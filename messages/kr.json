@@ -1,0 +1,1016 @@
+{
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공"
+  },
+  "cookieConsent": {
+    "title": "저희는 쿠키를 사용합니다",
+    "description": "더 나은 이용 경험 제공, 트래픽 분석, 관련성 높은 광고 제공을 위해 쿠키를 사용합니다.",
+    "learnMore": "자세히 보기",
+    "acceptAll": "모두 허용",
+    "manageCookies": "쿠키 설정",
+    "close": "닫기"
+  },
+  "cookieSettings": {
+    "title": "쿠키 설정",
+    "cookieWajib": "필수 쿠키",
+    "cookieWajibDescription": "웹사이트가 정상적으로 동작하기 위해 필요한 쿠키이며 비활성화할 수 없습니다.",
+    "cookieAnalitik": "분석 쿠키",
+    "cookieAnalitikDescription": "방문자가 웹사이트와 상호작용하는 방식을 이해하는 데 도움을 줍니다.",
+    "cookieIklan": "광고 쿠키",
+    "cookieIklanDescription": "관련성 높은 광고 표시 및 캠페인 효과 측정을 위해 사용됩니다.",
+    "simpanDanTerima": "저장 및 허용",
+    "tolakSemua": "모두 거부"
+  },
+  "navigation": {
+    "about": "소개",
+    "features": "기능",
+    "tutorial": "튜토리얼",
+    "pricing": "가격"
+  },
+  "buttons": {
+    "getStarted": "지금 시작하기"
+  },
+  "hero": {
+    "title1": "소셜 미디어를 자동화하세요",
+    "title2": "Postmatic와 함께",
+    "getStarted": "지금 시작하기"
+  },
+  "introduction": {
+    "headline": "무엇이냐면",
+    "brand": "Postmatic",
+    "subHeadline": "Postmatic은 한 번의 비즈니스 정보 입력만으로 트렌드 분석, 콘텐츠 제작, 캡션 작성, 게시 예약, 광고 관리까지 자동으로 도와주는 AI 플랫폼입니다."
+  },
+  "comparison": {
+    "titleLine1": "소셜 미디어 콘텐츠를",
+    "titleLine2": "마법처럼 바꾸세요"
+  },
+  "problemSection": {
+    "title": "왜 83.46%의 UMKM가 디지털 시대에 뒤처질까요?",
+    "subtitle": "INDEF 2024 데이터가 인도네시아 UMKM의 현실을 보여줍니다",
+    "stats": [
+      {
+        "icon": "TrendingDown",
+        "value": "83,46%",
+        "label": "UMKM의 그래픽 디자인 & 디지털 마케팅 역량 부족",
+        "color": "red"
+      },
+      {
+        "icon": "Clock",
+        "value": "8+ Jam",
+        "label": "고품질 콘텐츠 3–4개 제작에 필요한 시간",
+        "color": "orange"
+      },
+      {
+        "icon": "DollarSign",
+        "value": "4,5 Juta",
+        "label": "에이전시/프리랜서 월 평균 비용",
+        "color": "yellow"
+      },
+      {
+        "icon": "AlertTriangle",
+        "value": "342K+",
+        "label": "솔루션이 필요한 욕야카르타의 UMKM",
+        "color": "purple"
+      }
+    ],
+    "fakeSolutionsTitle": "왜 기존 솔루션은 효과적이지 않을까요?",
+    "existingTools": {
+      "title": "❌ 콘텐츠 제작 도구",
+      "points": [
+        "여전히 디자인/카피라이팅 스킬이 필요",
+        "설정에 많은 시간이 소요",
+        "복잡하고 비직관적인 인터페이스",
+        "인도네시아 로컬 비즈니스 맥락을 이해하지 못함"
+      ]
+    },
+    "agencyFreelancer": {
+      "title": "❌ 에이전시 & 프리랜서",
+      "points": [
+        "UMKM에 과도한 비용 (월 Rp 4,5 juta)",
+        "342,000+ UMKM에 확장 불가",
+        "커뮤니케이션 및 수정에 시간 소요",
+        "장기적으로 지속 가능하지 않음"
+      ]
+    }
+  },
+  "solutionSection": {
+    "title": "AI 플랫폼이",
+    "titleHighlight": "모든 것을 바꿉니다",
+    "subtitle": "디지털 포용을 실현하는 자동화 솔루션으로, 수많은 사업자를 동시에 지원하고 디지털 경제·마케팅 접근을 열어줍니다.",
+    "steps": [
+      {
+        "icon": "Zap",
+        "title": "원타임 입력",
+        "description": "브랜드명, 로고, 제품, 설명, 제품 사진 등 비즈니스 데이터를 한 번만 입력하면 됩니다.",
+        "benefit": "시간·역량 한계를 극복",
+        "colors": "from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10"
+      },
+      {
+        "icon": "Target",
+        "title": "자동 트렌드 분석",
+        "description": "아이디어 및 최신 콘텐츠/뉴스 트렌드를 분석합니다.",
+        "benefit": "트렌드를 놓치지 않음",
+        "colors": "from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10"
+      },
+      {
+        "icon": "BarChart3",
+        "title": "AI 기반 콘텐츠 생성",
+        "description": "최신 AI 모델로 매력적이고 관련성 높은 홍보 비주얼과 캡션을 생성합니다.",
+        "benefit": "디자인·카피 스킬 불필요",
+        "colors": "from-orange-50 to-red-50 dark:from-orange-900/10 dark:to-red-900/10"
+      },
+      {
+        "icon": "Calendar",
+        "title": "스케줄링 최적화",
+        "description": "소셜 미디어 게시 시간을 설정하고 추천합니다.",
+        "benefit": "최적의 게시 타이밍",
+        "colors": "from-purple-50 to-pink-50 dark:from-purple-900/10 dark:to-pink-900/10"
+      },
+      {
+        "icon": "Megaphone",
+        "title": "자동 부스팅/광고",
+        "description": "광고 적합 콘텐츠를 추천하고 자동으로 집행합니다.",
+        "benefit": "정확한 타게팅 & 수익성",
+        "colors": "from-yellow-50 to-orange-50 dark:from-yellow-900/10 dark:to-orange-900/10"
+      },
+      {
+        "icon": "CheckCircle",
+        "title": "AI 채팅 어시스턴트",
+        "description": "DM, 채팅, 댓글에 빠르고 비즈니스 톤에 맞춘 자동 응답을 제공합니다.",
+        "benefit": "참여도 향상 & 시간 절약",
+        "colors": "from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10"
+      }
+    ],
+    "impactTitle": "더 효율적인 인도네시아 UMKM 실현",
+    "impactStats": [
+      {
+        "value": "90%+",
+        "label": "수작업 대비 시간·비용 절감"
+      },
+      { "value": "20.000+", "label": "2년 내 온보딩 목표 UMKM" },
+      {
+        "value": "1 Juta+",
+        "label": "자동 생성될 소셜 미디어 콘텐츠"
+      },
+      { "value": "156%", "label": "사용자 비즈니스 참여도 증가" }
+    ]
+  },
+  "featuresSection": {
+    "title": "마케팅 자동화를 위한",
+    "titleHighlight": "완전한 기능",
+    "subtitle": "인도네시아 UMKM을 위해 설계된 올인원 플랫폼",
+    "features": [
+      {
+        "icon": "Bot",
+        "title": "AI 콘텐츠 생성기",
+        "description": "최신 AI로 고품질 비주얼 & 카피라이팅 생성",
+        "color": "from-blue-500 to-cyan-500"
+      },
+      {
+        "icon": "Target",
+        "title": "트렌드 분석",
+        "description": "실시간 트렌드 분석으로 항상 관련성과 바이럴 유지",
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "icon": "Calendar",
+        "title": "스마트 스케줄링",
+        "description": "모든 소셜 플랫폼으로 수동/자동 게시",
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "icon": "Megaphone",
+        "title": "자동 광고",
+        "description": "지능형 타게팅과 예산 최적화가 가능한 자동 광고",
+        "color": "from-orange-500 to-red-500"
+      },
+      {
+        "icon": "BarChart3",
+        "title": "분석 대시보드",
+        "description": "마케팅 성과에 대한 심층 인사이트 제공",
+        "color": "from-indigo-500 to-purple-500"
+      },
+      {
+        "icon": "Zap",
+        "title": "원클릭 설정",
+        "description": "비즈니스 지식은 한 번만 설정, 이후 자동 동작",
+        "color": "from-yellow-500 to-orange-500"
+      },
+      {
+        "icon": "Shield",
+        "title": "AI 채팅 어시스턴트",
+        "description": "빠르고 관련성 높은 자동 응답으로 브랜드 톤 유지",
+        "color": "from-cyan-500 to-blue-500"
+      },
+      {
+        "icon": "Users",
+        "title": "멀티 플랫폼",
+        "description": "여러 인기 소셜 플랫폼에 자동 배포",
+        "color": "from-pink-500 to-red-500"
+      }
+    ],
+    "highlight": {
+      "title": "왜 POSTMATIC은 다를까요?",
+      "points": [
+        {
+          "title": "인도네시아 비즈니스 특화",
+          "description": "로컬 비즈니스 맥락, 문화, 소비자 선호를 이해"
+        },
+        {
+          "title": "학습 곡선 제로",
+          "description": "초기 설정 후 기술 역량 없이도 자동으로 운영"
+        },
+        {
+          "title": "합리적 & 확장 가능",
+          "description": "프리미엄 에이전시급 결과를 합리적 가격에"
+        },
+        {
+          "title": "지속적 혁신",
+          "description": "최신 트렌드에 맞춰 계속 학습하고 진화"
+        }
+      ]
+    }
+  },
+  "endToEnd": {
+    "title": "자동화",
+    "highlight": "엔드 투 엔드",
+    "description": "AI가 콘텐츠와 캡션을 생성 → 소셜 미디어에 업로드 예약 → 콘텐츠를 프로모션 → 다음 사이클을 고도화합니다.",
+    "steps": [
+      "브랜드 에셋 한 번 입력",
+      "AI가 트렌드 & 오디언스 분석",
+      "비주얼 + 카피 생성",
+      "최적 시간에 스케줄링",
+      "유료 광고 자동 집행",
+      "분석 제공 & 학습"
+    ]
+  },
+  "introVideo": {
+    "titleLine1": "멋지죠?",
+    "title": "만나보세요",
+    "brand": "POSTMATIC",
+    "subtitle": "짧은 영상을 통해 POSTMATIC이 더 쉽고 빠르고 효과적인 마케팅 캠페인을 어떻게 돕는지 확인하세요.",
+    "windowTitle": "Postmatic"
+  },
+  "ctaSection": {
+    "title": "이제 자동화할",
+    "titleHighlight": "소셜 미디어",
+    "subtitle": "준비되셨나요?",
+    "cta": "Postmatic을 사용해 보세요. AI가 비즈니스 방식을 어떻게 바꾸는지 느껴보세요. 첫 30일 안에 참여도가 최대 156%까지 증가할 수 있습니다!",
+    "contactUs": "문의하기",
+    "getStarted": "지금 시작하기"
+  },
+  "footer": {
+    "companyDescription": "인도네시아 비즈니스의 디지털 마케팅을 자동화하는 선도적 AI 플랫폼.",
+    "platform": "플랫폼",
+    "fitur": "기능",
+    "tutorial": "튜토리얼",
+    "helpCenter": "도움말 센터",
+    "community": "커뮤니티",
+    "statusSystem": "시스템 상태",
+    "harga": "가격",
+    "resources": "리소스",
+    "contact": "연락처",
+    "privacyPolicy": "개인정보 처리방침",
+    "termsOfService": "이용약관",
+    "dataDeletion": "데이터 삭제",
+    "cookiePolicy": "쿠키 정책",
+    "supportedBy": "인도네시아 비즈니스의 소셜 미디어 자동화를 위한 최첨단 AI 기술로 지원됩니다 🇮🇩"
+  },
+  "pricing": {
+    "title": "비즈니스에",
+    "titleHighlight": "가장 알맞은 요금제",
+    "subtitle": "합리적인 가격으로 선도적 AI 소셜 미디어 자동화 플랫폼을 이용해 보세요",
+    "tabs": {
+      "subscription": "구독",
+      "tokens": "토큰 구매"
+    },
+    "badge": "가장 인기",
+    "cta": {
+      "free": "무료 시작",
+      "paid": "요금제 선택",
+      "token": "토큰 구매",
+      "sales": "세일즈 문의"
+    },
+    "currency": "IDR",
+    "tokenUnit": "토큰",
+    "validFor": "{days}일 유효",
+    "perToken": "토큰당 {price}",
+    "saveBadge": "20% 절약",
+    "tokenTitle": "콘텐츠 생성용 토큰",
+    "tokenSubtitle": "월 구독 없이 필요에 따라 토큰만 구매하세요",
+    "enterpriseHelp": {
+      "title": "더 많은 토큰이 필요하신가요?",
+      "desc": "엔터프라이즈 전용 가격으로 상담해 드립니다"
+    },
+    "plans": [
+      {
+        "id": "788cce03-7e8e-4bda-a211-554bc56ea937",
+        "name": "무료",
+        "icon": "Star",
+        "color": "from-gray-500 to-gray-600",
+        "bgColor": "bg-gray-50 border-gray-200 dark:bg-slate-800 dark:border-slate-700",
+        "popular": false,
+        "benefits": [
+          "1개월 체험",
+          "최대 3개 콘텐츠 생성",
+          "소셜 미디어 최대 3회 게시"
+        ],
+        "items": [
+          {
+            "id": "f37c15ce-6a05-48ba-92e2-a4f01296504e",
+            "name": "무료",
+            "price": 0,
+            "description": "지금 체험",
+            "tokenValidFor": 30,
+            "tokenImage": 30000,
+            "originalPrice": 0
+          }
+        ]
+      },
+      {
+        "id": "0cb0f83d-9868-417e-aed0-4bc7590ce8bc",
+        "name": "프로페셔널",
+        "icon": "Zap",
+        "color": "from-blue-500 to-indigo-600",
+        "bgColor": "bg-blue-50 border-blue-200 dark:bg-slate-800 dark:border-slate-700",
+        "popular": true,
+        "benefits": [
+          "매월 최대 50개 콘텐츠 제작",
+          "최대 50개 콘텐츠 생성",
+          "무제한 콘텐츠 업로드",
+          "처리 우선순위",
+          "고급 커스터마이즈",
+          "모든 기능 액세스"
+        ],
+        "items": [
+          {
+            "id": "73cc0502-1ba3-4254-84fc-f3cfd236649b",
+            "name": "월간",
+            "price": 900000,
+            "tokenValidFor": 30,
+            "tokenImage": 500000
+          },
+          {
+            "id": "3031f5f5-e84e-498c-9878-186b4c735dd2",
+            "name": "연간",
+            "price": 10350000,
+            "description": "Rp 450.000 절약",
+            "tokenValidFor": 365,
+            "tokenImage": 6000000,
+            "originalPrice": 10800000
+          }
+        ]
+      },
+      {
+        "id": "1f5d87d8-0f93-4ebe-a9c9-333df9ec500b",
+        "name": "엔터프라이즈",
+        "icon": "Crown",
+        "color": "from-purple-500 to-pink-600",
+        "bgColor": "bg-purple-50 border-purple-200 dark:bg-slate-800 dark:border-slate-700",
+        "popular": false,
+        "benefits": [
+          "매월 최대 150개 콘텐츠 제작",
+          "최대 150개 콘텐츠 생성",
+          "무제한 콘텐츠 업로드",
+          "처리 우선순위",
+          "고급 커스터마이즈",
+          "모든 기능 액세스",
+          "우선 문제 대응",
+          "최고 성능 AI 모델",
+          "더 나은 이미지 생성",
+          "연간 요금제로 더 큰 절감"
+        ],
+        "items": [
+          {
+            "id": "d2ec82c2-c2ed-4fe5-bf6c-2afa26fff14b",
+            "name": "월간",
+            "price": 2500000,
+            "tokenValidFor": 30,
+            "tokenImage": 1500000
+          },
+          {
+            "id": "ff318282-b0ba-4ef6-ab5c-80d9a91825b7",
+            "name": "연간",
+            "price": 28750000,
+            "description": "Rp 1.250.000 절약",
+            "tokenValidFor": 365,
+            "tokenImage": 18000000,
+            "originalPrice": 30000000
+          }
+        ]
+      }
+    ],
+    "tokens": [
+      {
+        "id": "b858d06e-9e88-4e31-bf89-bb7a74f39e99",
+        "token": 50000,
+        "price": 60000,
+        "tokenType": "Image"
+      },
+      {
+        "id": "e5eb12df-d347-4c23-bba9-9d379d85adf7",
+        "token": 100000,
+        "price": 110000,
+        "tokenType": "Image",
+        "deletedAt": null
+      },
+      {
+        "id": "96552efd-6e6f-4bda-a234-92774120883e",
+        "token": 250000,
+        "price": 250000,
+        "tokenType": "Image"
+      },
+      {
+        "id": "0c42705d-8c6c-4f4c-9b9c-8e23ae34f0a2",
+        "token": 500000,
+        "price": 450000,
+        "tokenType": "Image"
+      },
+      {
+        "id": "24945acc-3998-4ade-9bfb-edbf88b17617",
+        "token": 1000000,
+        "price": 800000,
+        "tokenType": "Image"
+      }
+    ]
+  },
+  "privacyPolicy": {
+    "title": "Postmatic 개인정보 처리방침",
+    "lastUpdated": "최종 업데이트: 2025년 7월 2일",
+    "sections": [
+      {
+        "title": "해석 및 정의",
+        "description": [
+          {
+            "type": "bold",
+            "content": "해석"
+          },
+          {
+            "type": "text",
+            "content": "대문자로 시작하는 단어들은 아래 조건에 따라 정의된 의미를 가집니다."
+          },
+          {
+            "type": "bold",
+            "content": "정의"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**계정(Akun)**: 당사 서비스를 이용하기 위해 생성되는 고유 계정.",
+              "**회사(Perusahaan)** (\"Postmatic\", \"당사\", \"우리는\", \"당사의\"): Jl. Lempongsari No.353, Indonesia.",
+              "**개인정보(Data Pribadi)**: 식별되었거나 식별 가능한 개인과 관련된 모든 정보.",
+              "**서비스(Layanan)**: https://postmatic.id 에서 접근 가능한 웹사이트.",
+              "**이용 데이터(Data Penggunaan)**: 자동 수집 데이터(IP 주소, 브라우저, 방문 페이지 등).",
+              "**쿠키(Cookie)**: 브라우징 세부 정보를 저장하기 위해 기기에 배치되는 작은 파일.",
+              "**제3자 소셜 미디어 서비스**: Google, Facebook, Instagram, Twitter, LinkedIn.",
+              "**귀하(Anda)**: 서비스를 이용하는 개인 또는 법인."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "개인정보의 수집 및 이용",
+        "description": [
+          {
+            "type": "bold",
+            "content": "수집되는 데이터의 종류"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**개인정보**: 이메일, 이름, 전화번호, 주소, 도시, 주/도, 우편번호, 이용 데이터.",
+              "**이용 데이터**: IP 주소, 브라우저 유형/버전, 타임스탬프, 기기 정보, 진단 데이터.",
+              "**제3자 소셜 미디어**: Google, Facebook, Instagram, Twitter, LinkedIn을 통해 가입하는 경우 이름, 이메일, 활동, 연락처 목록을 수집할 수 있습니다.",
+              "**추적 기술 & 쿠키**: 필수(세션) 쿠키, 쿠키 배너 동의(영구) 쿠키, 기능(영구) 쿠키"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "개인정보의 이용 목적",
+        "description": [
+          {
+            "type": "text",
+            "content": "당사는 다음의 목적을 위해 개인정보를 사용할 수 있습니다:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "서비스 제공 및 유지.",
+              "계정 및 가입 관리.",
+              "계약 이행(예: 구매).",
+              "이메일, 전화, SMS, 푸시 알림을 통한 연락.",
+              "뉴스, 제안, 일반 정보 발송(수신 거부 가능).",
+              "요청사항 처리.",
+              "사업 양수·양도(합병, 자산 매각 등) 평가 또는 수행.",
+              "데이터 분석, 캠페인 효과 측정, 제품/서비스 개선."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "개인정보의 보관",
+        "description": [
+          {
+            "type": "text",
+            "content": "본 처리방침에 명시된 목적을 위해 필요한 기간 동안에만 개인정보를 보관합니다(법적 의무, 분쟁 해결, 정책 집행 포함)."
+          },
+          {
+            "type": "text",
+            "content": "이용 데이터는 보안 또는 기능 향상 목적 등 특별한 경우를 제외하고 더 짧은 기간 보관됩니다."
+          }
+        ]
+      },
+      {
+        "title": "개인정보의 이전",
+        "description": [
+          {
+            "type": "text",
+            "content": "귀하의 정보는 귀하의 관할권 밖의 컴퓨터로 이전되어 보관될 수 있으며, 해당 지역의 데이터 보호법은 다를 수 있습니다."
+          },
+          {
+            "type": "text",
+            "content": "당사는 귀하의 데이터가 본 처리방침에 따라 안전하게 처리되도록 합리적인 모든 조치를 취합니다."
+          }
+        ]
+      },
+      {
+        "title": "개인정보 삭제",
+        "description": [
+          {
+            "type": "text",
+            "content": "당사가 수집한 귀하의 개인정보 삭제를 요청하거나 삭제 지원을 요청할 권리가 있습니다."
+          },
+          {
+            "type": "text",
+            "content": "계정 설정을 통해 정보를 업데이트/변경/삭제하거나 team@postmatic.id로 연락해 주십시오."
+          },
+          {
+            "type": "text",
+            "content": "법률상 요구되는 경우 특정 정보를 보관할 수 있습니다."
+          }
+        ]
+      },
+      {
+        "title": "개인정보의 공개",
+        "description": [
+          {
+            "type": "bold",
+            "content": "기업 거래"
+          },
+          {
+            "type": "text",
+            "content": "당사가 합병·인수·자산 매각에 참여하는 경우 개인정보가 이전될 수 있습니다. 다른 처리방침이 적용되기 전에 고지됩니다."
+          },
+          {
+            "type": "bold",
+            "content": "법 집행"
+          },
+          {
+            "type": "text",
+            "content": "법률상 요구 또는 공공기관의 유효한 요청에 따라 귀하의 개인정보를 공개할 수 있습니다."
+          },
+          {
+            "type": "bold",
+            "content": "기타 법적 요구"
+          },
+          {
+            "type": "text",
+            "content": "법적 의무 준수, 권리/재산 보호, 위해 방지, 사용자 안전 보호, 법적 책임 방어를 위해 필요한 경우 선의로 개인정보를 공개할 수 있습니다."
+          }
+        ]
+      },
+      {
+        "title": "개인정보의 보안",
+        "description": [
+          {
+            "type": "text",
+            "content": "인터넷 전송 또는 전자 보관 방식은 100% 안전하지 않지만, 상업적으로 합리적인 수단으로 개인정보를 보호하기 위해 노력합니다."
+          }
+        ]
+      },
+      {
+        "title": "아동의 프라이버시",
+        "description": [
+          {
+            "type": "text",
+            "content": "본 서비스는 만 13세 미만을 대상으로 하지 않습니다. 13세 미만 아동의 개인정보를 고의로 수집하지 않습니다. 아동이 정보를 제공했다고 판단되는 경우 연락해 주시면 삭제하겠습니다."
+          }
+        ]
+      },
+      {
+        "title": "다른 웹사이트로의 링크",
+        "description": [
+          {
+            "type": "text",
+            "content": "서비스에는 제3자 사이트 링크가 포함될 수 있습니다. 당사는 제3자 사이트의 콘텐츠, 처리방침 또는 관행에 대해 책임지지 않습니다."
+          }
+        ]
+      },
+      {
+        "title": "본 처리방침의 변경",
+        "description": [
+          {
+            "type": "text",
+            "content": "당사는 수시로 본 처리방침을 업데이트할 수 있습니다. 변경 사항은 본 페이지에 게시되는 시점부터 적용됩니다. 변경 전에 이메일 및/또는 서비스 내 공지로 알려드리며 \"최종 업데이트\" 날짜를 갱신합니다."
+          }
+        ]
+      },
+      {
+        "title": "문의하기",
+        "description": [
+          {
+            "type": "text",
+            "content": "본 처리방침에 대해 질문이 있으시면 아래로 연락해 주세요:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**이메일**: team@postmatic.id",
+              "**웹사이트**: https://postmatic.id"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "cookiePolicy": {
+    "title": "쿠키 정책",
+    "lastUpdated": "최종 업데이트: 2025년 8월 6일",
+    "sections": [
+      {
+        "title": "쿠키란?",
+        "content": [
+          {
+            "type": "text",
+            "text": "쿠키는 웹사이트 방문 시 기기에 저장되는 작은 텍스트 파일입니다. 쿠키는 사이트 운영, 사용자 경험 향상, 트래픽 분석, 관련 광고 제공을 돕습니다."
+          }
+        ]
+      },
+      {
+        "title": "쿠키 사용 방식",
+        "content": [
+          {
+            "type": "text",
+            "text": "아래 목적을 위해 쿠키를 사용합니다. 비필수 쿠키는 언제든 쿠키 설정 모달에서 제어할 수 있습니다."
+          }
+        ]
+      },
+      {
+        "title": "사용하는 쿠키 범주",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "<strong>1. 필수 쿠키(항상 활성)</strong><br/>웹사이트의 기본 기능, 보안, 네트워크 관리에 필수적입니다. 로그인이나 양식 작성 같은 서비스는 이 쿠키 없이는 제공될 수 없습니다.",
+              "<strong>2. 분석 쿠키</strong><br/>방문자 수, 조회된 페이지, 세션 길이 등 집계 정보를 수집하여 사이트 사용 방식을 이해하고 성능을 개선합니다.",
+              "<strong>3. 마케팅/광고 쿠키</strong><br/>다양한 사이트에서 방문자를 추적하여 개인화된 관련 광고를 표시하고 마케팅 캠페인의 효과를 측정합니다."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "제3자 쿠키",
+        "content": [
+          {
+            "type": "text",
+            "text": "신뢰할 수 있는 제3자 서비스(예: Google Analytics, Meta Pixel)가 분석 또는 마케팅 목적으로 쿠키를 설정하도록 허용할 수 있습니다. 이 제공자들은 관련 법률에 따라 책임 있게 데이터를 처리하도록 계약상 의무를 집니다."
+          }
+        ]
+      },
+      {
+        "title": "쿠키 선호도 관리",
+        "content": [
+          {
+            "type": "text",
+            "text": "처음 방문 시 쿠키 동의 배너가 표시됩니다. 다음을 선택할 수 있습니다:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "모든 쿠키 허용;",
+              "모든 선택 쿠키 거부;",
+              "\"쿠키 설정\"을 열어 개별 범주 선택."
+            ]
+          },
+          {
+            "type": "text",
+            "text": "푸터의 \"쿠키 설정\" 링크를 클릭하거나 로컬 스토리지를 삭제 후 페이지를 새로고침하여 언제든 선택을 변경할 수 있습니다."
+          }
+        ]
+      },
+      {
+        "title": "데이터 보관",
+        "content": [
+          {
+            "type": "text",
+            "text": "보관 기간은 범주별로 다릅니다: 필수 쿠키는 세션 종료 시 또는 최대 30일, 분석 쿠키는 최대 24개월, 마케팅 쿠키는 일반적으로 6–12개월 또는 동의 철회 시까지 보관됩니다."
+          }
+        ]
+      },
+      {
+        "title": "문의하기",
+        "content": [
+          {
+            "type": "text",
+            "text": "쿠키 정책에 대한 문의는 아래로 연락해 주세요:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "<strong>이메일:</strong> <a href='mailto:team@postmatic.id' class='text-blue-600 underline'>team@postmatic.id</a>",
+              "<strong>웹사이트:</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "dataDeletion": {
+    "title": "데이터 삭제 정책",
+    "lastUpdated": "최종 업데이트: 2025년 8월 6일",
+    "sections": [
+      {
+        "title": "데이터 삭제 요청 절차",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "<strong>1. 요청 제출</strong><br/>제목을 \"데이터 삭제 요청\"으로 하여 <a href='mailto:team@postmatic.id'>team@postmatic.id</a>로 이메일을 보내 주세요. 성명, 등록 이메일, 전화번호, 선택 사항으로 간단한 설명을 포함해 주세요.",
+              "<strong>2. 신원 확인</strong><br/>확인 이메일을 보내드립니다. 신속히 회신하여 본인 확인을 완료해 주세요.",
+              "<strong>3. 처리 기간</strong><br/>확인 후 7–14 영업일 내 삭제를 완료하고 이메일로 안내드립니다."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "삭제 범위",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "개인 식별 정보(이름, 이메일, 전화번호)",
+              "모든 프로젝트 및 지식 베이스 관련 데이터",
+              "생성된 이미지, 동영상, 캡션 및 기타 저장 미디어",
+              "연결된 소셜 미디어 토큰 및 자격 증명(즉시 비활성화)",
+              "자동 채팅/응답 설정 및 채팅 기록"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "예외",
+        "content": [
+          {
+            "type": "text",
+            "text": "법률, 규정, 컴플라이언스 목적상 일부 데이터는 보관될 수 있습니다:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "세무·회계 보고를 위한 거래 기록(법적 요구 기간 보관)",
+              "내부 보고 및 성과 분석을 위한 익명화 분석 데이터"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "구독 & 결제 정보",
+        "content": [
+          {
+            "type": "text",
+            "text": "<strong>Midtrans</strong>가 처리하는 결제 및 구독 데이터는 해당사의 처리방침이 적용됩니다. 해당 정보 삭제를 원하시면 Midtrans 공식 채널로 직접 문의해 주세요."
+          }
+        ]
+      },
+      {
+        "title": "삭제 이후 접근",
+        "content": [
+          {
+            "type": "text",
+            "text": "삭제가 완료되면 귀하의 프로젝트, 생성된 콘텐츠 또는 계정과 연계된 서비스에 접근할 수 없습니다."
+          }
+        ]
+      },
+      {
+        "title": "문의하기",
+        "content": [
+          {
+            "type": "text",
+            "text": "질문이 있으신가요? <a href='mailto:team@postmatic.id'>team@postmatic.id</a>로 이메일 주세요."
+          }
+        ]
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "이용약관",
+    "lastUpdated": "최종 업데이트: 2025년 8월 6일",
+    "sections": [
+      {
+        "title": "약관 동의",
+        "content": [
+          {
+            "type": "text",
+            "text": "Postmatic(“Postmatic”, “당사”)의 서비스에 접근하거나 사용하는 것으로 본 이용약관(“약관”)에 동의하는 것으로 간주됩니다. 약관의 일부라도 동의하지 않으시면 서비스를 사용하실 수 없습니다."
+          }
+        ]
+      },
+      {
+        "title": "계정 등록 및 보안",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "계정 등록 시 정확하고 완전한 정보를 제공해야 합니다(이름, 이메일, 전화번호, 비밀번호 포함).",
+              "계정 자격 증명 관리 및 계정 하의 모든 활동에 대한 책임은 사용자에게 있습니다."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "제공 서비스",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "AI가 생성한 이미지, 동영상, 캡션을 통한 소셜 미디어 콘텐츠 자동화.",
+              "연결된 소셜 미디어 계정으로 자동 게시 기능.",
+              "AI 기반 채팅 및 자동 응답 기능."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "사용자 책임",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "제공하는 로고, 브랜드명, 설명, 제품 정보, 가격 등 비즈니스 관련 정보가 정확하고 합법적이며 지식재산권을 침해하지 않도록 해야 합니다.",
+              "Postmatic과 통합된 제3자 소셜 미디어 플랫폼의 약관 및 정책을 준수해야 합니다."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "지식재산권",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Postmatic은 AI가 생성한 템플릿, 소프트웨어, 알고리즘 등 서비스에 대한 모든 지식재산권을 보유합니다.",
+              "사용자는 Postmatic에 제공하거나 업로드한 비즈니스 관련 정보 및 콘텐츠에 대한 소유권을 유지합니다."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "구독 및 결제",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Postmatic은 토큰 기반 구독 모델을 사용합니다.",
+              "결제는 <strong>Midtrans</strong>를 통해 안전하게 처리됩니다.",
+              "구매한 토큰은 환불되지 않으며 구매 과정에서 고지된 만료 정책을 따릅니다."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "금지된 사용",
+        "content": [
+          {
+            "type": "text",
+            "text": "다음 행위를 금지합니다:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "불법, 사기, 유해한 목적으로 Postmatic 사용.",
+              "Postmatic의 기능, 성능, 보안을 방해 또는 저해.",
+              "유해·위협·학대·명예훼손·외설·모욕적·부적절한 콘텐츠 업로드 또는 생성."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "개인정보 보호",
+        "content": [
+          {
+            "type": "text",
+            "text": "Postmatic은 개인정보를 개인정보 처리방침에 따라 처리합니다. 서비스를 사용함으로써 품질 향상을 위한 데이터 분석 수집 및 이용에 동의합니다."
+          }
+        ]
+      },
+      {
+        "title": "책임의 한계",
+        "content": [
+          {
+            "type": "text",
+            "text": "Postmatic은 간접적, 우발적, 특별, 결과적 또는 징벌적 손해, 이익 또는 수익 손실에 대해 직간접적으로 책임지지 않습니다."
+          }
+        ]
+      },
+      {
+        "title": "면책",
+        "content": [
+          {
+            "type": "text",
+            "text": "사용자는 서비스 이용 또는 본 약관 위반으로 발생하는 청구, 손해, 책임, 비용에 대해 Postmatic을 면책하고 방어하며 보호하는 데 동의합니다."
+          }
+        ]
+      },
+      {
+        "title": "약관 변경",
+        "content": [
+          {
+            "type": "text",
+            "text": "당사는 언제든 본 약관을 수정할 수 있습니다. 변경 사항은 이메일 또는 웹사이트 공지를 통해 알리며, 계속 사용 시 변경된 약관에 동의한 것으로 간주됩니다."
+          }
+        ]
+      },
+      {
+        "title": "이용 종료",
+        "content": [
+          {
+            "type": "text",
+            "text": "사용자가 본 약관을 위반하는 경우, 사전 통지 없이 서비스 접근을 중단하거나 종료할 수 있습니다."
+          }
+        ]
+      },
+      {
+        "title": "준거법",
+        "content": [
+          {
+            "type": "text",
+            "text": "본 약관은 인도네시아 공화국 법률에 따라 규율되고 해석됩니다."
+          }
+        ]
+      },
+      {
+        "title": "연락처",
+        "content": [
+          {
+            "type": "text",
+            "text": "본 약관 관련 문의:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "<strong>이메일:</strong> team@postmatic.id",
+              "<strong>웹사이트:</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "productShowcase": {
+    "products": [
+      {
+        "id": 1,
+        "name": "Dendeng Lambok",
+        "shortDes": "미낭 특유의 정통 매콤 육포",
+        "description": "🔥 중독되는 매운맛!\n\n미낭 스타일의 매콤한 육포, Dendeng Lambok! 엄선한 소고기에 정통 향신료를 더하고 풍성한 삼발 소스로 더 맛있게. 🌶🍖\n\n따끈한 밥과 함께 먹기 좋고, 언제든 간편한 반찬으로도 딱 맞아요.\n\n📦 200g 위생 포장, 실용적입니다.\n\n지금 바로 매운 맛의 짜릿함을 경험해 보세요!\n\n#DendengLambok #Haykatuju #정통매운맛",
+        "imageBefore": "/content/dendeng-before.png",
+        "imageAfter": "/content/dendeng-after.png"
+      },
+      {
+        "id": 2,
+        "name": "클래식 카페라떼",
+        "shortDes": "선별한 로부스타와 신선한 크리미 우유의 조화",
+        "description": "☕✨ KopiLagi Dukuh Zamrud에서 더 맛있는 커피 타임!\n\n진한 커피 풍미와 신선한 우유의 부드러움이 어우러진 클래식 라떼. 대화, 업무, 혼자만의 시간에 딱 어울려요. 🌿❄\n\n📍 지금 바로 KopiLagi Dukuh Zamrud에서 신선함을 느껴보세요!\n\n#KopiLagi #커피타임 #DukuhZamrud",
+        "imageBefore": "/content/kopilagi-before.png",
+        "imageAfter": "/content/kopilagi-after.png"
+      },
+      {
+        "id": 3,
+        "name": "알마 허벌 비누",
+        "shortDes": "편안한 향의 천연 허벌 비누, 피부에 순하고 부드럽게",
+        "description": "🌿✨ 이제 자연의 선함으로 피부를 관리하세요!\n\n*Alma 허벌 비누*는 피부에 순한 허브 성분으로 당김 없이 말끔히 세정해 줍니다. 편안한 플로럴 향으로 하루의 피로를 풀어 보세요. 🌸🫧\n\n💧 휴대하기 좋은 30ml 사이즈.\n\n#허벌비누 #AlmaCare #내추럴뷰티",
+        "imageBefore": "/content/sabun-before.png",
+        "imageAfter": "/content/sabun-after.png"
+      },
+      {
+        "id": 4,
+        "name": "할머니의 비법 덴덩",
+        "shortDes": "정통 풍미와 매콤함이 살아있는 스페셜 신메뉴",
+        "description": "🍽 신메뉴 출시!\n\n집밥이 떠오르는 정통 덴덩. 고소한 소고기 덴덩, 입맛 돋우는 매콤한 삼발, 그리고 따뜻한 밥의 최강 조합. 🤤🔥\n\n가격은 단 *Rp 20.000,-*! 💸\n\n📍 지금 Haykatuju에서 만나보세요. 품절 전에 서둘러요!\n\n#Haykatuju #신메뉴 #할머니의비법덴덩",
+        "imageBefore": "/content/nasi-dendeng-before.png",
+        "imageAfter": "/content/nasi-dendeng-after.png"
+      },
+      {
+        "id": 5,
+        "name": "헤이스튜디오 프로퍼티 임대주택",
+        "shortDes": "욕야카르타 팔라가니스메 거리의 전략적 입지",
+        "description": "🏠 욕야카르타에서 넓고 편안한 집을 찾고 계신가요?\n\nHaystudio Property의 임대 하우스는 다음과 같이 완비되어 있어요:\n✨ 침실 4개\n✨ 욕실 2개\n✨ 욕야카르타 팔라가니스메 거리의 핵심 입지\n\n연 *Rp 30,000,000*로 가족 혹은 쉐어 하우스에 제격입니다. 💫\n\n📍 마감되기 전에 지금 바로 예약하세요!\n\n#Jogja임대 #HaystudioProperty #전월세",
+        "imageBefore": "/content/rumah-before.png",
+        "imageAfter": "/content/rumah-after.png"
+      }
+    ]
+  }
+}

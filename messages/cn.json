@@ -1,0 +1,1012 @@
+{
+  "common": {
+    "loading": "加载中…",
+    "error": "错误",
+    "success": "成功"
+  },
+  "cookieConsent": {
+    "title": "我们使用 Cookie",
+    "description": "我们使用 Cookie 来提升您的体验、分析流量，并展示更相关的广告。",
+    "learnMore": "了解更多",
+    "acceptAll": "全部接受",
+    "manageCookies": "管理 Cookie",
+    "close": "关闭"
+  },
+  "cookieSettings": {
+    "title": "Cookie 设置",
+    "cookieWajib": "必要型 Cookie",
+    "cookieWajibDescription": "这些 Cookie 对网站正常运行必不可少，无法被关闭。",
+    "cookieAnalitik": "分析型 Cookie",
+    "cookieAnalitikDescription": "帮助我们了解访客如何与我们的网站互动。",
+    "cookieIklan": "广告型 Cookie",
+    "cookieIklanDescription": "用于展示相关广告并衡量广告活动效果。",
+    "simpanDanTerima": "保存并接受",
+    "tolakSemua": "全部拒绝"
+  },
+  "navigation": {
+    "about": "关于",
+    "features": "功能",
+    "tutorial": "教程",
+    "pricing": "价格"
+  },
+  "buttons": {
+    "getStarted": "立即开始"
+  },
+  "hero": {
+    "title1": "自动化你的社交媒体",
+    "title2": "尽在 Postmatic",
+    "getStarted": "立即开始"
+  },
+  "introduction": {
+    "headline": "什么是",
+    "brand": "Postmatic",
+    "subHeadline": "Postmatic 是一款 AI 平台，只需一次性输入企业信息，即可自动完成趋势分析、内容创作、文案生成、发布排程以及广告管理。"
+  },
+  "comparison": {
+    "titleLine1": "让你的社交媒体内容",
+    "titleLine2": "化身为奇迹"
+  },
+  "problemSection": {
+    "title": "为何有 83,46% 的 UMKM 在数字时代落后？",
+    "subtitle": "INDEF 2024 的数据揭示了印尼 UMKM 的真实现状",
+    "stats": [
+      {
+        "icon": "TrendingDown",
+        "value": "83,46%",
+        "label": "UMKM 缺乏平面设计与数字营销技能",
+        "color": "red"
+      },
+      {
+        "icon": "Clock",
+        "value": "8+ Jam",
+        "label": "制作 3–4 条高质量内容所需时间",
+        "color": "orange"
+      },
+      {
+        "icon": "DollarSign",
+        "value": "4,5 Juta",
+        "label": "外包给代理/自由职业者的月均费用",
+        "color": "yellow"
+      },
+      {
+        "icon": "AlertTriangle",
+        "value": "342K+",
+        "label": "日惹地区需要解决方案的 UMKM 数量",
+        "color": "purple"
+      }
+    ],
+    "fakeSolutionsTitle": "为何现有方案仍旧无效？",
+    "existingTools": {
+      "title": "❌ 内容创作工具",
+      "points": [
+        "仍需设计与文案能力",
+        "搭建流程耗时数小时",
+        "界面复杂且不够友好",
+        "不理解印尼本地商业语境"
+      ]
+    },
+    "agencyFreelancer": {
+      "title": "❌ 代理与自由职业者",
+      "points": [
+        "对 UMKM 来说成本过高（每月 Rp 4,5 juta）",
+        "无法扩展至 342,000+ 家 UMKM",
+        "沟通与反复修改耗时",
+        "长期来看不可持续"
+      ]
+    }
+  },
+  "solutionSection": {
+    "title": "这款 AI 平台",
+    "titleHighlight": "将改变一切",
+    "subtitle": "包容性的数字化自动化解决方案，既可服务百万商家，也能真正打开通往数字经济与数字营销的大门。",
+    "steps": [
+      {
+        "icon": "Zap",
+        "title": "一次性输入",
+        "description": "用户只需一次性输入企业数据（品牌名、Logo、产品、描述、产品图片等）。",
+        "benefit": "解决时间与技能限制",
+        "colors": "from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10"
+      },
+      {
+        "icon": "Target",
+        "title": "自动趋势分析",
+        "description": "系统会分析内容/新闻的最新创意与趋势。",
+        "benefit": "永不落后于潮流",
+        "colors": "from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10"
+      },
+      {
+        "icon": "BarChart3",
+        "title": "AI 内容生成",
+        "description": "通过先进 AI 模型生成吸睛的宣传视觉与相关文案。",
+        "benefit": "无需设计与文案技能",
+        "colors": "from-orange-50 to-red-50 dark:from-orange-900/10 dark:to-red-900/10"
+      },
+      {
+        "icon": "Calendar",
+        "title": "排程优化",
+        "description": "可设置并推荐社媒内容的最佳发布时间。",
+        "benefit": "发布时机更理想",
+        "colors": "from-purple-50 to-pink-50 dark:from-purple-900/10 dark:to-pink-900/10"
+      },
+      {
+        "icon": "Megaphone",
+        "title": "自动投放/广告",
+        "description": "系统会推荐适合投放的内容并自动执行广告。",
+        "benefit": "精准触达且更盈利",
+        "colors": "from-yellow-50 to-orange-50 dark:from-yellow-900/10 dark:to-orange-900/10"
+      },
+      {
+        "icon": "CheckCircle",
+        "title": "AI 聊天助理",
+        "description": "AI 会自动以快速、相关且符合品牌风格的方式回复私信、聊天与评论。",
+        "benefit": "提升互动并节省时间",
+        "colors": "from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10"
+      }
+    ],
+    "impactTitle": "让印尼 UMKM 更高效更进步",
+    "impactStats": [
+      {
+        "value": "90%+",
+        "label": "相较人工模式节省时间与成本"
+      },
+      { "value": "20.000+", "label": "两年内的 UMKM 上线目标" },
+      {
+        "value": "1 Juta+",
+        "label": "将自动生成的社交媒体内容数量"
+      },
+      { "value": "156%", "label": "用户业务互动度的提升" }
+    ]
+  },
+  "featuresSection": {
+    "title": "为",
+    "titleHighlight": "营销自动化",
+    "subtitle": "量身为印尼 UMKM 设计的一体化平台",
+    "features": [
+      {
+        "icon": "Bot",
+        "title": "AI 内容生成器",
+        "description": "以先进 AI 生成高质量视觉与文案",
+        "color": "from-blue-500 to-cyan-500"
+      },
+      {
+        "icon": "Target",
+        "title": "趋势分析",
+        "description": "实时分析，确保内容始终相关且易传播",
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "icon": "Calendar",
+        "title": "智能排程",
+        "description": "支持向各大社媒进行手动/自动发布",
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "icon": "Megaphone",
+        "title": "自动广告",
+        "description": "具备智能定向与预算优化的自动投放",
+        "color": "from-orange-500 to-red-500"
+      },
+      {
+        "icon": "BarChart3",
+        "title": "分析仪表盘",
+        "description": "提供营销表现的深度洞察",
+        "color": "from-indigo-500 to-purple-500"
+      },
+      {
+        "icon": "Zap",
+        "title": "一键配置",
+        "description": "业务知识只需配置一次，之后自动运行",
+        "color": "from-yellow-500 to-orange-500"
+      },
+      {
+        "icon": "Shield",
+        "title": "AI 聊天助理",
+        "description": "快速且相关的自动回复，始终保持品牌语气",
+        "color": "from-cyan-500 to-blue-500"
+      },
+      {
+        "icon": "Users",
+        "title": "多平台",
+        "description": "自动分发到各大主流社交平台",
+        "color": "from-pink-500 to-red-500"
+      }
+    ],
+    "highlight": {
+      "title": "为何 POSTMATIC 与众不同？",
+      "points": [
+        {
+          "title": "专为印尼企业打造",
+          "description": "理解本地商业语境、文化与消费者偏好"
+        },
+        {
+          "title": "零学习成本",
+          "description": "初始设置后，无需任何技术技能即可自动化运行"
+        },
+        {
+          "title": "实惠且可扩展",
+          "description": "以亲民价格获得媲美高端代理的效果"
+        },
+        {
+          "title": "持续创新",
+          "description": "AI 持续学习并紧跟最新趋势"
+        }
+      ]
+    }
+  },
+  "endToEnd": {
+    "title": "自动化",
+    "highlight": "端到端",
+    "description": "AI 生成内容和文案 → 安排上传至社交媒体 → 推广内容 → 不断优化下一轮循环。",
+    "steps": [
+      "一次性输入品牌资产",
+      "AI 分析趋势与受众",
+      "生成视觉 + 文案",
+      "在最佳时间发布",
+      "自动投放付费广告",
+      "提供分析并持续学习"
+    ]
+  },
+  "introVideo": {
+    "titleLine1": "很酷，对吧？！",
+    "title": "来认识一下",
+    "brand": "POSTMATIC",
+    "subtitle": "观看短视频，了解 POSTMATIC 如何帮助你更轻松、更快速、更高效地打造营销活动。",
+    "windowTitle": "Postmatic"
+  },
+  "ctaSection": {
+    "title": "准备好将你的",
+    "titleHighlight": "社交媒体",
+    "subtitle": "自动化了吗？",
+    "cta": "使用 Postmatic，感受 AI 如何改变你的商业方式。前 30 天内互动度最高可提升 156%！",
+    "contactUs": "联系我们",
+    "getStarted": "立即开始"
+  },
+  "footer": {
+    "companyDescription": "面向印尼企业、用于自动化数字营销的领先 AI 平台。",
+    "platform": "平台",
+    "fitur": "功能",
+    "tutorial": "教程",
+    "helpCenter": "帮助中心",
+    "community": "社区",
+    "statusSystem": "系统状态",
+    "harga": "价格",
+    "resources": "资源",
+    "contact": "联系",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "dataDeletion": "数据删除",
+    "cookiePolicy": "Cookie 政策",
+    "supportedBy": "由最前沿的 AI 技术驱动，助力印尼企业实现社媒自动化 🇮🇩"
+  },
+  "pricing": {
+    "title": "为你的企业选择",
+    "titleHighlight": "最合适的套餐",
+    "subtitle": "以亲民的价格，使用领先的 AI 社交媒体自动化平台",
+    "tabs": {
+      "subscription": "订阅套餐",
+      "tokens": "购买代币"
+    },
+    "badge": "最受欢迎",
+    "cta": {
+      "free": "免费开始",
+      "paid": "选择套餐",
+      "token": "购买代币",
+      "sales": "联系销售"
+    },
+    "currency": "IDR",
+    "tokenUnit": "代币",
+    "validFor": "有效期 {days} 天",
+    "perToken": "每枚代币 {price}",
+    "saveBadge": "立省 20%",
+    "tokenTitle": "用于内容生成的代币",
+    "tokenSubtitle": "按需购买，无需月度订阅",
+    "enterpriseHelp": {
+      "title": "需要更多代币？",
+      "desc": "联系我们的团队，获取企业专属价格"
+    },
+    "plans": [
+      {
+        "id": "788cce03-7e8e-4bda-a211-554bc56ea937",
+        "name": "免费",
+        "icon": "Star",
+        "color": "from-gray-500 to-gray-600",
+        "bgColor": "bg-gray-50 border-gray-200 dark:bg-slate-800 dark:border-slate-700",
+        "popular": false,
+        "benefits": ["1 个月试用", "最多创建 3 条内容", "最多发布到社媒 3 次"],
+        "items": [
+          {
+            "id": "f37c15ce-6a05-48ba-92e2-a4f01296504e",
+            "name": "免费",
+            "price": 0,
+            "description": "立即体验",
+            "tokenValidFor": 30,
+            "tokenImage": 30000,
+            "originalPrice": 0
+          }
+        ]
+      },
+      {
+        "id": "0cb0f83d-9868-417e-aed0-4bc7590ce8bc",
+        "name": "专业版",
+        "icon": "Zap",
+        "color": "from-blue-500 to-indigo-600",
+        "bgColor": "bg-blue-50 border-blue-200 dark:bg-slate-800 dark:border-slate-700",
+        "popular": true,
+        "benefits": [
+          "每月最多制作 50 条内容",
+          "最多生成 50 条内容",
+          "内容上传不限量",
+          "处理优先级更高",
+          "高级自定义",
+          "访问全部功能"
+        ],
+        "items": [
+          {
+            "id": "73cc0502-1ba3-4254-84fc-f3cfd236649b",
+            "name": "月度",
+            "price": 900000,
+            "tokenValidFor": 30,
+            "tokenImage": 500000
+          },
+          {
+            "id": "3031f5f5-e84e-498c-9878-186b4c735dd2",
+            "name": "年度",
+            "description": "立省 Rp 450.000",
+            "price": 10350000,
+            "tokenValidFor": 365,
+            "tokenImage": 6000000,
+            "originalPrice": 10800000
+          }
+        ]
+      },
+      {
+        "id": "1f5d87d8-0f93-4ebe-a9c9-333df9ec500b",
+        "name": "企业版",
+        "icon": "Crown",
+        "color": "from-purple-500 to-pink-600",
+        "bgColor": "bg-purple-50 border-purple-200 dark:bg-slate-800 dark:border-slate-700",
+        "popular": false,
+        "benefits": [
+          "每月最多制作 150 条内容",
+          "最多生成 150 条内容",
+          "内容上传不限量",
+          "处理优先级更高",
+          "高级自定义",
+          "访问全部功能",
+          "问题优先响应",
+          "最佳性能的 AI 模型",
+          "更出色的图像生成",
+          "年度套餐更省钱"
+        ],
+        "items": [
+          {
+            "id": "d2ec82c2-c2ed-4fe5-bf6c-2afa26fff14b",
+            "name": "月度",
+            "price": 2500000,
+            "tokenValidFor": 30,
+            "tokenImage": 1500000
+          },
+          {
+            "id": "ff318282-b0ba-4ef6-ab5c-80d9a91825b7",
+            "name": "年度",
+            "price": 28750000,
+            "description": "立省 Rp 1.250.000",
+            "tokenValidFor": 365,
+            "tokenImage": 18000000,
+            "originalPrice": 30000000
+          }
+        ]
+      }
+    ],
+    "tokens": [
+      {
+        "id": "b858d06e-9e88-4e31-bf89-bb7a74f39e99",
+        "token": 50000,
+        "price": 60000,
+        "tokenType": "Image"
+      },
+      {
+        "id": "e5eb12df-d347-4c23-bba9-9d379d85adf7",
+        "token": 100000,
+        "price": 110000,
+        "tokenType": "Image",
+        "deletedAt": null
+      },
+      {
+        "id": "96552efd-6e6f-4bda-a234-92774120883e",
+        "token": 250000,
+        "price": 250000,
+        "tokenType": "Image"
+      },
+      {
+        "id": "0c42705d-8c6c-4f4c-9b9c-8e23ae34f0a2",
+        "token": 500000,
+        "price": 450000,
+        "tokenType": "Image"
+      },
+      {
+        "id": "24945acc-3998-4ade-9bfb-edbf88b17617",
+        "token": 1000000,
+        "price": 800000,
+        "tokenType": "Image"
+      }
+    ]
+  },
+  "privacyPolicy": {
+    "title": "Postmatic 隐私政策",
+    "lastUpdated": "最后更新：2025 年 7 月 2 日",
+    "sections": [
+      {
+        "title": "解释与定义",
+        "description": [
+          {
+            "type": "bold",
+            "content": "解释"
+          },
+          {
+            "type": "text",
+            "content": "首字母大写的词语在下列条件下具有特定含义。"
+          },
+          {
+            "type": "bold",
+            "content": "定义"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**账户（Akun）**：为您创建、用于访问我们服务的唯一账户。",
+              "**公司（Perusahaan）**（“Postmatic”“我们”或“本公司”）：Jl. Lempongsari No.353, Indonesia。",
+              "**个人数据（Data Pribadi）**：与已识别或可识别个人有关的任何信息。",
+              "**服务（Layanan）**：可从 https://postmatic.id 访问的网站。",
+              "**使用数据（Data Penggunaan）**：自动收集的数据（IP 地址、浏览器、访问页面等）。",
+              "**Cookie**：存储在您设备上的小文件，用于保存浏览详情。",
+              "**第三方社交媒体服务**：Google、Facebook、Instagram、Twitter、LinkedIn。",
+              "**您（Anda）**：使用本服务的个人或法人实体。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "个人数据的收集与使用",
+        "description": [
+          {
+            "type": "bold",
+            "content": "收集的数据类型"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**个人数据**：电子邮箱、姓名、电话号码、地址、城市、省/州、邮编、使用数据。",
+              "**使用数据**：IP 地址、浏览器类型/版本、时间戳、设备信息、诊断数据。",
+              "**第三方社交媒体**：若您通过 Google、Facebook、Instagram、Twitter 或 LinkedIn 注册，我们可能收集您的姓名、邮箱、活动及联系人列表。",
+              "**追踪技术与 Cookie**：必要（会话）Cookie、Cookie 横幅同意（持久）Cookie、功能（持久）Cookie"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "我们如何使用个人数据",
+        "description": [
+          {
+            "type": "text",
+            "content": "我们可能将您的个人数据用于："
+          },
+          {
+            "type": "list",
+            "items": [
+              "提供与维护服务；",
+              "管理您的账户与注册；",
+              "履行合同（如：购买）；",
+              "通过电子邮件、电话、短信、推送通知与您联系；",
+              "发送新闻、优惠与一般信息（除非您选择退出）；",
+              "处理您的请求；",
+              "评估或进行业务转移（并购、资产出售等）；",
+              "进行数据分析、衡量活动效果、改进产品/服务。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "个人数据的保留",
+        "description": [
+          {
+            "type": "text",
+            "content": "我们仅在实现本政策所述目的所需期间内保留您的个人数据（包括法律义务、争议解决、政策执行）。"
+          },
+          {
+            "type": "text",
+            "content": "除非用于提升安全或功能，使用数据通常保留时间更短。"
+          }
+        ]
+      },
+      {
+        "title": "个人数据的传输",
+        "description": [
+          {
+            "type": "text",
+            "content": "您的信息可能被传输至并存储在您所属司法辖区之外的计算机上，且当地数据保护法律可能不同。"
+          },
+          {
+            "type": "text",
+            "content": "我们会采取一切合理措施，确保您的数据依本政策得到安全处理。"
+          }
+        ]
+      },
+      {
+        "title": "删除您的个人数据",
+        "description": [
+          {
+            "type": "text",
+            "content": "您有权删除或请求我们协助删除我们已收集的您的个人数据。"
+          },
+          {
+            "type": "text",
+            "content": "您可通过账户设置更新、更改或删除信息，或发送邮件至 team@postmatic.id。"
+          },
+          {
+            "type": "text",
+            "content": "法律要求的情况下，我们可能保留某些信息。"
+          }
+        ]
+      },
+      {
+        "title": "个人数据的披露",
+        "description": [
+          {
+            "type": "bold",
+            "content": "商业交易"
+          },
+          {
+            "type": "text",
+            "content": "若公司参与合并、收购或资产出售，您的个人数据可能被转移。在适用不同隐私政策前，我们会进行通知。"
+          },
+          {
+            "type": "bold",
+            "content": "执法要求"
+          },
+          {
+            "type": "text",
+            "content": "如法律要求或应公共机关有效请求，我们可能披露您的个人数据。"
+          },
+          {
+            "type": "bold",
+            "content": "其他法律要求"
+          },
+          {
+            "type": "text",
+            "content": "为遵守法律义务、保护权利或财产、预防不当行为、保护用户安全、或抗辩法律责任之需要，我们可本着善意披露个人数据。"
+          }
+        ]
+      },
+      {
+        "title": "个人数据的安全",
+        "description": [
+          {
+            "type": "text",
+            "content": "虽然互联网传输或电子存储并非 100% 安全，但我们会以商业上可接受的方式保护您的个人数据。"
+          }
+        ]
+      },
+      {
+        "title": "儿童隐私",
+        "description": [
+          {
+            "type": "text",
+            "content": "我们的服务不面向 13 岁以下人士。我们不会有意收集 13 岁以下儿童的个人数据。如您认为孩子已向我们提供信息，请联系我们，我们将从服务器删除相关信息。"
+          }
+        ]
+      },
+      {
+        "title": "外部网站链接",
+        "description": [
+          {
+            "type": "text",
+            "content": "我们的服务可能包含第三方网站链接。我们不对任何第三方网站或服务的内容、隐私政策或实践负责。"
+          }
+        ]
+      },
+      {
+        "title": "本政策的变更",
+        "description": [
+          {
+            "type": "text",
+            "content": "我们可能不时更新本隐私政策。变更自发布于本页起生效。变更生效前，我们会通过电子邮件及/或服务内显著通知，并更新“最后更新”日期。"
+          }
+        ]
+      },
+      {
+        "title": "联系我们",
+        "description": [
+          {
+            "type": "text",
+            "content": "若您对本隐私政策有任何疑问，请联系："
+          },
+          {
+            "type": "list",
+            "items": [
+              "**邮箱**：team@postmatic.id",
+              "**网站**：https://postmatic.id"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "cookiePolicy": {
+    "title": "Cookie 政策",
+    "lastUpdated": "最后更新：2025 年 8 月 6 日",
+    "sections": [
+      {
+        "title": "什么是 Cookie？",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cookie 是您访问网站时存放在设备上的小型文本文件。Cookie 帮助我们运营网站、提升体验、分析流量并投放相关广告。"
+          }
+        ]
+      },
+      {
+        "title": "我们如何使用 Cookie",
+        "content": [
+          {
+            "type": "text",
+            "text": "我们将 Cookie 用于以下目的。您可随时通过“Cookie 设置”弹窗控制非必要 Cookie。"
+          }
+        ]
+      },
+      {
+        "title": "我们使用的 Cookie 类别",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "<strong>1. 必要型 Cookie（始终启用）</strong><br/>对网站基础功能、安全与网络管理必不可少。若无此类 Cookie，登录或填写表单等服务将无法提供。",
+              "<strong>2. 分析型 Cookie</strong><br/>以汇总形式收集访客数量、浏览页面与会话时长等信息，帮助我们理解网站使用方式并提升性能。",
+              "<strong>3. 营销/广告型 Cookie</strong><br/>跨站跟踪访客，以展示个性化相关广告，并衡量营销活动效果。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "第三方 Cookie",
+        "content": [
+          {
+            "type": "text",
+            "text": "我们可能允许受信任的第三方服务（如 Google Analytics、Meta Pixel）设置 Cookie 用于分析或营销。供应商受合同约束，需依照适用法律负责任地处理数据。"
+          }
+        ]
+      },
+      {
+        "title": "管理你的 Cookie 偏好",
+        "content": [
+          {
+            "type": "text",
+            "text": "首次访问 Postmatic 时会显示 Cookie 同意横幅。你可以："
+          },
+          {
+            "type": "list",
+            "items": [
+              "接受所有 Cookie；",
+              "拒绝所有可选 Cookie；",
+              "打开“Cookie 设置”以逐类选择。"
+            ]
+          },
+          {
+            "type": "text",
+            "text": "可随时点击页脚中的“Cookie 设置”或清除本地存储并刷新页面来重新选择。"
+          }
+        ]
+      },
+      {
+        "title": "数据保留",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cookie 保留期因类别不同而异：必要型 Cookie 会话结束或最长 30 天；分析型 Cookie 最长 24 个月；营销型 Cookie 通常 6–12 个月，或直至你撤回同意。"
+          }
+        ]
+      },
+      {
+        "title": "联系我们",
+        "content": [
+          {
+            "type": "text",
+            "text": "如对本 Cookie 政策有疑问，请联系："
+          },
+          {
+            "type": "list",
+            "items": [
+              "<strong>邮箱：</strong> <a href='mailto:team@postmatic.id' class='text-blue-600 underline'>team@postmatic.id</a>",
+              "<strong>网站：</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "dataDeletion": {
+    "title": "数据删除政策",
+    "lastUpdated": "最后更新：2025 年 8 月 6 日",
+    "sections": [
+      {
+        "title": "数据删除申请流程",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "<strong>1. 提交申请</strong><br/>发送邮件至 <a href='mailto:team@postmatic.id'>team@postmatic.id</a>，主题为“数据删除申请”。请附上姓名、注册邮箱、电话号码，以及可选的简要说明。",
+              "<strong>2. 身份验证</strong><br/>我们会向你发送确认邮件，请尽快回复以完成身份验证。",
+              "<strong>3. 处理时间</strong><br/>验证后，我们将在 7–14 个工作日内完成删除，并通过邮件通知你。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "删除范围",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "个人身份信息（姓名、邮箱、电话号码）",
+              "所有项目与知识库相关数据",
+              "已生成的图片、视频、文案与其他存储媒体",
+              "已连接社交媒体的令牌与凭证（立即禁用）",
+              "自动聊天/回复配置与聊天记录"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "例外情况",
+        "content": [
+          {
+            "type": "text",
+            "text": "基于法律、监管或合规要求，部分数据可能被保留："
+          },
+          {
+            "type": "list",
+            "items": [
+              "用于税务与财务申报的交易记录（按法定期限保留）",
+              "用于内部报告与绩效分析的匿名化分析数据"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "订阅与支付信息",
+        "content": [
+          {
+            "type": "text",
+            "text": "由 <strong>Midtrans</strong> 处理的支付与订阅数据，受其隐私政策约束。若需删除相关信息，请通过其官方渠道直接联系 Midtrans。"
+          }
+        ]
+      },
+      {
+        "title": "删除后的访问",
+        "content": [
+          {
+            "type": "text",
+            "text": "删除完成后，你将无法访问与你账户相关的项目、已生成内容或服务。"
+          }
+        ]
+      },
+      {
+        "title": "联系我们",
+        "content": [
+          {
+            "type": "text",
+            "text": "有问题？请发送邮件至 <a href='mailto:team@postmatic.id'>team@postmatic.id</a>。"
+          }
+        ]
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "服务条款",
+    "lastUpdated": "最后更新：2025 年 8 月 6 日",
+    "sections": [
+      {
+        "title": "同意条款",
+        "content": [
+          {
+            "type": "text",
+            "text": "访问或使用 Postmatic（“Postmatic”“我们”“本公司”）的服务，即表示你同意遵守本服务条款（“条款”）。若你不同意条款的任何部分，请勿访问或使用本服务。"
+          }
+        ]
+      },
+      {
+        "title": "账户注册与安全",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "注册账户时须提供准确、完整的信息（包括姓名、邮箱、电话与密码）。",
+              "你对账户凭证的保管以及在账户下发生的一切活动负责。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "提供的服务",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "通过 AI 生成图片、视频与文案，实现社交媒体内容自动化；",
+              "自动发布到已连接的社交媒体账户；",
+              "AI 驱动的聊天与自动回复功能。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "用户责任",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "确保提供的企业相关信息（如 Logo、品牌名、描述、产品详情与价格）准确、合法且不侵犯知识产权；",
+              "遵守与 Postmatic 集成的第三方社交媒体平台的条款与政策。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "知识产权",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Postmatic 拥有与服务相关的所有知识产权，包括 AI 生成模板、软件与算法；",
+              "用户保留向 Postmatic 提供或上传之企业相关信息与内容的所有权。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "订阅与支付",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Postmatic 采用基于代币的订阅模式；",
+              "支付由 <strong>Midtrans</strong> 安全处理；",
+              "所购代币不可退款，并遵循购买流程中说明的有效期政策。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "禁止的使用",
+        "content": [
+          {
+            "type": "text",
+            "text": "你同意不进行以下行为："
+          },
+          {
+            "type": "list",
+            "items": [
+              "将 Postmatic 用于违法、欺诈或有害目的；",
+              "干扰或破坏 Postmatic 的功能、性能或安全；",
+              "上传或生成有害、威胁、辱骂、诽谤、淫秽、冒犯或不当内容。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "数据隐私",
+        "content": [
+          {
+            "type": "text",
+            "text": "Postmatic 按照隐私政策处理个人与业务数据。使用 Postmatic 即表示你同意我们为提升服务质量而进行的数据分析收集与使用。"
+          }
+        ]
+      },
+      {
+        "title": "责任限制",
+        "content": [
+          {
+            "type": "text",
+            "text": "对于因使用本服务而直接或间接造成的任何间接、偶发、特殊、后果性或惩罚性损害，或利润/收入损失，Postmatic 概不负责。"
+          }
+        ]
+      },
+      {
+        "title": "赔偿",
+        "content": [
+          {
+            "type": "text",
+            "text": "你同意就因你使用本服务或违反本条款而引起的索赔、损害、责任、费用或开支，对 Postmatic 进行赔偿、辩护并使其免受损害。"
+          }
+        ]
+      },
+      {
+        "title": "条款变更",
+        "content": [
+          {
+            "type": "text",
+            "text": "我们保留随时修改本条款的权利。我们将通过电子邮件或网站通知变更；继续使用即表示你接受更新后的条款。"
+          }
+        ]
+      },
+      {
+        "title": "服务终止",
+        "content": [
+          {
+            "type": "text",
+            "text": "若你违反本条款，Postmatic 有权在不事先通知的情况下暂停或终止你对服务的访问。"
+          }
+        ]
+      },
+      {
+        "title": "适用法律",
+        "content": [
+          {
+            "type": "text",
+            "text": "本条款受印度尼西亚共和国法律管辖并依其解释。"
+          }
+        ]
+      },
+      {
+        "title": "联系信息",
+        "content": [
+          {
+            "type": "text",
+            "text": "有关本条款的问题，请联系："
+          },
+          {
+            "type": "list",
+            "items": [
+              "<strong>邮箱：</strong> team@postmatic.id",
+              "<strong>网站：</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "productShowcase": {
+    "products": [
+      {
+        "id": 1,
+        "name": "Dendeng Lambok",
+        "shortDes": "米南风味的正宗辣味牛肉干，刺激味蕾",
+        "description": "🔥 辣到上瘾！\n\n隆重介绍 Dendeng Lambok——米南风味的正宗辣味牛肉干，劲辣直击味蕾！精选牛肉配以地道香料，再加上满满的叁巴辣酱，越吃越下饭。🌶🍖\n\n搭配热米饭更带劲，或作为随时即食的便捷小菜。\n\n📦 200 克包装，卫生又方便。\n\n现在就来尝一口，感受火辣魅力！\n\n#DendengLambok #Haykatuju #正宗辣味",
+        "imageBefore": "/content/dendeng-before.png",
+        "imageAfter": "/content/dendeng-after.png"
+      },
+      {
+        "id": 2,
+        "name": "经典咖啡牛奶",
+        "shortDes": "精选罗布斯塔与新鲜顺滑牛奶的融合",
+        "description": "☕✨ 和 KopiLagi Dukuh Zamrud 一起享受更美好的咖啡时光！\n\n经典的咖啡牛奶组合，浓郁的咖啡与新鲜牛奶的丝滑完美平衡，聊天、工作或独处时光的绝佳伙伴。🌿❄\n\n📍 欢迎到 KopiLagi Dukuh Zamrud 门店，现场感受新鲜！\n\n#KopiLagi #咖啡时光 #DukuhZamrud",
+        "imageBefore": "/content/kopilagi-before.png",
+        "imageAfter": "/content/kopilagi-after.png"
+      },
+      {
+        "id": 3,
+        "name": "Alma 草本香皂",
+        "shortDes": "天然草本香皂，香气宁神，温和亲肤",
+        "description": "🌿✨ 用自然之力呵护你的肌肤！\n\n*Alma 草本香皂* 采用甄选草本成分，温和清洁、不紧绷。融入舒缓花香，忙碌一天后的身心放松之选。🌸🫧\n\n💧 便携 30ml 规格，随身带着走。\n\n#草本香皂 #AlmaCare #自然之美",
+        "imageBefore": "/content/sabun-before.png",
+        "imageAfter": "/content/sabun-after.png"
+      },
+      {
+        "id": 4,
+        "name": "奶奶传承的 Dendeng",
+        "shortDes": "全新特选菜单，正宗风味与诱人辣度",
+        "description": "🍽 全新菜单上线！\n\n来一份奶奶传承的 Dendeng，唤醒家的味道。咸香牛肉干、诱人辣味叁巴，再配上一碗热腾腾的白米饭，满足你的味蕾。🤤🔥\n\n价格仅 Rp 20.000,-！💸\n\n📍 现已登陆 Haykatuju，售完即止，手慢无！\n\n#Haykatuju #新菜单 #奶奶的传承Dendeng",
+        "imageBefore": "/content/nasi-dendeng-before.png",
+        "imageAfter": "/content/nasi-dendeng-after.png"
+      },
+      {
+        "id": 5,
+        "name": "Haystudio Property 租房",
+        "shortDes": "日惹 Palaganisme 大街的优越地段",
+        "description": "🏠 在日惹寻找宽敞舒适的租住房？\n\nHaystudio Property 提供设施齐全的房源：\n✨ 4 间卧室\n✨ 2 间浴室\n✨ 位于日惹 Palaganisme 大街的黄金位置\n\n价格仅 *每年 Rp 30,000,000*，家庭或合租都很合适。💫\n\n📍 赶紧下订，先到先得！\n\n#Jogja租房 #HaystudioProperty #租屋",
+        "imageBefore": "/content/rumah-before.png",
+        "imageAfter": "/content/rumah-after.png"
+      }
+    ]
+  }
+}

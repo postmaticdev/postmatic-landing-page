@@ -1,0 +1,1019 @@
+{
+  "common": {
+    "loading": "Cargando…",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "cookieConsent": {
+    "title": "Usamos cookies",
+    "description": "Usamos cookies para mejorar tu experiencia, analizar el tráfico y mostrar anuncios más relevantes.",
+    "learnMore": "Saber más",
+    "acceptAll": "Aceptar todo",
+    "manageCookies": "Gestionar cookies",
+    "close": "Cerrar"
+  },
+  "cookieSettings": {
+    "title": "Configuración de cookies",
+    "cookieWajib": "Cookies esenciales",
+    "cookieWajibDescription": "Estas cookies son necesarias para que el sitio funcione correctamente y no pueden desactivarse.",
+    "cookieAnalitik": "Cookies analíticas",
+    "cookieAnalitikDescription": "Nos ayudan a comprender cómo interactúan los visitantes con nuestro sitio web.",
+    "cookieIklan": "Cookies de publicidad",
+    "cookieIklanDescription": "Se utilizan para mostrar anuncios relevantes y medir la efectividad de las campañas.",
+    "simpanDanTerima": "Guardar y aceptar",
+    "tolakSemua": "Rechazar todo"
+  },
+  "navigation": {
+    "about": "Acerca de",
+    "features": "Funciones",
+    "tutorial": "Tutorial",
+    "pricing": "Precios"
+  },
+  "buttons": {
+    "getStarted": "Empezar ahora"
+  },
+  "hero": {
+    "title1": "Automatiza tus redes sociales",
+    "title2": "con Postmatic",
+    "getStarted": "Empezar ahora"
+  },
+  "introduction": {
+    "headline": "Qué es",
+    "brand": "Postmatic",
+    "subHeadline": "Postmatic es una plataforma de IA que ayuda automáticamente a las empresas a gestionar sus redes sociales: analiza tendencias, crea contenido, genera captions, programa publicaciones y gestiona anuncios, todo con una sola entrada de la información del negocio."
+  },
+  "comparison": {
+    "titleLine1": "Convierte tu contenido de redes",
+    "titleLine2": "en pura magia"
+  },
+  "problemSection": {
+    "title": "¿Por qué el 83,46% de las UMKM se quedan atrás en la era digital?",
+    "subtitle": "Los datos de INDEF 2024 muestran una realidad preocupante sobre la situación de las UMKM en Indonesia",
+    "stats": [
+      {
+        "icon": "TrendingDown",
+        "value": "83,46%",
+        "label": "Las UMKM carecen de habilidades de diseño gráfico y marketing digital",
+        "color": "red"
+      },
+      {
+        "icon": "Clock",
+        "value": "8+ Jam",
+        "label": "Tiempo necesario para crear 3–4 contenidos de calidad",
+        "color": "orange"
+      },
+      {
+        "icon": "DollarSign",
+        "value": "4,5 Juta",
+        "label": "Costo mensual promedio de agencia/freelancer",
+        "color": "yellow"
+      },
+      {
+        "icon": "AlertTriangle",
+        "value": "342K+",
+        "label": "UMKM en Yogyakarta que necesitan una solución",
+        "color": "purple"
+      }
+    ],
+    "fakeSolutionsTitle": "¿Por qué las soluciones existentes aún no son efectivas?",
+    "existingTools": {
+      "title": "❌ Herramientas de creación de contenido",
+      "points": [
+        "Aún requieren habilidades de diseño y copywriting",
+        "Horas de configuración",
+        "Interfaz compleja y poco amigable",
+        "No comprenden el contexto del negocio local en Indonesia"
+      ]
+    },
+    "agencyFreelancer": {
+      "title": "❌ Agencias y freelancers",
+      "points": [
+        "Demasiado costosas para las UMKM (Rp 4,5 juta/mes)",
+        "No escalables para 342.000+ UMKM",
+        "Comunicación y revisiones que consumen tiempo",
+        "No sostenible a largo plazo"
+      ]
+    }
+  },
+  "solutionSection": {
+    "title": "Una plataforma de IA que",
+    "titleHighlight": "lo cambia todo",
+    "subtitle": "Una solución digital automática e inclusiva que puede llegar a millones de emprendedores y abrir un acceso real a la economía y al marketing digital.",
+    "steps": [
+      {
+        "icon": "Zap",
+        "title": "Entrada única",
+        "description": "El usuario ingresa una sola vez los datos del negocio (marca, logo, productos, descripción, fotos, etc.).",
+        "benefit": "Supera la falta de tiempo y habilidades",
+        "colors": "from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10"
+      },
+      {
+        "icon": "Target",
+        "title": "Análisis automático de tendencias",
+        "description": "El sistema analiza ideas y tendencias de contenido/noticias recientes.",
+        "benefit": "Nunca te quedas fuera de tendencia",
+        "colors": "from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10"
+      },
+      {
+        "icon": "BarChart3",
+        "title": "Generación de contenido con IA",
+        "description": "Genera visuales promocionales y captions relevantes mediante modelos de IA de vanguardia.",
+        "benefit": "Sin necesidad de diseño ni copywriting",
+        "colors": "from-orange-50 to-red-50 dark:from-orange-900/10 dark:to-red-900/10"
+      },
+      {
+        "icon": "Calendar",
+        "title": "Optimización de programación",
+        "description": "Puede configurar y recomendar los mejores horarios de publicación.",
+        "benefit": "Timing óptimo de publicaciones",
+        "colors": "from-purple-50 to-pink-50 dark:from-purple-900/10 dark:to-pink-900/10"
+      },
+      {
+        "icon": "Megaphone",
+        "title": "Auto-Boosting/Publicidad",
+        "description": "El sistema recomienda qué contenido promocionar y ejecuta anuncios automáticamente.",
+        "benefit": "Segmentación precisa y rentable",
+        "colors": "from-yellow-50 to-orange-50 dark:from-yellow-900/10 dark:to-orange-900/10"
+      },
+      {
+        "icon": "CheckCircle",
+        "title": "Asistente de chat con IA",
+        "description": "Responde automáticamente a DMs, chats y comentarios con rapidez, relevancia y el tono de tu marca.",
+        "benefit": "Mayor engagement y ahorro de tiempo",
+        "colors": "from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10"
+      }
+    ],
+    "impactTitle": "Hagamos que las UMKM de Indonesia sean más eficientes y avanzadas",
+    "impactStats": [
+      {
+        "value": "90%+",
+        "label": "Más eficiencia de tiempo y costo frente al modelo manual"
+      },
+      { "value": "20.000+", "label": "Meta de onboarding de UMKM en 2 años" },
+      {
+        "value": "1 Juta+",
+        "label": "Contenidos de redes generados automáticamente"
+      },
+      {
+        "value": "156%",
+        "label": "Aumento del engagement de los negocios usuarios"
+      }
+    ]
+  },
+  "featuresSection": {
+    "title": "Funciones completas para",
+    "titleHighlight": "automatizar tu marketing",
+    "subtitle": "Plataforma todo-en-uno diseñada para las necesidades de las UMKM de Indonesia",
+    "features": [
+      {
+        "icon": "Bot",
+        "title": "Generador de contenido con IA",
+        "description": "Genera visuales y copy de alta calidad con tecnología de IA avanzada",
+        "color": "from-blue-500 to-cyan-500"
+      },
+      {
+        "icon": "Target",
+        "title": "Análisis de tendencias",
+        "description": "Análisis en tiempo real para asegurar contenido siempre relevante y viral",
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "icon": "Calendar",
+        "title": "Programación inteligente",
+        "description": "Publicación manual y automática en todas las plataformas",
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "icon": "Megaphone",
+        "title": "Publicidad automática",
+        "description": "Sistema publicitario inteligente con segmentación y optimización de presupuesto",
+        "color": "from-orange-500 to-red-500"
+      },
+      {
+        "icon": "BarChart3",
+        "title": "Panel de analíticas",
+        "description": "Dashboard integral con insights profundos del rendimiento",
+        "color": "from-indigo-500 to-purple-500"
+      },
+      {
+        "icon": "Zap",
+        "title": "Configuración en un clic",
+        "description": "Configura el conocimiento del negocio una sola vez; el sistema trabaja automáticamente",
+        "color": "from-yellow-500 to-orange-500"
+      },
+      {
+        "icon": "Shield",
+        "title": "Asistente de chat con IA",
+        "description": "Respuestas automáticas rápidas y relevantes manteniendo el tono de la marca",
+        "color": "from-cyan-500 to-blue-500"
+      },
+      {
+        "icon": "Users",
+        "title": "Multiplataforma",
+        "description": "Distribución automática a múltiples redes sociales populares",
+        "color": "from-pink-500 to-red-500"
+      }
+    ],
+    "highlight": {
+      "title": "¿Por qué POSTMATIC es diferente?",
+      "points": [
+        {
+          "title": "Hecho para negocios indonesios",
+          "description": "Comprende el contexto local, la cultura y las preferencias del consumidor"
+        },
+        {
+          "title": "Curva de aprendizaje cero",
+          "description": "No se necesitan habilidades técnicas tras la configuración inicial"
+        },
+        {
+          "title": "Asequible y escalable",
+          "description": "Resultados dignos de agencia premium a un precio accesible"
+        },
+        {
+          "title": "Innovación continua",
+          "description": "La IA aprende y evoluciona siguiendo las últimas tendencias"
+        }
+      ]
+    }
+  },
+  "endToEnd": {
+    "title": "Automatización",
+    "highlight": "de extremo a extremo",
+    "description": "La IA crea contenido y captions → programa la subida a redes → promociona el contenido → y mejora el siguiente ciclo.",
+    "steps": [
+      "Ingresa los assets de marca una vez",
+      "La IA analiza tendencias y audiencia",
+      "Genera visuales + copy",
+      "Programa en horarios óptimos",
+      "Ejecuta anuncios pagados automáticamente",
+      "Entrega analíticas y aprende"
+    ]
+  },
+  "introVideo": {
+    "titleLine1": "Genial, ¿no?!",
+    "title": "Conoce",
+    "brand": "POSTMATIC",
+    "subtitle": "Mira este video corto para ver cómo POSTMATIC te ayuda a crear campañas de marketing más fáciles, rápidas y efectivas.",
+    "windowTitle": "Postmatic"
+  },
+  "ctaSection": {
+    "title": "¿Listo para automatizar",
+    "titleHighlight": "tus redes sociales",
+    "subtitle": "de tu negocio?",
+    "cta": "Usa Postmatic y descubre cómo la IA puede transformar tu forma de trabajar. ¡Incrementa el engagement hasta un 156% en los primeros 30 días!",
+    "contactUs": "Contáctanos",
+    "getStarted": "Empezar ahora"
+  },
+  "footer": {
+    "companyDescription": "Plataforma de IA líder para automatizar el marketing digital de los negocios en Indonesia.",
+    "platform": "Plataforma",
+    "fitur": "Funciones",
+    "tutorial": "Tutorial",
+    "helpCenter": "Centro de ayuda",
+    "community": "Comunidad",
+    "statusSystem": "Estado del sistema",
+    "harga": "Precios",
+    "resources": "Recursos",
+    "contact": "Contacto",
+    "privacyPolicy": "Política de privacidad",
+    "termsOfService": "Términos del servicio",
+    "dataDeletion": "Eliminación de datos",
+    "cookiePolicy": "Política de cookies",
+    "supportedBy": "Impulsado por tecnología de IA de vanguardia para automatizar las redes sociales de los negocios indonesios 🇮🇩"
+  },
+  "pricing": {
+    "title": "Elige el plan",
+    "titleHighlight": "ideal para tu negocio",
+    "subtitle": "Accede a la plataforma líder de automatización de redes con IA a un precio accesible",
+    "tabs": {
+      "subscription": "Planes de suscripción",
+      "tokens": "Comprar tokens"
+    },
+    "badge": "El más popular",
+    "cta": {
+      "free": "Comenzar gratis",
+      "paid": "Elegir plan",
+      "token": "Comprar tokens",
+      "sales": "Contactar a ventas"
+    },
+    "currency": "IDR",
+    "tokenUnit": "token",
+    "validFor": "Válido por {days} días",
+    "perToken": "{price} por token",
+    "saveBadge": "Ahorra 20%",
+    "tokenTitle": "Tokens para generar contenido",
+    "tokenSubtitle": "Compra tokens según lo necesites, sin compromiso mensual",
+    "enterpriseHelp": {
+      "title": "¿Necesitas más tokens?",
+      "desc": "Contacta a nuestro equipo para planes enterprise con precios especiales"
+    },
+    "plans": [
+      {
+        "id": "788cce03-7e8e-4bda-a211-554bc56ea937",
+        "name": "Gratis",
+        "icon": "Star",
+        "color": "from-gray-500 to-gray-600",
+        "bgColor": "bg-gray-50 border-gray-200 dark:bg-slate-800 dark:border-slate-700",
+        "popular": false,
+        "benefits": [
+          "Prueba de 1 mes",
+          "Crea hasta 3 contenidos",
+          "Hasta 3 publicaciones en redes"
+        ],
+        "items": [
+          {
+            "id": "f37c15ce-6a05-48ba-92e2-a4f01296504e",
+            "name": "Gratis",
+            "price": 0,
+            "description": "Probar ahora",
+            "tokenValidFor": 30,
+            "tokenImage": 30000,
+            "originalPrice": 0
+          }
+        ]
+      },
+      {
+        "id": "0cb0f83d-9868-417e-aed0-4bc7590ce8bc",
+        "name": "Professional",
+        "icon": "Zap",
+        "color": "from-blue-500 to-indigo-600",
+        "bgColor": "bg-blue-50 border-blue-200 dark:bg-slate-800 dark:border-slate-700",
+        "popular": true,
+        "benefits": [
+          "Crea hasta 50 contenidos al mes",
+          "Genera hasta 50 contenidos",
+          "Cargas ilimitadas",
+          "Procesamiento prioritario",
+          "Personalización avanzada",
+          "Acceso a todas las funciones"
+        ],
+        "items": [
+          {
+            "id": "73cc0502-1ba3-4254-84fc-f3cfd236649b",
+            "name": "Mensual",
+            "price": 900000,
+            "tokenValidFor": 30,
+            "tokenImage": 500000
+          },
+          {
+            "id": "3031f5f5-e84e-498c-9878-186b4c735dd2",
+            "name": "Anual",
+            "price": 10350000,
+            "description": "Ahorra Rp 450.000",
+            "tokenValidFor": 365,
+            "tokenImage": 6000000,
+            "originalPrice": 10800000
+          }
+        ]
+      },
+      {
+        "id": "1f5d87d8-0f93-4ebe-a9c9-333df9ec500b",
+        "name": "Enterprise",
+        "icon": "Crown",
+        "color": "from-purple-500 to-pink-600",
+        "bgColor": "bg-purple-50 border-purple-200 dark:bg-slate-800 dark:border-slate-700",
+        "popular": false,
+        "benefits": [
+          "Crea hasta 150 contenidos al mes",
+          "Genera hasta 150 contenidos",
+          "Cargas ilimitadas",
+          "Máxima prioridad de procesamiento",
+          "Personalización avanzada",
+          "Acceso a todas las funciones",
+          "Atención prioritaria de incidentes",
+          "Mejores modelos de IA",
+          "Mejor generación de imágenes",
+          "Más ahorro con el plan anual"
+        ],
+        "items": [
+          {
+            "id": "d2ec82c2-c2ed-4fe5-bf6c-2afa26fff14b",
+            "name": "Mensual",
+            "price": 2500000,
+            "tokenValidFor": 30,
+            "tokenImage": 1500000
+          },
+          {
+            "id": "ff318282-b0ba-4ef6-ab5c-80d9a91825b7",
+            "name": "Anual",
+            "price": 28750000,
+            "description": "Ahorra Rp 1.250.000",
+            "tokenValidFor": 365,
+            "tokenImage": 18000000,
+            "originalPrice": 30000000
+          }
+        ]
+      }
+    ],
+    "tokens": [
+      {
+        "id": "b858d06e-9e88-4e31-bf89-bb7a74f39e99",
+        "token": 50000,
+        "price": 60000,
+        "tokenType": "Image"
+      },
+      {
+        "id": "e5eb12df-d347-4c23-bba9-9d379d85adf7",
+        "token": 100000,
+        "price": 110000,
+        "tokenType": "Image",
+        "deletedAt": null
+      },
+      {
+        "id": "96552efd-6e6f-4bda-a234-92774120883e",
+        "token": 250000,
+        "price": 250000,
+        "tokenType": "Image"
+      },
+      {
+        "id": "0c42705d-8c6c-4f4c-9b9c-8e23ae34f0a2",
+        "token": 500000,
+        "price": 450000,
+        "tokenType": "Image"
+      },
+      {
+        "id": "24945acc-3998-4ade-9bfb-edbf88b17617",
+        "token": 1000000,
+        "price": 800000,
+        "tokenType": "Image"
+      }
+    ]
+  },
+  "privacyPolicy": {
+    "title": "Política de privacidad de Postmatic",
+    "lastUpdated": "Última actualización: 02 de julio de 2025",
+    "sections": [
+      {
+        "title": "Interpretación y definiciones",
+        "description": [
+          {
+            "type": "bold",
+            "content": "Interpretación"
+          },
+          {
+            "type": "text",
+            "content": "Las palabras cuyo inicio está en mayúscula tienen los significados definidos a continuación."
+          },
+          {
+            "type": "bold",
+            "content": "Definiciones"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**Cuenta (Akun)**: cuenta única creada para que puedas acceder a nuestros Servicios.",
+              "**Empresa (Perusahaan)** (\"Postmatic\", \"nosotros\"): Jl. Lempongsari No.353, Indonesia.",
+              "**Datos Personales (Data Pribadi)**: cualquier información relacionada con una persona identificada o identificable.",
+              "**Servicio (Layanan)**: el sitio web accesible desde https://postmatic.id",
+              "**Datos de Uso (Data Penggunaan)**: datos recopilados automáticamente (IP, navegador, páginas visitadas, etc.).",
+              "**Cookies**: archivos pequeños colocados en tu dispositivo para almacenar detalles de navegación.",
+              "**Servicios de Redes Sociales de Terceros**: Google, Facebook, Instagram, Twitter, LinkedIn.",
+              "**Tú (Anda)**: individuo o entidad legal que utiliza el Servicio."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Recopilación y uso de tus Datos Personales",
+        "description": [
+          {
+            "type": "bold",
+            "content": "Tipos de datos recopilados"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**Datos Personales**: email, nombre/apellido, número de teléfono, dirección, ciudad, provincia, código postal, datos de uso.",
+              "**Datos de Uso**: IP, tipo/versión de navegador, marcas de tiempo, información del dispositivo, datos de diagnóstico.",
+              "**Redes sociales de terceros**: si te registras a través de Google, Facebook, Instagram, Twitter o LinkedIn, podemos recopilar tu nombre, email, actividad y lista de contactos.",
+              "**Tecnologías de seguimiento y cookies**: Cookies esenciales (de sesión), de aceptación del aviso (persistentes), y de funcionalidad (persistentes)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cómo usamos tus Datos Personales",
+        "description": [
+          {
+            "type": "text",
+            "content": "Podemos utilizar tus Datos Personales para:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Proporcionar y mantener el Servicio.",
+              "Gestionar tu Cuenta y registro.",
+              "Cumplir contratos (por ejemplo, compras).",
+              "Contactarte por email, teléfono, SMS o notificaciones push.",
+              "Enviar noticias, ofertas e información general (a menos que optes por no recibirlas).",
+              "Gestionar tus solicitudes.",
+              "Evaluar o llevar a cabo transferencias comerciales (fusión, venta de activos, etc.).",
+              "Realizar análisis de datos, medir la eficacia de campañas y mejorar productos/servicios."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Retención de tus Datos Personales",
+        "description": [
+          {
+            "type": "text",
+            "content": "Conservamos los Datos Personales solo durante el tiempo necesario para los fines establecidos en esta Política (obligaciones legales, resolución de disputas y cumplimiento de políticas)."
+          },
+          {
+            "type": "text",
+            "content": "Los Datos de Uso suelen conservarse por un período más corto, salvo que se utilicen para mejorar la seguridad o la funcionalidad."
+          }
+        ]
+      },
+      {
+        "title": "Transferencia de tus Datos Personales",
+        "description": [
+          {
+            "type": "text",
+            "content": "Tu información puede transferirse a —y mantenerse en— computadoras ubicadas fuera de tu jurisdicción, donde las leyes de protección de datos pueden diferir."
+          },
+          {
+            "type": "text",
+            "content": "Tomamos todas las medidas razonables para asegurar que tus datos se traten de forma segura y conforme a esta Política."
+          }
+        ]
+      },
+      {
+        "title": "Eliminar tus Datos Personales",
+        "description": [
+          {
+            "type": "text",
+            "content": "Tienes derecho a eliminar o solicitar ayuda para eliminar los Datos Personales que hemos recopilado sobre ti."
+          },
+          {
+            "type": "text",
+            "content": "Puedes actualizar, modificar o eliminar tu información mediante la configuración de tu Cuenta o contactándonos en team@postmatic.id"
+          },
+          {
+            "type": "text",
+            "content": "Podemos conservar cierta información cuando la ley lo requiera."
+          }
+        ]
+      },
+      {
+        "title": "Divulgación de tus Datos Personales",
+        "description": [
+          {
+            "type": "bold",
+            "content": "Transacciones comerciales"
+          },
+          {
+            "type": "text",
+            "content": "Si la Empresa participa en una fusión, adquisición o venta de activos, tus Datos Personales pueden ser transferidos. Te notificaremos antes de que tus datos queden sujetos a una política diferente."
+          },
+          {
+            "type": "bold",
+            "content": "Cumplimiento de la ley"
+          },
+          {
+            "type": "text",
+            "content": "Podemos divulgar tus datos si lo exige la ley o en respuesta a solicitudes válidas de autoridades públicas."
+          },
+          {
+            "type": "bold",
+            "content": "Otros requisitos legales"
+          },
+          {
+            "type": "text",
+            "content": "Podemos divulgar tus datos de buena fe cuando sea necesario para cumplir obligaciones legales, proteger derechos o propiedad, prevenir faltas, proteger la seguridad de los usuarios o defendernos de responsabilidades legales."
+          }
+        ]
+      },
+      {
+        "title": "Seguridad de tus Datos Personales",
+        "description": [
+          {
+            "type": "text",
+            "content": "Ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro, pero procuramos usar medios comercialmente aceptables para proteger tus datos."
+          }
+        ]
+      },
+      {
+        "title": "Privacidad de menores",
+        "description": [
+          {
+            "type": "text",
+            "content": "Nuestro Servicio no está dirigido a menores de 13 años. No recopilamos conscientemente datos de niños menores de 13. Si crees que tu hijo nos proporcionó datos, contáctanos y los eliminaremos."
+          }
+        ]
+      },
+      {
+        "title": "Enlaces a otros sitios",
+        "description": [
+          {
+            "type": "text",
+            "content": "Nuestro Servicio puede contener enlaces a sitios de terceros. No somos responsables del contenido, políticas o prácticas de dichos sitios o servicios."
+          }
+        ]
+      },
+      {
+        "title": "Cambios en esta Política de privacidad",
+        "description": [
+          {
+            "type": "text",
+            "content": "Podemos actualizar esta Política periódicamente. Los cambios son efectivos cuando se publican en esta página. Te notificaremos por email y/o con un aviso destacado en el Servicio y actualizaremos la fecha de “Última actualización”."
+          }
+        ]
+      },
+      {
+        "title": "Contáctanos",
+        "description": [
+          {
+            "type": "text",
+            "content": "Si tienes preguntas sobre esta Política de privacidad, contáctanos:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**Correo**: team@postmatic.id",
+              "**Sitio web**: https://postmatic.id"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "cookiePolicy": {
+    "title": "Política de cookies",
+    "lastUpdated": "Última actualización: 06 de agosto de 2025",
+    "sections": [
+      {
+        "title": "¿Qué son las cookies?",
+        "content": [
+          {
+            "type": "text",
+            "text": "Las cookies son pequeños archivos de texto que se colocan en tu dispositivo al visitar un sitio web. Ayudan a operar el sitio, mejorar tu experiencia, analizar el tráfico y mostrar anuncios relevantes."
+          }
+        ]
+      },
+      {
+        "title": "Cómo usamos las cookies",
+        "content": [
+          {
+            "type": "text",
+            "text": "Usamos cookies para los fines descritos a continuación. Puedes controlar las cookies no esenciales desde nuestro modal de Configuración de cookies en cualquier momento."
+          }
+        ]
+      },
+      {
+        "title": "Categorías de cookies que usamos",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "<strong>1. Cookies esenciales (Siempre activas)</strong><br/>Necesarias para funciones básicas del sitio, seguridad y gestión de red. Sin ellas, servicios como el inicio de sesión o envío de formularios no serían posibles.",
+              "<strong>2. Cookies analíticas</strong><br/>Recopilan información agregada —número de visitantes, páginas vistas, duración de sesión— para comprender el uso del sitio y mejorar el rendimiento.",
+              "<strong>3. Cookies de marketing / publicidad</strong><br/>Rastreadoras entre sitios para mostrar anuncios relevantes y personalizados y medir la eficacia de nuestras campañas."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cookies de terceros",
+        "content": [
+          {
+            "type": "text",
+            "text": "Podemos permitir que proveedores confiables (p. ej., Google Analytics, Meta Pixel) establezcan cookies con fines analíticos o de marketing. Estos proveedores están contractualmente obligados a manejar los datos de forma responsable y conforme a la ley."
+          }
+        ]
+      },
+      {
+        "title": "Gestiona tus preferencias de cookies",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cuando visites Postmatic por primera vez, verás un banner de consentimiento de cookies. Puedes:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Aceptar todas las cookies;",
+              "Rechazar todas las cookies opcionales;",
+              "Abrir «Configuración de cookies» para elegir categorías individualmente."
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Puedes cambiar tus elecciones en cualquier momento haciendo clic en «Configuración de cookies» en el pie de página o borrando el almacenamiento local y recargando la página."
+          }
+        ]
+      },
+      {
+        "title": "Retención de datos",
+        "content": [
+          {
+            "type": "text",
+            "text": "Los periodos de retención varían por categoría: esenciales hasta el final de la sesión o 30 días; analíticas hasta 24 meses; de marketing generalmente 6–12 meses o hasta que retires tu consentimiento."
+          }
+        ]
+      },
+      {
+        "title": "Contáctanos",
+        "content": [
+          {
+            "type": "text",
+            "text": "Si tienes preguntas sobre esta Política de cookies, contáctanos:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "<strong>Correo:</strong> <a href='mailto:team@postmatic.id' class='text-blue-600 underline'>team@postmatic.id</a>",
+              "<strong>Sitio web:</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "dataDeletion": {
+    "title": "Política de eliminación de datos",
+    "lastUpdated": "Última actualización: 06 de agosto de 2025",
+    "sections": [
+      {
+        "title": "Procedimiento para solicitar eliminación de datos",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "<strong>1. Envío de la solicitud</strong><br/>Envía un correo a <a href='mailto:team@postmatic.id'>team@postmatic.id</a> con el asunto «Solicitud de eliminación de datos». Incluye nombre completo, email registrado, número de teléfono y una breve explicación opcional.",
+              "<strong>2. Verificación de identidad</strong><br/>Te enviaremos un correo de confirmación. Responde lo antes posible para completar la verificación.",
+              "<strong>3. Tiempo de procesamiento</strong><br/>Tras la verificación, completaremos la eliminación en 7–14 días hábiles y te notificaremos por correo."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Alcance de la eliminación",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Información de identificación personal (nombre, email, teléfono)",
+              "Todos los datos relacionados con proyectos y base de conocimiento",
+              "Imágenes, videos, captions generados y otros medios almacenados",
+              "Tokens y credenciales de redes sociales conectadas (desactivados de inmediato)",
+              "Configuraciones de chat/respuestas automáticas e historial de chat"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Excepciones",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ciertos datos pueden conservarse por motivos legales, regulatorios o de cumplimiento:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Registros de transacciones para informes fiscales y financieros (conservados según el mandato legal)",
+              "Datos analíticos anonimizados para informes internos y análisis de rendimiento"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Información de suscripción y pagos",
+        "content": [
+          {
+            "type": "text",
+            "text": "Los datos de pago y suscripción gestionados por <strong>Midtrans</strong> se rigen por su propia política de privacidad. Para eliminarlos, contacta directamente con Midtrans por sus canales oficiales."
+          }
+        ]
+      },
+      {
+        "title": "Acceso después de la eliminación",
+        "content": [
+          {
+            "type": "text",
+            "text": "Una vez completada la eliminación, no podrás acceder a proyectos, contenido generado ni servicios asociados a tu cuenta."
+          }
+        ]
+      },
+      {
+        "title": "Contáctanos",
+        "content": [
+          {
+            "type": "text",
+            "text": "¿Preguntas? Escríbenos a <a href='mailto:team@postmatic.id'>team@postmatic.id</a>."
+          }
+        ]
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "Términos del servicio",
+    "lastUpdated": "Última actualización: 06 de agosto de 2025",
+    "sections": [
+      {
+        "title": "Aceptación de los términos",
+        "content": [
+          {
+            "type": "text",
+            "text": "Al acceder o usar los servicios de Postmatic (\"Postmatic\", \"nosotros\"), aceptas estos Términos (\"Términos\"). Si no estás de acuerdo con alguna parte, no debes usar el Servicio."
+          }
+        ]
+      },
+      {
+        "title": "Registro y seguridad de la cuenta",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Debes proporcionar información precisa y completa al registrar tu cuenta (nombre, email, teléfono y contraseña).",
+              "Eres responsable de proteger tus credenciales y de todas las actividades que ocurran en tu cuenta."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Servicios proporcionados",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Automatización de contenido para redes mediante imágenes, videos y captions generados por IA.",
+              "Publicación automática en cuentas de redes sociales conectadas.",
+              "Funciones de chat y respuestas automáticas impulsadas por IA."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Responsabilidades del usuario",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Asegurar que la información del negocio proporcionada (logo, nombre de marca, descripción, detalles y precios de productos) sea precisa, legal y no infrinja derechos de propiedad intelectual.",
+              "Cumplir los términos y políticas de las plataformas de redes sociales de terceros integradas con Postmatic."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Propiedad intelectual",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Postmatic mantiene todos los derechos de propiedad intelectual del Servicio, incluidos plantillas de contenido generadas por IA, software y algoritmos.",
+              "Los usuarios conservan la propiedad de la información y el contenido del negocio que proporcionan o suben a Postmatic."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Suscripción y pagos",
+        "content": [
+          {
+            "type": "list",
+            "items": [
+              "Postmatic utiliza un modelo de suscripción basado en tokens.",
+              "Los pagos se procesan de forma segura a través de <strong>Midtrans</strong>.",
+              "Los tokens comprados no son reembolsables y están sujetos a vencimiento según se detalla durante la compra."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Uso prohibido",
+        "content": [
+          {
+            "type": "text",
+            "text": "Aceptas no:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Usar Postmatic con fines ilegales, fraudulentos o dañinos.",
+              "Interferir con la funcionalidad, el rendimiento o la seguridad de Postmatic.",
+              "Subir o generar contenido dañino, amenazante, abusivo, difamatorio, obsceno, ofensivo o inapropiado."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Privacidad de datos",
+        "content": [
+          {
+            "type": "text",
+            "text": "Postmatic procesa datos personales y del negocio conforme a nuestra Política de privacidad. Al usar el Servicio, aceptas la recopilación y el análisis de datos para mejorar la calidad de nuestros servicios."
+          }
+        ]
+      },
+      {
+        "title": "Limitación de responsabilidad",
+        "content": [
+          {
+            "type": "text",
+            "text": "Postmatic no será responsable por daños indirectos, incidentales, especiales, consecuentes o punitivos, ni por pérdida de ganancias o ingresos, derivados directa o indirectamente del uso del Servicio."
+          }
+        ]
+      },
+      {
+        "title": "Indemnización",
+        "content": [
+          {
+            "type": "text",
+            "text": "Aceptas indemnizar, defender y mantener indemne a Postmatic frente a reclamaciones, daños, responsabilidades, costos o gastos derivados de tu uso del Servicio o del incumplimiento de estos Términos."
+          }
+        ]
+      },
+      {
+        "title": "Cambios a los Términos",
+        "content": [
+          {
+            "type": "text",
+            "text": "Postmatic se reserva el derecho de modificar estos Términos en cualquier momento. Se notificará a los usuarios por email o mediante un aviso en nuestro sitio web. El uso continuado implica la aceptación de los Términos actualizados."
+          }
+        ]
+      },
+      {
+        "title": "Terminación",
+        "content": [
+          {
+            "type": "text",
+            "text": "Postmatic puede suspender o terminar tu acceso al Servicio sin previo aviso si incumples estos Términos."
+          }
+        ]
+      },
+      {
+        "title": "Ley aplicable",
+        "content": [
+          {
+            "type": "text",
+            "text": "Estos Términos se regirán e interpretarán de acuerdo con las leyes de la República de Indonesia."
+          }
+        ]
+      },
+      {
+        "title": "Información de contacto",
+        "content": [
+          {
+            "type": "text",
+            "text": "Para preguntas sobre estos Términos, contáctanos:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "<strong>Correo:</strong> team@postmatic.id",
+              "<strong>Sitio web:</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "productShowcase": {
+    "products": [
+      {
+        "id": 1,
+        "name": "Dendeng Lambok",
+        "shortDes": "Cecina picante al estilo Minang con sabor auténtico",
+        "description": "🔥 ¡Un picante que engancha!\n\nTe presentamos Dendeng Lambok: cecina al estilo Minang con un toque picante auténtico que hará vibrar tu paladar. Elaborada con carne seleccionada, mezclada con especias reales y abundante sambal que abre el apetito. 🌶🍖\n\nIdeal con arroz caliente o como guarnición lista para cualquier momento.\n\n📦 Presentación 200 g, práctica e higiénica.\n\n¡Pruébala ahora y siente el picante!\n\n#DendengLambok #Haykatuju #SaborAuténtico",
+        "imageBefore": "/content/dendeng-before.png",
+        "imageAfter": "/content/dendeng-after.png"
+      },
+      {
+        "id": 2,
+        "name": "Café con leche clásico",
+        "shortDes": "Mezcla de robusta seleccionada y leche fresca cremosa",
+        "description": "☕✨ ¡Hora de un café más rico con KopiLagi Dukuh Zamrud!\n\nCafé con leche clásico: el sabor intenso del café con la suavidad de la leche fresca; tu compañero ideal para charlar, trabajar o disfrutar de tu propio momento. 🌿❄\n\n📍 Ven a KopiLagi Dukuh Zamrud y siente la frescura.\n\n#KopiLagi #TiempoDeCafé #DukuhZamrud",
+        "imageBefore": "/content/kopilagi-before.png",
+        "imageAfter": "/content/kopilagi-after.png"
+      },
+      {
+        "id": 3,
+        "name": "Jabón Herbal Alma",
+        "shortDes": "Jabón herbal natural con aroma relajante y suave con la piel",
+        "description": "🌿✨ ¡Cuida tu piel con lo mejor de la naturaleza!\n\n*Jabón Herbal Alma* elaborado con ingredientes herbales seleccionados, limpia a fondo sin resecar. Enriquecido con un aroma floral relajante, perfecto para después de un día ajetreado. 🌸🫧\n\n💧 Tamaño práctico de 30 ml, ideal para llevar a cualquier lugar.\n\n#JabónHerbal #AlmaCare #BellezaNatural",
+        "imageBefore": "/content/sabun-before.png",
+        "imageAfter": "/content/sabun-after.png"
+      },
+      {
+        "id": 4,
+        "name": "Dendeng Herencia de la Abuela",
+        "shortDes": "Nuevo menú especial con sabor auténtico y picante irresistible",
+        "description": "🍽 ¡Nuevo menú disponible!\n\nDisfruta del Dendeng Herencia de la Abuela con un sabor auténtico que evoca la cocina de casa. Cecina de res sabrosa, sambal picante y arroz caliente para consentir tu paladar. 🤤🔥\n\n¡Solo Rp 20.000! 💸\n\n📍 Disponible ahora en Haykatuju. ¡Apresúrate antes de que se agote!\n\n#Haykatuju #MenúNuevo #DendengDeLaAbuela",
+        "imageBefore": "/content/nasi-dendeng-before.png",
+        "imageAfter": "/content/nasi-dendeng-after.png"
+      },
+      {
+        "id": 5,
+        "name": "Casa en alquiler de Haystudio Property",
+        "shortDes": "Ubicación estratégica en Jl. Palaganisme, Yogyakarta",
+        "description": "🏠 ¿Buscas una casa amplia y cómoda en Yogyakarta?\n\nHaystudio Property ofrece una vivienda con instalaciones completas:\n✨ 4 dormitorios\n✨ 2 baños\n✨ Ubicación estratégica en Jl. Palaganisme, Yogyakarta\n\nPor solo *Rp 30.000.000/año*, ideal para familias o vivienda compartida. 💫\n\n📍 ¡Asegura tu unidad antes de que se ocupe!\n\n#AlquilerEnJogja #HaystudioProperty #CasaEnAlquiler",
+        "imageBefore": "/content/rumah-before.png",
+        "imageAfter": "/content/rumah-after.png"
+      }
+    ]
+  }
+}
