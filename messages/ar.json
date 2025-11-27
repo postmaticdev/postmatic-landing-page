@@ -149,12 +149,18 @@
         "value": "90%+",
         "label": "توفير في الوقت والتكلفة مقارنة بالنموذج اليدوي"
       },
-      { "value": "20.000+", "label": "هدف إオンبوردينغ UMKM خلال عامين" },
+      {
+        "value": "20.000+",
+        "label": "هدف إオンبوردينغ UMKM خلال عامين"
+      },
       {
         "value": "1 Juta+",
         "label": "عدد المحتويات التي سيتم توليدها تلقائيًا"
       },
-      { "value": "156%", "label": "ارتفاع التفاعل لدى الأعمال المستخدمة" }
+      {
+        "value": "156%",
+        "label": "ارتفاع التفاعل لدى الأعمال المستخدمة"
+      }
     ]
   },
   "featuresSection": {
@@ -348,7 +354,7 @@
           {
             "id": "73cc0502-1ba3-4254-84fc-f3cfd236649b",
             "name": "شهري",
-            "price": 900000,
+            "price": 450000,
             "tokenValidFor": 30,
             "tokenImage": 500000
           },
@@ -356,10 +362,10 @@
             "id": "3031f5f5-e84e-498c-9878-186b4c735dd2",
             "name": "سنوي",
             "description": "وفّر Rp 450.000",
-            "price": 10350000,
+            "price": 5175000,
             "tokenValidFor": 365,
             "tokenImage": 6000000,
-            "originalPrice": 10800000
+            "originalPrice": 5400000
           }
         ]
       },
@@ -386,7 +392,7 @@
           {
             "id": "d2ec82c2-c2ed-4fe5-bf6c-2afa26fff14b",
             "name": "شهري",
-            "price": 2500000,
+            "price": 1250000,
             "tokenValidFor": 30,
             "tokenImage": 1500000
           },
@@ -394,10 +400,10 @@
             "id": "ff318282-b0ba-4ef6-ab5c-80d9a91825b7",
             "name": "سنوي",
             "description": "وفّر Rp 1.250.000",
-            "price": 28750000,
+            "price": 14375000,
             "tokenValidFor": 365,
             "tokenImage": 18000000,
-            "originalPrice": 30000000
+            "originalPrice": 15000000
           }
         ]
       }

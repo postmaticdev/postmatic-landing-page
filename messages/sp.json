@@ -149,7 +149,10 @@
         "value": "90%+",
         "label": "Más eficiencia de tiempo y costo frente al modelo manual"
       },
-      { "value": "20.000+", "label": "Meta de onboarding de UMKM en 2 años" },
+      {
+        "value": "20.000+",
+        "label": "Meta de onboarding de UMKM en 2 años"
+      },
       {
         "value": "1 Juta+",
         "label": "Contenidos de redes generados automáticamente"
@@ -351,18 +354,18 @@
           {
             "id": "73cc0502-1ba3-4254-84fc-f3cfd236649b",
             "name": "Mensual",
-            "price": 900000,
+            "price": 450000,
             "tokenValidFor": 30,
             "tokenImage": 500000
           },
           {
             "id": "3031f5f5-e84e-498c-9878-186b4c735dd2",
             "name": "Anual",
-            "price": 10350000,
+            "price": 5175000,
             "description": "Ahorra Rp 450.000",
             "tokenValidFor": 365,
             "tokenImage": 6000000,
-            "originalPrice": 10800000
+            "originalPrice": 5400000
           }
         ]
       },
@@ -389,18 +392,18 @@
           {
             "id": "d2ec82c2-c2ed-4fe5-bf6c-2afa26fff14b",
             "name": "Mensual",
-            "price": 2500000,
+            "price": 1250000,
             "tokenValidFor": 30,
             "tokenImage": 1500000
           },
           {
             "id": "ff318282-b0ba-4ef6-ab5c-80d9a91825b7",
             "name": "Anual",
-            "price": 28750000,
+            "price": 14375000,
             "description": "Ahorra Rp 1.250.000",
             "tokenValidFor": 365,
             "tokenImage": 18000000,
-            "originalPrice": 30000000
+            "originalPrice": 15000000
           }
         ]
       }
