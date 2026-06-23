@@ -90,6 +90,8 @@ export const metadata: Metadata = {
 async function hasValidRefreshToken() {
   const refreshToken = (await cookies()).get(REFRESH_TOKEN_COOKIE_NAME)?.value;
 
+  console.log({ refreshToken, API_URL });
+
   if (!refreshToken || !API_URL) {
     return false;
   }
@@ -104,11 +106,14 @@ async function hasValidRefreshToken() {
         },
         body: JSON.stringify({ refreshToken }),
         cache: "no-store",
-      }
+      },
     );
 
+    console.log({ response });
+
     return response.ok;
-  } catch {
+  } catch (e) {
+    console.error({ e });
     return false;
   }
 }
