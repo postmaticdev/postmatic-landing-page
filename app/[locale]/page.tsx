@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import ProblemSection from "@/components/problem-section";
 import SolutionSection from "@/components/solution-section";
 import FeaturesSection from "@/components/features-section";
@@ -11,12 +13,17 @@ import { Comparison } from "@/components/comparison";
 import EndToEnd from "@/components/end-to-end";
 import IntroVideoPage from "@/components/intro-video";
 import {
+  API_URL,
+  DASHBOARD_URL,
   GOOGLE_SITE_VERIFICATION,
   LANDINGPAGE_URL,
   TITLE_APP,
   YAHOO_SITE_VERIFICATION,
   YANDEX_SITE_VERIFICATION,
 } from "@/constants";
+
+const REFRESH_TOKEN_COOKIE_NAME =
+  process.env.POSTMATIC_REFRESH_COOKIE_NAME || "postmaticRefreshToken";
 
 export const metadata: Metadata = {
   title: {
@@ -80,7 +87,37 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-export default function Home() {
+async function hasValidRefreshToken() {
+  const refreshToken = (await cookies()).get(REFRESH_TOKEN_COOKIE_NAME)?.value;
+
+  if (!refreshToken || !API_URL) {
+    return false;
+  }
+
+  try {
+    const response = await fetch(
+      new URL("/api/account/auth/refresh-token", API_URL),
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ refreshToken }),
+        cache: "no-store",
+      }
+    );
+
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
+export default async function Home() {
+  if (DASHBOARD_URL !== "#" && (await hasValidRefreshToken())) {
+    redirect(DASHBOARD_URL);
+  }
+
   return (
     <main className="">
       <Hero />
