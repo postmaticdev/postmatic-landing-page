@@ -1,0 +1,39 @@
+name: Deploy Landing Page to Vercel
+
+on:
+  push:
+    branches:
+      - master 
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        id: vercel_deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          
+          vercel-args: ${{ github.ref_name == 'master' && '--prod' || '' }}
+          alias-domains: ${{ github.ref_name == 'staging' && 'landing-staging.postmatic.id' || '' }}
+
+      - name: Send Notification to Discord
+        uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
+          username: "中野 二乃 (Landing Page)"
+          # Cek kondisional diubah ke 'master'
+          title: "Update Landing Page: ${{ github.ref_name == 'master' && 'PRODUCTION 🚀' || 'STAGING 🛠️' }}"
+          content: ${{ job.status == 'failure' && '🚨 **@here Haaah?!** Landing Page gagal deploy?! Ini kan etalase utamanya! Kalau tampilannya berantakan, mana ada orang yang mau pakai produk kita! Cepat beresin desainnya!' || '✅ Hmph, Landing Page sudah online. T-tampilannya lumayan keren sih... T-tapi jangan kepedean dulu! Belum tentu *conversion rate*-nya naik!' }}
+          description: |
+            *Deployment* untuk *Landing Page* sudah kelar. 
+            Segera buka di HP kalian masing-masing! Pastikan animasinya nggak bikin lambat dan tampilannya nggak pecah! 😤
