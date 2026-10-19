@@ -1193,6 +1193,7 @@
       "title": "Otomatisasi <hl>media sosial</hl><br></br> tanpa ribet untuk bisnis<br></br> Anda",
       "description": "Platform AI yang otomatis membantu bisnis mengelola media sosial, mulai dari analisis tren, pembuatan konten, Caption, penjadwalan, hingga iklan otomatis, cukup dengan sekali input.",
       "cta": "Coba Postmatic Gratis",
+      "step": "STEP {number}",
       "cards": [
         {
           "title": "Input Pengetahuan Sekali Saja",

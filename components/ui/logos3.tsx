@@ -33,15 +33,15 @@ const Logos3 = () => {
       `}</style>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div data-reveal="fade" className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-12 relative z-10 bg-white dark:bg-[#0A0A0A]">
-          
+        <div data-reveal="fade" className="flex flex-row items-center justify-between gap-3 md:gap-12 relative z-10 bg-white dark:bg-[#0A0A0A]">
+
           {/* Left Text */}
-          <div className="flex items-center self-start gap-3 shrink-0 relative z-20 bg-white dark:bg-[#0A0A0A] pr-4">
-            <Asterisk 
-              className="w-10 h-10 md:w-12 md:h-12 text-neutral-900 dark:text-white" 
+          <div className="flex items-center gap-2 md:gap-3 shrink-0 relative z-20 bg-white dark:bg-[#0A0A0A] pr-1 md:pr-4">
+            <Asterisk
+              className="w-8 h-8 md:w-12 md:h-12 text-neutral-900 dark:text-white"
               strokeWidth={1} 
             />
-            <p className="text-[13px] md:text-sm font-medium text-neutral-700 dark:text-neutral-300 leading-snug">
+            <p className="text-xs md:text-sm font-medium text-neutral-700 dark:text-neutral-300 leading-snug">
               {t("line1")}<br />{t("line2")}
             </p>
           </div>
@@ -51,11 +51,11 @@ const Logos3 = () => {
             {/* Two identical sets; the track slides by exactly one set (-50%) for a seamless loop */}
             <div className="flex w-max animate-marquee-infinite motion-reduce:[animation-play-state:paused]">
               {[0, 1].map((set) => (
-                <ul key={set} aria-hidden={set === 1} className="flex shrink-0 items-center gap-4 md:gap-6 pr-4 md:pr-6">
+                <ul key={set} aria-hidden={set === 1} className="flex shrink-0 items-center gap-3 md:gap-6 pr-3 md:pr-6">
                   {LOGOS.map((logo) => (
                     <li
                       key={logo.file}
-                      className="relative h-12 md:h-14 aspect-[2/1] shrink-0 overflow-hidden rounded-lg ring-1 ring-black/5 dark:ring-white/10 select-none"
+                      className="relative h-10 sm:h-12 md:h-14 aspect-[2/1] shrink-0 overflow-hidden rounded-lg ring-1 ring-black/5 dark:ring-white/10 select-none"
                     >
                       <Image
                         src={`/content/dummy/logo_brand/${logo.file}`}

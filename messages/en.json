@@ -1193,6 +1193,7 @@
       "title": "Automate <hl>social media</hl><br></br> without the hassle,<br></br> for your business",
       "description": "An AI platform that automatically manages your social media, from trend analysis, content, and captions to scheduling and auto-ads, with just one input.",
       "cta": "Try Postmatic Free",
+      "step": "STEP {number}",
       "cards": [
         {
           "title": "One-Time Knowledge Input",

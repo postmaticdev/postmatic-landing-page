@@ -99,6 +99,14 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <meta name="theme-color" content="#0066FF" />
+        {/* A reload starts from the top like a fresh visit. Runs before the
+            browser would restore the old scroll position. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{var n=performance.getEntriesByType("navigation")[0];if(n&&n.type==="reload"){history.scrollRestoration="manual";window.scrollTo(0,0)}}catch(e){}',
+          }}
+        />
       </head>
       <body
         className={`${jakarta.className} bg-white dark:bg-[#0A0A0A] antialiased`}

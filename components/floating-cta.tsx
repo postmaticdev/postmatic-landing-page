@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import { cn } from "@/lib/utils";
@@ -95,11 +96,17 @@ export default function FloatingCta() {
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
       className={cn(
-        "fixed bottom-6 right-4 sm:right-6 z-40 flex items-center gap-2 rounded-full bg-[#0066FF] hover:bg-blue-600 text-white pl-3.5 pr-3 py-2 text-xs sm:text-sm font-semibold shadow-xl shadow-[#0066FF]/30 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] max-w-[calc(100vw-2rem)]",
+        "fixed bottom-6 right-4 sm:right-6 z-40 flex items-center gap-2.5 rounded-full bg-[#0066FF] hover:bg-blue-600 text-white pl-2 pr-3.5 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold shadow-xl shadow-[#0066FF]/30 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] max-w-[calc(100vw-2rem)]",
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       )}
     >
-      <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-pulse" />
+      <Image
+        src="/user.png"
+        alt=""
+        width={24}
+        height={24}
+        className="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover shrink-0 border border-white/30"
+      />
       <span className="truncate">{label}</span>
       <ArrowUpRight className="w-4 h-4 shrink-0 opacity-80" strokeWidth={2.5} />
     </a>

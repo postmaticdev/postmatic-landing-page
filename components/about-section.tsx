@@ -246,10 +246,9 @@ export default function AboutSection() {
                   aria-hidden
                   className={cn(
                     "absolute inset-0 pointer-events-none transition-opacity duration-700",
-                    "bg-black/30",
-                    "bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.75)_100%)]",
-                    "shadow-[inset_0_0_40px_rgba(0,0,0,0.85)] md:shadow-[inset_0_0_60px_rgba(0,0,0,0.9)]",
-                    "before:absolute before:inset-0 before:bg-gradient-to-r before:from-black/70 before:via-transparent before:to-transparent md:before:bg-gradient-to-t md:before:from-black/80 md:before:via-transparent md:before:to-black/30",
+                    "bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.35)_100%)]",
+                    "shadow-[inset_0_0_30px_rgba(0,0,0,0.4)]",
+                    "before:absolute before:inset-0 before:bg-gradient-to-r before:from-black/45 before:via-transparent before:to-transparent md:before:bg-gradient-to-t md:before:from-black/50 md:before:via-transparent md:before:to-transparent",
                     !isActive ? "opacity-100" : "opacity-0"
                   )}
                 />
@@ -282,11 +281,12 @@ export default function AboutSection() {
                       : "opacity-100 md:translate-y-0"
                   )}
                 >
-                  <h3 
-                    className="text-white font-bold text-xl sm:text-2xl md:text-3xl whitespace-nowrap tracking-wide [writing-mode:horizontal-tb] md:[writing-mode:vertical-rl] md:rotate-180 drop-shadow-md"
+                  <p
+                    aria-hidden
+                    className="text-white font-extrabold text-xl sm:text-2xl md:text-3xl whitespace-nowrap tracking-widest [writing-mode:horizontal-tb] md:[writing-mode:vertical-rl] md:rotate-180 drop-shadow-md"
                   >
-                    {texts[index].title}
-                  </h3>
+                    {t("step", { number: index + 1 })}
+                  </p>
                 </div>
               </div>
             );

@@ -68,6 +68,13 @@ function scrollToSectionAndSettle(hash: string) {
   return true;
 }
 
+// True only for the document's first render after a reload; later client-side
+// navigations in the same document keep the reload's navigation entry.
+let isInitialReload =
+  typeof window !== "undefined" &&
+  (performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined)?.type ===
+    "reload";
+
 /**
  * Lenis smooth scroll synced to GSAP's ticker so every ScrollTrigger
  * (scrub) animation samples the same interpolated scroll position.
@@ -142,8 +149,18 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
   }, []);
 
   // Arriving with a hash (/en#pricing), on first load or via client-side
-  // navigation from another page (this layout stays mounted).
+  // navigation from another page (this layout stays mounted). A reload starts
+  // from the top instead, and drops the hash a section link left in the URL.
   useEffect(() => {
+    if (isInitialReload) {
+      isInitialReload = false;
+      if (window.location.hash) {
+        history.replaceState(history.state, "", window.location.pathname + window.location.search);
+      }
+      window.__lenis?.scrollTo(0, { immediate: true });
+      window.scrollTo(0, 0);
+      return;
+    }
     const hash = decodeHash(window.location.hash);
     if (!hash || hash === "#") return;
     const raf = requestAnimationFrame(() => scrollToSectionAndSettle(hash));
