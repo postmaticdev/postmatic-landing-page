@@ -360,7 +360,7 @@
             "price": 0,
             "description": "Try Now",
             "tokenValidFor": 30,
-            "tokenImage": 30000,
+            "tokenImage": 10000,
             "originalPrice": 0
           }
         ]
@@ -1083,10 +1083,10 @@
         "Automatic scheduling and auto-posting",
         "Multi-brand management from one dashboard",
         "Instagram, Facebook, LinkedIn, and TikTok integrations",
-        "Pay-as-you-go tokens with free trial credits"
+        "Pay-as-you-go tokens with 10,000 free trial tokens after completing the business profile"
       ],
       "appSubCategory": "Social media management & automation",
-      "appOfferDescription": "Free trial tokens included; then pay-as-you-go at about Rp 2,000 per generated post. No subscription.",
+      "appOfferDescription": "10,000 free trial tokens included after completing your business profile; then pay-as-you-go at about Rp 2,000 per generated post. No subscription.",
       "serviceName": "AI Social Media Agency by Postmatic",
       "serviceTypes": [
         "AI social media agency",
@@ -1097,7 +1097,7 @@
         "Automatic social media posting"
       ],
       "audience": "Small and medium businesses, growing brands, marketers",
-      "serviceOfferDescription": "About Rp 2,000 per generated post, pay as you go, with free trial tokens.",
+      "serviceOfferDescription": "About Rp 2,000 per generated post, pay as you go, with 10,000 free trial tokens after completing your business profile.",
       "offerCatalogName": "Postmatic capabilities"
     }
   },
@@ -1304,7 +1304,7 @@
         },
         {
           "question": "Can I try Postmatic for free?",
-          "answer": "Yes. New users receive free tokens to try Postmatic's main features."
+          "answer": "Yes. New users receive 10,000 free tokens after completing their business profile, to try Postmatic's main features."
         },
         {
           "question": "Is the content and visual output guaranteed to be unique to my brand?",
@@ -1329,7 +1329,7 @@
       "estimate": "Estimated Total Cost",
       "perContent": "Rp {price} / post",
       "adjust": "Adjust the number of posts",
-      "cta": "Start Free with 30,000 Tokens",
+      "cta": "Start Free with 10,000 Tokens",
       "features": [
         {
           "title": "No Subscription Fees",
@@ -1355,13 +1355,13 @@
       "button": "Try Now",
       "getStarted": "Try It Free Now",
       "contactWa": "Contact Us (WA)",
-      "perks": ["30,000 free tokens", "No monthly subscription", "Tokens never expire"]
+      "perks": ["10,000 free tokens after business profile setup", "No monthly subscription", "Tokens never expire"]
     },
     "floatingCta": {
       "tryNow": "Try It Now",
       "tutorial": "Watch the Tutorial",
       "cheap": "Only Rp 2,000 per Post",
-      "freeTokens": "30,000 Free Tokens",
+      "freeTokens": "10,000 Free Tokens",
       "consult": "Free Consultation on WA",
       "noSubscription": "No Monthly Subscription"
     },

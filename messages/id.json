@@ -360,7 +360,7 @@
             "price": 0,
             "description": "Coba Sekarang",
             "tokenValidFor": 30,
-            "tokenImage": 30000,
+            "tokenImage": 10000,
             "originalPrice": 0
           }
         ]
@@ -1083,10 +1083,10 @@
         "Penjadwalan dan posting otomatis",
         "Kelola banyak brand dari satu Dashboard",
         "Integrasi Instagram, Facebook, LinkedIn, dan TikTok",
-        "Token Pay As You Go dengan kredit uji coba gratis"
+        "Token Pay As You Go dengan 10.000 token uji coba gratis setelah melengkapi profil bisnis"
       ],
       "appSubCategory": "Manajemen & otomatisasi media sosial",
-      "appOfferDescription": "Termasuk token uji coba gratis; selanjutnya bayar sesuai pemakaian, sekitar Rp 2.000 per postingan yang dibuat. Tanpa langganan.",
+      "appOfferDescription": "Termasuk 10.000 token uji coba gratis setelah melengkapi profil bisnis; selanjutnya bayar sesuai pemakaian, sekitar Rp 2.000 per postingan yang dibuat. Tanpa langganan.",
       "serviceName": "Agensi Media Sosial AI oleh Postmatic",
       "serviceTypes": [
         "Agensi media sosial AI",
@@ -1097,7 +1097,7 @@
         "Posting media sosial otomatis"
       ],
       "audience": "Usaha kecil dan menengah, brand yang sedang bertumbuh, pemasar",
-      "serviceOfferDescription": "Sekitar Rp 2.000 per postingan yang dibuat, bayar sesuai pemakaian, dengan token uji coba gratis.",
+      "serviceOfferDescription": "Sekitar Rp 2.000 per postingan yang dibuat, bayar sesuai pemakaian, dengan 10.000 token uji coba gratis setelah melengkapi profil bisnis.",
       "offerCatalogName": "Kemampuan Postmatic"
     }
   },
@@ -1304,7 +1304,7 @@
         },
         {
           "question": "Apakah saya bisa mencoba Postmatic secara gratis?",
-          "answer": "Ya, kami memberikan token gratis untuk pengguna baru agar dapat mencoba berbagai fitur utama Postmatic."
+          "answer": "Ya, pengguna baru mendapatkan 10.000 token gratis setelah melengkapi profil bisnis, agar dapat mencoba berbagai fitur utama Postmatic."
         },
         {
           "question": "Apakah hasil konten dan visual dijamin unik untuk brand saya?",
@@ -1329,7 +1329,7 @@
       "estimate": "Estimasi Total Biaya",
       "perContent": "Rp {price} / konten",
       "adjust": "Sesuaikan jumlah konten",
-      "cta": "Mulai Gratis 30.000 Token",
+      "cta": "Mulai Gratis 10.000 Token",
       "features": [
         {
           "title": "Tanpa Biaya Langganan",
@@ -1355,13 +1355,13 @@
       "button": "Coba Sekarang",
       "getStarted": "Coba Gratis Sekarang",
       "contactWa": "Hubungi Kami (WA)",
-      "perks": ["Gratis 30.000 token", "Tanpa langganan bulanan", "Token tidak hangus"]
+      "perks": ["Gratis 10.000 token setelah isi profil bisnis", "Tanpa langganan bulanan", "Token tidak hangus"]
     },
     "floatingCta": {
       "tryNow": "Coba Sekarang",
       "tutorial": "Lihat Tutorial",
       "cheap": "Harga Murah, Rp 2.000/Konten",
-      "freeTokens": "Gratis 30.000 Token",
+      "freeTokens": "Gratis 10.000 Token",
       "consult": "Konsultasi Gratis via WA",
       "noSubscription": "Tanpa Langganan Bulanan"
     },
