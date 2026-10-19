@@ -120,6 +120,7 @@ export default function PaperPlane() {
     let inFront = true;
     let layerFade = 1; // dips briefly when switching layers
     const pts: Array<[number, number]> = [];
+    let trailDirty = true;
 
     const st = ScrollTrigger.create({
       start: 0,
@@ -134,6 +135,13 @@ export default function PaperPlane() {
     // Exit: as the footer scrolls in, the plane drops to the back layer and
     // dives below the footer's top edge, so the (opaque) footer covers it.
     const footer = document.querySelector("footer");
+    // The footer's document offset is measured on every ScrollTrigger refresh
+    // (which also runs whenever the page height changes), so the per-frame
+    // tick never has to force a layout with getBoundingClientRect().
+    let footerDocTop = 0;
+    const measureFooter = () => {
+      if (footer) footerDocTop = footer.getBoundingClientRect().top + window.scrollY;
+    };
     const footerST = footer
       ? ScrollTrigger.create({
           trigger: footer,
@@ -142,9 +150,11 @@ export default function PaperPlane() {
           onUpdate: (self) => {
             footerP = self.progress;
           },
+          onRefresh: measureFooter,
         })
       : null;
     if (footerST) footerP = footerST.progress;
+    measureFooter();
 
     const setLayer = (front: boolean) => {
       if (front === inFront) return;
@@ -168,7 +178,7 @@ export default function PaperPlane() {
       const pathY = p.y * vh + bob;
       // Dive target: just under the footer's top edge (tracks the footer as it
       // scrolls up, so once hidden the plane stays tucked behind it).
-      const footerTop = footer && footerP > 0 ? footer.getBoundingClientRect().top : vh;
+      const footerTop = footer && footerP > 0 ? footerDocTop - window.scrollY : vh;
       const hiddenY = footerTop + 110 * baseScale;
       const y = pathY + (Math.max(pathY, hiddenY) - pathY) * exit;
       const s = p.s * baseScale * (1 - exit * 0.2);
@@ -228,20 +238,47 @@ export default function PaperPlane() {
       if (speed > 0.6) {
         pts.push([tailX, tailY]);
         if (pts.length > TRAIL_POINTS) pts.shift();
+        trailDirty = true;
       } else if (pts.length) {
         pts.shift();
+        trailDirty = true;
       }
-      trail.setAttribute("points", pts.map(([a, b]) => `${a.toFixed(1)},${b.toFixed(1)}`).join(" "));
+      // An idle plane has an empty trail: don't rewrite (and re-layout) the SVG every frame.
+      if (trailDirty) {
+        trail.setAttribute("points", pts.map(([a, b]) => `${a.toFixed(1)},${b.toFixed(1)}`).join(" "));
+        trailDirty = false;
+      }
 
       prevX = x;
       prevY = y;
       prevS = s;
     };
 
-    gsap.ticker.add(tick);
-    plane.style.opacity = "1";
+    // Take off once the page has loaded and the main thread is idle, so the
+    // per-frame flight never competes with hydration and initial setup.
+    let started = false;
+    const takeOff = () => {
+      if (started) return;
+      started = true;
+      target = st.progress;
+      prog = target;
+      gsap.ticker.add(tick);
+      plane.style.opacity = "1";
+    };
+    const hasIdle = "requestIdleCallback" in window;
+    let idle = 0;
+    const scheduleTakeOff = () => {
+      idle = hasIdle
+        ? window.requestIdleCallback(takeOff, { timeout: 1500 })
+        : window.setTimeout(takeOff, 300);
+    };
+    if (document.readyState === "complete") scheduleTakeOff();
+    else window.addEventListener("load", scheduleTakeOff, { once: true });
 
     return () => {
+      window.removeEventListener("load", scheduleTakeOff);
+      if (hasIdle) window.cancelIdleCallback(idle);
+      else window.clearTimeout(idle);
       gsap.ticker.remove(tick);
       mq.removeEventListener("change", onMq);
       st.kill();

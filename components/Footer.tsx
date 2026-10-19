@@ -122,7 +122,7 @@ export default function Footer() {
           <div className="w-full lg:w-[15%] flex flex-col gap-0 lg:gap-5">
             <h3 className={headCls}>{t("resource")}</h3>
             <a href={COMMUNITY_URL} target="_blank" rel="noopener noreferrer" className={linkCls}>{t("community")}</a>
-            <Link href="/docs" className={linkCls}>{t("docs")}</Link>
+            <a href="https://docs.postmatic.id/" target="_blank" rel="noopener noreferrer" className={linkCls}>{t("docs")}</a>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={linkCls}>{t("helpCenter")}</a>
           </div>
 
@@ -147,8 +147,12 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-neutral-100 dark:border-neutral-900 gap-6">
+          {/* The page is prerendered, so after New Year the build-time year can
+              differ from the visitor's until the next deploy. The mismatch is
+              tolerated during hydration (no whole-page client re-render), and
+              the remount after mount shows the visitor's current year. */}
           <p className="text-[13px] text-neutral-400 dark:text-neutral-500">
-            © {currentYear} {COMPANY_NAME}. {t("rights")}
+            © <span key={mounted ? "client" : "server"} suppressHydrationWarning>{currentYear}</span> {COMPANY_NAME}. {t("rights")}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-0 lg:gap-6">
             <LanguageToggle />

@@ -8,6 +8,7 @@
     "title": "Kami menggunakan cookie",
     "description": "Kami menggunakan cookie untuk meningkatkan pengalaman Anda, menganalisis lalu lintas, dan menampilkan iklan yang relevan.",
     "learnMore": "Pelajari lebih lanjut",
+    "learnMoreTarget": "tentang kebijakan cookie kami",
     "acceptAll": "Terima Semua",
     "manageCookies": "Atur Cookie",
     "close": "Tutup"
@@ -1215,7 +1216,7 @@
     "design": {
       "title": "Desain untuk Tampil Beda",
       "subtitle": "Anda yang buat, kami yang sempurnakan.",
-      "cta": "Mulai Sekarang",
+      "cta": "Coba Sekarang",
       "imageAlt": {
         "eclatStory": "Story Instagram perhiasan emas Eclat Muse",
         "bitesFeed": "Feed promo diskon akhir pekan Bites Daily",
@@ -1344,14 +1345,24 @@
       ],
       "normalPriceLabel": "Harga normal:",
       "currentPriceLabel": "Harga sekarang:",
-      "save": "Hemat {percent}%"
+      "save": "Hemat {percent}%",
+      "endsIn": "Promo berakhir dalam"
     },
     "cta": {
-      "title": "Pilih Paket yang Tepat untuk Bisnis Anda",
-      "description": "Gunakan Postmatic dan rasakan bagaimana AI dapat mengubah cara Anda berbisnis. Tingkatkan engagement hingga 156% dalam 30 hari pertama!",
-      "button": "Mulai Sekarang",
-      "getStarted": "Mulai Sekarang",
-      "contactWa": "Hubungi Kami (WA)"
+      "title": "Konten Sebulan Penuh, Cukup dari Satu Kali Input",
+      "description": "Berhenti menghabiskan waktu berjam-jam untuk desain dan caption. Postmatic meriset tren, membuat visual berstandar agensi, dan memposting otomatis ke Instagram, Facebook, LinkedIn, dan TikTok, tanpa biaya agensi jutaan rupiah per bulan.",
+      "button": "Coba Sekarang",
+      "getStarted": "Coba Gratis Sekarang",
+      "contactWa": "Hubungi Kami (WA)",
+      "perks": ["Gratis 30.000 token", "Tanpa langganan bulanan", "Token tidak hangus"]
+    },
+    "floatingCta": {
+      "tryNow": "Coba Sekarang",
+      "tutorial": "Lihat Tutorial",
+      "cheap": "Harga Murah, Rp 2.000/Konten",
+      "freeTokens": "Gratis 30.000 Token",
+      "consult": "Konsultasi Gratis via WA",
+      "noSubscription": "Tanpa Langganan Bulanan"
     },
     "footer": {
       "description": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis untuk brand yang bertumbuh, semua dari satu kali input.",

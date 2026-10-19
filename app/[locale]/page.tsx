@@ -12,6 +12,7 @@ import PricingSection from "@/components/pricing-section";
 import CtaSection from "@/components/cta-section";
 import ScrollEffects from "@/components/scroll/scroll-effects";
 import PaperPlane from "@/components/scroll/paper-plane";
+import FloatingCta from "@/components/floating-cta";
 import {
   GOOGLE_SITE_VERIFICATION,
   LANDINGPAGE_URL,
@@ -174,6 +175,7 @@ export default async function Home({
       <CtaSection />
       <ScrollEffects />
       <PaperPlane />
+      <FloatingCta />
     </main>
   );
 }

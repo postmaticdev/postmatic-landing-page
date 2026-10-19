@@ -27,7 +27,7 @@ export default async function ProblemSection() {
           <div data-reveal="clip" className="lg:col-span-5 relative rounded-[2rem] overflow-hidden min-h-[420px] sm:min-h-[500px] lg:min-h-[100%] flex flex-col justify-end">
             <Image
               data-parallax-img="0.1"
-              src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=2564&auto=format&fit=crop&grayscale=true" 
+              src="/ibu-asih.png"
               alt={t("imageAlt")}
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"

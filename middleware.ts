@@ -8,6 +8,8 @@ const intlMiddleware = createMiddleware(routing);
 
 const REFRESH_TOKEN_COOKIE_NAME =
   process.env.POSTMATIC_REFRESH_COOKIE_NAME || "postmaticRefreshToken";
+const ACCESS_TOKEN_COOKIE_NAME =
+  process.env.POSTMATIC_ACCESS_COOKIE_NAME || "postmaticAccessToken";
 
 // "/" or "/{locale}" (with optional trailing slash): the landing page only.
 const HOME_PATH = new RegExp(`^/(?:(?:${routing.locales.join("|")})/?)?$`);
@@ -24,9 +26,11 @@ const HAS_LOCALE = new RegExp(`^/(?:${routing.locales.join("|")})(?:/|$)`);
  * renders. Doing this here (instead of calling `cookies()` inside the page)
  * keeps every locale homepage fully static and cacheable.
  */
-async function hasValidRefreshToken(request: NextRequest): Promise<boolean> {
+type SessionTokens = { accessToken?: string; refreshToken?: string };
+
+async function refreshSession(request: NextRequest): Promise<SessionTokens | null> {
   const refreshToken = request.cookies.get(REFRESH_TOKEN_COOKIE_NAME)?.value;
-  if (!refreshToken || !API_URL) return false;
+  if (!refreshToken || !API_URL) return null;
 
   try {
     const response = await fetch(
@@ -39,19 +43,58 @@ async function hasValidRefreshToken(request: NextRequest): Promise<boolean> {
         signal: AbortSignal.timeout(3000),
       },
     );
-    return response.ok;
+    if (!response.ok) return null;
+    const payload = (await response.json().catch(() => null)) as { data?: SessionTokens } | null;
+    return payload?.data ?? {};
   } catch {
-    return false;
+    return null;
+  }
+}
+
+// Seconds until the JWT expires, so the cookie lives exactly as long as the token.
+function jwtMaxAge(token: string): number | undefined {
+  try {
+    const { exp } = JSON.parse(atob(token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/")));
+    return typeof exp === "number" ? Math.max(exp - Math.floor(Date.now() / 1000), 0) : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/**
+ * The API rotates the refresh token when it is close to expiry and drops the
+ * old one, so whatever it hands back must reach the browser — otherwise this
+ * check would quietly sign the visitor out of the workspace.
+ */
+function setSessionCookies(response: NextResponse, request: NextRequest, tokens: SessionTokens) {
+  const hostname = request.nextUrl.hostname;
+  const isPostmatic = hostname === "postmatic.id" || hostname.endsWith(".postmatic.id");
+  const base = {
+    path: "/",
+    sameSite: "lax" as const,
+    secure: request.nextUrl.protocol === "https:",
+    ...(isPostmatic ? { domain: ".postmatic.id" } : {}),
+  };
+  const set = (name: string, value: string, httpOnly: boolean) => {
+    const maxAge = jwtMaxAge(value);
+    response.cookies.set(name, value, { ...base, httpOnly, ...(maxAge !== undefined ? { maxAge } : {}) });
+  };
+
+  if (tokens.accessToken) set(ACCESS_TOKEN_COOKIE_NAME, tokens.accessToken, false);
+  if (tokens.refreshToken && tokens.refreshToken !== request.cookies.get(REFRESH_TOKEN_COOKIE_NAME)?.value) {
+    set(REFRESH_TOKEN_COOKIE_NAME, tokens.refreshToken, true);
   }
 }
 
 export default async function middleware(request: NextRequest) {
-  if (
-    DASHBOARD_URL !== "#" &&
-    HOME_PATH.test(request.nextUrl.pathname) &&
-    (await hasValidRefreshToken(request))
-  ) {
-    return NextResponse.redirect(new URL(DASHBOARD_URL, request.url));
+  if (HOME_PATH.test(request.nextUrl.pathname)) {
+    const tokens = await refreshSession(request);
+    if (tokens) {
+      const response = NextResponse.redirect(new URL(DASHBOARD_URL, request.url));
+      setSessionCookies(response, request, tokens);
+      response.headers.set("Cache-Control", "private, no-store");
+      return response;
+    }
   }
 
   if (RETIRED_LOCALE.test(request.nextUrl.pathname)) {

@@ -22,6 +22,23 @@ import { notFound } from "next/navigation";
 import SmoothScrollProvider from "@/components/scroll/smooth-scroll-provider";
 import { localeToLangMap } from "@/lib/seo";
 
+// Keep in sync when a client component starts using a new namespace.
+const CLIENT_MESSAGE_NAMESPACES = [
+  "landing",
+  "navigation",
+  "buttons",
+  "cookieConsent",
+  "cookieSettings",
+  "languageToggle",
+  "themeToggle",
+  "faq",
+  "comingSoon",
+  "notFound",
+  "endToEnd",
+  "introVideo",
+  "introduction",
+] as const;
+
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -58,15 +75,20 @@ export default async function RootLayout({
   const tButtons = await getTranslations("buttons");
   const tNav = await getTranslations("navigation");
   const navItems = [
-    { name: tNav("home"), link: "/#home" },
-    { name: tNav("about"), link: "/#about" },
-    { name: tNav("features"), link: "/#features" },
-    { name: tNav("pricing"), link: "/#pricing" },
+    { name: tNav("home"), link: `/${locale}#home` },
+    { name: tNav("about"), link: `/${locale}#about` },
+    { name: tNav("features"), link: `/${locale}#features` },
+    { name: tNav("pricing"), link: `/${locale}#pricing` },
   ];
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
+  // Only the namespaces client components read (useTranslations in "use client"
+  // trees). Everything else — legal pages, SEO metadata, server components —
+  // is translated on the server, so it no longer has to be inlined into every
+  // page's HTML (~45 KB less per page).
+  const allMessages = await getMessages();
+  const messages = Object.fromEntries(
+    CLIENT_MESSAGE_NAMESPACES.filter((ns) => ns in allMessages).map((ns) => [ns, allMessages[ns]]),
+  );
   return (
     <html
       lang={localeToLangMap[locale] ?? locale}

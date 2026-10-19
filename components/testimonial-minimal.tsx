@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
+import { useDeferredGSAP } from "@/lib/deferred-setup";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import ScrollWords from "@/components/scroll/scroll-words";
@@ -67,7 +67,7 @@ export default function TestimonialMinimal() {
   }, [active, inView, hovered, pinned, count]);
 
   // Pin the section and step through the first PINNED_SLIDES testimonials with the scroll.
-  useGSAP(
+  useDeferredGSAP(
     () => {
       const section = sectionRef.current;
       const content = contentRef.current;
@@ -153,6 +153,7 @@ export default function TestimonialMinimal() {
               {testimonials.map((item, i) => (
                 <div key={item.id} className={slide(i === active)} aria-hidden={i !== active}>
                   <ScrollWords
+                    active={i === active}
                     text={t(`items.${item.id}.quote`)}
                     className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] leading-[1.3] font-medium text-neutral-900 dark:text-white tracking-tight"
                   />

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
-import "flag-icons/css/flag-icons.min.css";
+import "./flag-icons.css";
 
 import { Button } from "@/components/ui/button";
 import {

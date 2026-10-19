@@ -10,6 +10,7 @@ import {
 } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { Link as LocaleLink } from "@/i18n/routing";
 
 import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
@@ -55,10 +56,10 @@ interface MobileNavMenuProps {
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+  // Only the page's scrollY is needed. Passing `target` made motion measure
+  // the navbar's layout on every scroll frame just to compute an unused
+  // scrollYProgress.
+  const { scrollY } = useScroll();
   const [visible, setVisible] = useState<boolean>(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -150,16 +151,9 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             />
           )}
 
-          {/* 
-            Span ini yang di-truncate. 
-            max-w berbasis jumlah karakter agar konsisten di berbagai bahasa.
-            Sesuaikan nilai ch sesuai kebutuhan desain.
-          */}
           <span
             className={cn(
-              "relative z-20 block leading-none",
-              "truncate", // overflow-hidden + text-ellipsis + nowrap
-              "max-w-[14ch] xl:max-w-[18ch]" // beri ruang lebih di layar lebar
+              "relative z-20 block leading-normal whitespace-nowrap py-0.5"
             )}
           >
             {item.name}
@@ -271,8 +265,10 @@ export const NavbarLogo = () => {
 
   // Use resolvedTheme for more accurate theme detection
   const isDark = mounted ? resolvedTheme === "dark" : false;
+  // Locale-aware, so the logo never sends a visitor to "/" (which would
+  // re-detect their language) from e.g. /en/privacy-policy.
   return (
-    <Link
+    <LocaleLink
       href="/#home"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black dark:text-white"
     >
@@ -286,7 +282,7 @@ export const NavbarLogo = () => {
       <span className="bg-gradient-to-r from-[#0066FF] to-indigo-600 dark:from-[#3385ff] dark:to-indigo-400 bg-clip-text text-transparent font-medium text-lg">
         Postmatic
       </span>
-    </Link>
+    </LocaleLink>
   );
 };
 

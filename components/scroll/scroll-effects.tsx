@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
+import { queueSetup } from "@/lib/deferred-setup";
 
 /**
  * Declarative, scroll-scrubbed effects driven by data-attributes.
@@ -351,7 +352,7 @@ export default function ScrollEffects() {
         });
       }
 
-      // ─── Run one job per frame once React has finished hydrating ───
+      // ─── Run one job per frame, after the deferred section setups (pins) ───
       let cancelled = false;
       let raf = 0;
       const run = contextSafe(() => {
@@ -366,19 +367,16 @@ export default function ScrollEffects() {
           ScrollTrigger.refresh();
         }
       });
-      const begin = () => {
+      // Queued behind the pinned sections' setups (see lib/deferred-setup),
+      // so the final refresh() above sees every pin spacer.
+      const dequeue = queueSetup(() => {
         if (!cancelled) raf = requestAnimationFrame(run);
-      };
-      const hasIdle = "requestIdleCallback" in window;
-      const idle = hasIdle
-        ? window.requestIdleCallback(begin, { timeout: 250 })
-        : window.setTimeout(begin, 0);
+      });
 
       return () => {
         cancelled = true;
         cancelAnimationFrame(raf);
-        if (hasIdle) window.cancelIdleCallback(idle);
-        else window.clearTimeout(idle);
+        dequeue();
       };
     },
     { dependencies: [] },

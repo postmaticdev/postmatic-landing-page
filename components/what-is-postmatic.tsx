@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useGSAP } from "@gsap/react";
+import { useDeferredGSAP } from "@/lib/deferred-setup";
 import { cn } from "@/lib/utils";
+import { expandableProps } from "@/lib/a11y";
 import { useTranslations } from "next-intl";
 import { gsap, ScrollTrigger, prefersReducedMotion, PIN_PRIORITY, PIN_STEP_SCROLL } from "@/lib/gsap";
 
@@ -87,7 +88,7 @@ export default function WhatIsPostmatic() {
   // Scroll progress opens menu 01 → 04 in turn,
   // then releases to normal scroll. Desktop pins the whole section; phones and
   // tablets pin the video + accordion block just below the navbar.
-  useGSAP(
+  useDeferredGSAP(
     () => {
       if (!sectionRef.current || prefersReducedMotion()) return;
       const mm = gsap.matchMedia();
@@ -150,14 +151,26 @@ export default function WhatIsPostmatic() {
                 {t("label")}
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-neutral-900 dark:text-white tracking-tight transition-all duration-300">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-neutral-900 dark:text-white tracking-tight">
               {/* Desktop: the title follows the active item (the whole section is
-                  pinned, so its height cannot change). Below lg the header scrolls
-                  away above the pinned block, and a changing line count would
-                  resize the page mid-pin, so the title stays fixed there. */}
+                  pinned, so its height cannot change). All titles share one grid
+                  cell, so the heading always reserves the height of the longest
+                  one. Below lg the header scrolls away above the pinned block, so
+                  the title stays fixed there. */}
               <span className="lg:hidden">{t("fallbackTitle")}</span>
-              <span className="hidden lg:inline">
-                {openIndex !== -1 ? features[openIndex].title : t("fallbackTitle")}
+              <span className="hidden lg:grid">
+                {features.map((feature, index) => (
+                  <span
+                    key={feature.id}
+                    aria-hidden={index !== openIndex}
+                    className={cn(
+                      "[grid-area:1/1] transition-opacity duration-300",
+                      index === openIndex ? "opacity-100" : "opacity-0",
+                    )}
+                  >
+                    {feature.title}
+                  </span>
+                ))}
               </span>
             </h2>
           </div>
@@ -207,17 +220,17 @@ export default function WhatIsPostmatic() {
                   className={cn(
                     "border-b border-neutral-200 dark:border-neutral-800 py-4 md:py-6 lg:py-5 first:pt-2 cursor-pointer transition-all duration-300",
                   )}
-                  onClick={() => setOpenIndex(index === openIndex ? -1 : index)}
+                  {...expandableProps(isOpen, () => setOpenIndex(index))}
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-start gap-6 md:gap-8">
+                    <div className="flex flex-1 min-w-0 items-start gap-6 md:gap-8">
                       <span className={cn(
                         "text-xs font-semibold pt-2 md:pt-2.5 transition-colors duration-300",
                         isOpen ? "text-[#0066FF]" : "text-neutral-400 dark:text-neutral-500"
                       )}>
                         {feature.id}
                       </span>
-                      <div className="flex flex-col">
+                      <div className="flex flex-1 min-w-0 flex-col">
                         <h3 className={cn(
                           "text-xl md:text-3xl font-medium tracking-tight transition-colors duration-300",
                           isOpen ? "text-[#0066FF]" : "text-neutral-900 dark:text-white"
@@ -232,10 +245,22 @@ export default function WhatIsPostmatic() {
                             isOpen ? "grid-rows-[1fr] opacity-100 mt-3 md:mt-4" : "grid-rows-[0fr] opacity-0"
                           )}
                         >
-                          <div className="overflow-hidden">
-                            <p className="text-[13px] md:text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-[90%] font-medium">
-                              {feature.description}
-                            </p>
+                          {/* Every description is stacked in one grid cell (only this
+                              item's is visible), so an open item is always as tall as
+                              the longest description and the section never shifts. */}
+                          <div className="overflow-hidden grid">
+                            {features.map((other, j) => (
+                              <p
+                                key={other.id}
+                                aria-hidden={j !== index}
+                                className={cn(
+                                  "[grid-area:1/1] text-[13px] md:text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-[90%] font-medium",
+                                  j !== index && "invisible",
+                                )}
+                              >
+                                {other.description}
+                              </p>
+                            ))}
                           </div>
                         </div>
                       </div>

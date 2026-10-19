@@ -39,3 +39,5 @@ next-env.d.ts
 
 
 backup
+# Uncompressed source videos (the optimized copies live in public/video)
+/assets-original

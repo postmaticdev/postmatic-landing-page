@@ -1,0 +1,26 @@
+/*
+ * The only flag-icons rules the language toggle uses (copied from
+ * flag-icons/css/flag-icons.min.css). Importing the full stylesheet shipped
+ * ~270 flags of render-blocking CSS to every page for these few.
+ */
+.fi {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.333333em;
+  line-height: 1em;
+}
+.fi:before {
+  content: " ";
+}
+.fi-id {
+  background-image: url("../node_modules/flag-icons/flags/4x3/id.svg");
+}
+.fi-us {
+  background-image: url("../node_modules/flag-icons/flags/4x3/us.svg");
+}
+.fi-xx {
+  background-image: url("../node_modules/flag-icons/flags/4x3/xx.svg");
+}

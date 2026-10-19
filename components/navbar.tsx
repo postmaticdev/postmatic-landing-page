@@ -38,8 +38,10 @@ export default function MobileNavWrapper({ items }: { items: NavItem[] }) {
         />
       )}
 
-      {/* Mobile Menu - positioned below fixed navbar */}
+      {/* Mobile Menu - positioned below fixed navbar. Closed, it is only faded
+          out, so `inert` keeps its links out of the tab order. */}
       <div
+        inert={!open}
         className={cn(
           "fixed top-16 left-0 right-0 z-40 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-xl border-b border-gray-200 dark:border-neutral-800 shadow-xl transition-all duration-300 ease-in-out",
           open

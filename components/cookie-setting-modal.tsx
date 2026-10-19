@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { X, ShieldCheck, BarChart3, Megaphone } from "lucide-react";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
+import { readStorage, writeStorage } from "@/lib/safe-storage";
 
 type CookiePreferences = {
   necessary: boolean;
@@ -29,16 +30,19 @@ export default function CookieSettingsModal({
 
   useEffect(() => {
     if (!isOpen) return;
-    const saved = localStorage.getItem("cookiePrefs");
-    if (saved) {
+    const saved = readStorage("cookiePrefs");
+    if (!saved) return;
+    try {
       setPreferences(JSON.parse(saved));
+    } catch {
+      // Corrupted value: keep the defaults.
     }
   }, [isOpen]);
   const t = useTranslations("cookieSettings");
 
   const handleSave = () => {
-    localStorage.setItem("cookiePrefs", JSON.stringify(preferences));
-    localStorage.setItem("cookieConsent", "custom");
+    writeStorage("cookiePrefs", JSON.stringify(preferences));
+    writeStorage("cookieConsent", "custom");
     onClose();
     closeConsent();
   };
@@ -46,8 +50,8 @@ export default function CookieSettingsModal({
   const handleRejectAll = () => {
     const rejected = { necessary: true, analytics: false, marketing: false };
     setPreferences(rejected);
-    localStorage.setItem("cookiePrefs", JSON.stringify(rejected));
-    localStorage.setItem("cookieConsent", "rejected");
+    writeStorage("cookiePrefs", JSON.stringify(rejected));
+    writeStorage("cookieConsent", "rejected");
     onClose();
     closeConsent();
   };
@@ -58,7 +62,7 @@ export default function CookieSettingsModal({
 
   return createPortal(
     <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-      <div className="bg-white dark:bg-zinc-900 border border-slate-200/80 dark:border-zinc-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto scrollbar-thin">
+      <div className="bg-white dark:bg-zinc-900 border border-slate-200/80 dark:border-zinc-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto scrollbar-thin" data-lenis-prevent>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-zinc-800">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">{t("title")}</h2>

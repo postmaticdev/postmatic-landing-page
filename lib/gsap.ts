@@ -5,7 +5,15 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
   // Lenis drives the ticker, so GSAP should not lag-smooth on its own.
   gsap.ticker.lagSmoothing(0);
-  ScrollTrigger.config({ ignoreMobileResize: true });
+  ScrollTrigger.config({
+    ignoreMobileResize: true,
+    // No automatic full refresh on DOMContentLoaded/load: pins already queue
+    // one when created, ScrollEffects runs one after the last trigger exists,
+    // and SmoothScrollProvider refreshes whenever the page height changes
+    // (fonts, images). The extra load-time passes re-measured the whole page
+    // for nothing.
+    autoRefreshEvents: "visibilitychange,resize",
+  });
 }
 
 export const prefersReducedMotion = () =>

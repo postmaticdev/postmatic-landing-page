@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Plus, ArrowDownRight, ArrowUpLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { expandableProps } from "@/lib/a11y";
 import { useTranslations } from "next-intl";
 
 
@@ -39,7 +40,7 @@ export default function FaqMinimal() {
               <div 
                 key={index}
                 className="group border-b border-[#EAF2FF] dark:border-neutral-800 py-6 md:py-8 cursor-pointer transition-colors"
-                onClick={() => toggleFaq(index)}
+                {...expandableProps(isOpen, () => toggleFaq(index))}
               >
                 <div className="flex items-start justify-between gap-4 md:gap-12">
                   {/* Plus Icon (Left) */}

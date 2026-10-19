@@ -8,6 +8,7 @@
     "title": "We use cookies",
     "description": "We use cookies to enhance your experience, analyze traffic, and display relevant ads.",
     "learnMore": "Learn more",
+    "learnMoreTarget": "about our cookie policy",
     "acceptAll": "Accept All",
     "manageCookies": "Manage Cookies",
     "close": "Close"
@@ -1215,7 +1216,7 @@
     "design": {
       "title": "Design That Stands Out",
       "subtitle": "You create, we perfect it.",
-      "cta": "Start Now",
+      "cta": "Try Now",
       "imageAlt": {
         "eclatStory": "Instagram Story for Eclat Muse gold jewelry",
         "bitesFeed": "Bites Daily weekend sale promo Feed post",
@@ -1344,14 +1345,24 @@
       ],
       "normalPriceLabel": "Regular price:",
       "currentPriceLabel": "Current price:",
-      "save": "Save {percent}%"
+      "save": "Save {percent}%",
+      "endsIn": "Offer ends in"
     },
     "cta": {
-      "title": "Pick the Right Plan for Your Business",
-      "description": "Use Postmatic and see how AI can change the way you do business. Lift engagement by up to 156% in the first 30 days!",
-      "button": "Start Now",
-      "getStarted": "Get Started",
-      "contactWa": "Contact Us (WA)"
+      "title": "A Full Month of Content From a Single Input",
+      "description": "Stop spending hours on designs and captions. Postmatic researches trends, creates agency-grade visuals, and posts automatically to Instagram, Facebook, LinkedIn, and TikTok, without paying an agency millions of rupiah every month.",
+      "button": "Try Now",
+      "getStarted": "Try It Free Now",
+      "contactWa": "Contact Us (WA)",
+      "perks": ["30,000 free tokens", "No monthly subscription", "Tokens never expire"]
+    },
+    "floatingCta": {
+      "tryNow": "Try It Now",
+      "tutorial": "Watch the Tutorial",
+      "cheap": "Only Rp 2,000 per Post",
+      "freeTokens": "30,000 Free Tokens",
+      "consult": "Free Consultation on WA",
+      "noSubscription": "No Monthly Subscription"
     },
     "footer": {
       "description": "Postmatic is an AI social media agency platform: trend research, AI design, captions, and auto-posting for growing brands, all from a single input.",

@@ -2,8 +2,9 @@
 
 const TITLE_APP = process.env.NEXT_PUBLIC_TITLE_APP || "Postmatic";
 const LANDINGPAGE_URL = process.env.NEXT_PUBLIC_LANDINGPAGE_URL || "https://postmatic.id";
-const LOGIN_URL = process.env.NEXT_PUBLIC_LOGIN_URL || "#";
-const DASHBOARD_URL = process.env.NEXT_PUBLIC_DASHBOARD_URL || "#";
+const DASHBOARD_URL = process.env.NEXT_PUBLIC_DASHBOARD_URL || "https://workspace.postmatic.id";
+// After signing in, the auth site sends the visitor on to the workspace.
+const LOGIN_URL = process.env.NEXT_PUBLIC_LOGIN_URL || `https://auth.postmatic.id/login?from=${encodeURIComponent(DASHBOARD_URL)}`;
 const SIGNUP_URL = process.env.NEXT_PUBLIC_SIGNUP_URL || "#";
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
 const EMAIL = process.env.NEXT_PUBLIC_EMAIL || "team@postmatic.id";
@@ -18,7 +19,7 @@ const FACEBOOK = process.env.NEXT_PUBLIC_FACEBOOK || "#";
 const TWITTER = process.env.NEXT_PUBLIC_TWITTER || "#";
 const LINKEDIN = process.env.NEXT_PUBLIC_LINKEDIN || "#";
 
-const COMMUNITY_URL = process.env.NEXT_PUBLIC_COMMUNITY || INSTAGRAM;
+const COMMUNITY_URL = process.env.NEXT_PUBLIC_COMMUNITY || "https://discord.com/invite/NNGwjhWWxG";
 
 const VIDEO_TUTORIAL_URL = process.env.NEXT_PUBLIC_VIDEO_TUTORIAL_URL || "https://www.youtube.com/embed/rEkeRl3WkFk?rel=0&showinfo=0&autoplay=0";
 const VIDEO_INTRODUCTION_URL = process.env.NEXT_PUBLIC_VIDEO_INTRODUCTION_URL || "https://www.youtube.com/embed/LRGvK7NwriE?rel=0&showinfo=0&autoplay=0";

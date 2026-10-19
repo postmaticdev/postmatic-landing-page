@@ -107,10 +107,10 @@ export default function Hero() {
               0,
             )
             .to(hintRef.current, { opacity: 0, y: -10, duration: 0.3 }, 0)
-            // 2. the headline drifts up slightly while the fan opens
-            .to(headerRef.current, { y: -32, duration: 1.3, ease: "none" }, 0)
-            // 3. short hold so the open fan is the last frame before unpin
-            .to({}, { duration: 0.3 });
+            // 2. short hold so the open fan is the last frame before unpin.
+            // (The headline stays put: the hero already sits right under the
+            // navbar, so any upward drift would slide it beneath the navbar.)
+            .to({}, { duration: 0.3 }, 1.3);
         },
       );
     },
@@ -121,9 +121,9 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative w-full min-h-[100svh] pt-24 sm:pt-28 lg:pt-32 overflow-hidden font-sans flex flex-col"
+      className="relative w-full min-h-[100svh] pt-[5.5rem] sm:pt-24 lg:pt-24 overflow-hidden font-sans flex flex-col"
     >
-      <div ref={headerRef} className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-10 lg:pb-14 will-change-transform">
+      <div ref={headerRef} className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-6 lg:pb-8 will-change-transform">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-8">
           {/* Left Column */}
           <div className="flex-1 max-w-3xl">
@@ -150,16 +150,22 @@ export default function Hero() {
               {t("subtitle")}
             </p>
             <div className="flex flex-row items-center gap-3 sm:gap-4 w-full">
-              <Link href={LOGIN_URL} className="flex-1 sm:flex-none">
-                <button className="w-full flex items-center justify-center gap-1 sm:gap-2 bg-[#0066FF] hover:bg-[#0052cc] text-white px-3 sm:px-7 py-3 sm:py-3.5 rounded-full font-semibold transition-all hover:scale-105 shadow-xl shadow-[#0066FF]/20 text-[13px] sm:text-base">
-                  {t("getStarted")}
-                  <ArrowUpRight size={18} className="w-[18px] h-[18px] sm:w-5 sm:h-5" />
-                </button>
+              <Link
+                href={LOGIN_URL}
+                className="flex-1 sm:flex-none flex items-center justify-center gap-1 sm:gap-2 bg-[#0066FF] hover:bg-[#0052cc] text-white px-3 sm:px-7 py-3 sm:py-3.5 rounded-full font-semibold transition-all hover:scale-105 shadow-xl shadow-[#0066FF]/20 text-[13px] sm:text-base"
+              >
+                {t("getStarted")}
+                <ArrowUpRight size={18} className="w-[18px] h-[18px] sm:w-5 sm:h-5" />
               </Link>
-              <button className="flex-1 sm:flex-none flex items-center justify-center gap-1 sm:gap-2 bg-white hover:bg-neutral-50 text-neutral-900 border border-neutral-300 dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 px-3 sm:px-7 py-3 sm:py-3.5 rounded-full font-semibold transition-all hover:scale-105 text-[13px] sm:text-base whitespace-nowrap">
+              <a
+                href="https://www.youtube.com/watch?v=rEkeRl3WkFk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 sm:flex-none flex items-center justify-center gap-1 sm:gap-2 bg-white hover:bg-neutral-50 text-neutral-900 border border-neutral-300 dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 px-3 sm:px-7 py-3 sm:py-3.5 rounded-full font-semibold transition-all hover:scale-105 text-[13px] sm:text-base whitespace-nowrap"
+              >
                 {t("watchTutorial")}
                 <ArrowUpRight size={18} className="text-neutral-500 w-[18px] h-[18px] sm:w-5 sm:h-5" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -189,14 +195,15 @@ export default function Hero() {
                   alt={card.title}
                   fill
                   priority
+                  fetchPriority="high"
                   sizes="(max-width: 640px) 150px, (max-width: 1024px) 270px, 300px"
                   className="object-cover"
                 />
-                <div className="absolute top-0 left-0 p-3 sm:p-6 lg:p-8 z-20 w-full text-white">
-                  <p className="text-base sm:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2 tracking-tight">
+                <div className="absolute top-0 left-0 p-2.5 sm:p-4 lg:p-5 z-20 w-full text-left text-white">
+                  <p className="text-sm sm:text-xl lg:text-2xl font-bold mb-0.5 sm:mb-1 tracking-tight">
                     {card.title}
                   </p>
-                  <p className="text-white/90 font-medium text-[11px] sm:text-sm lg:text-base">
+                  <p className="text-white/90 font-medium text-[10px] sm:text-xs lg:text-sm">
                     {t(`cards.${card.subtitleKey}`)}
                   </p>
                 </div>

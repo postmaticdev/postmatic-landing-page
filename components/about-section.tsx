@@ -2,55 +2,65 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { ArrowRight, Plus, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { LOGIN_URL } from "@/constants";
-import { useGSAP } from "@gsap/react";
+import { useDeferredGSAP } from "@/lib/deferred-setup";
 import { cn } from "@/lib/utils";
+import { expandableProps } from "@/lib/a11y";
 import { useTranslations } from "next-intl";
 import { gsap, ScrollTrigger, prefersReducedMotion, PIN_PRIORITY, PIN_STEP_SCROLL } from "@/lib/gsap";
 
-function CardVideo({ src, isActive, className }: { src: string; isActive: boolean; className?: string }) {
+function CardVideo({ src, poster, isActive, className }: { src: string; poster: string; isActive: boolean; className?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  // The three videos weigh ~50MB together: only attach a source once the
-  // card first comes near the viewport (then keep it, so scrolling back never
-  // re-downloads), and pause whenever it scrolls away.
+  // Only download a card's video once it is the active (open) card and the
+  // section is within a screen of the viewport — the three used to start
+  // downloading together and fight over bandwidth. Until then the poster (the
+  // video's first frame, which is all a closed card shows) stands in. Once
+  // attached the source is kept, so going back never re-downloads.
   const [inView, setInView] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const wantsPlay = isActive && inView;
 
   useEffect(() => {
     const el = videoRef.current;
     if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-        if (entry.isIntersecting) setLoaded(true);
-      },
-      { rootMargin: "300px 0px" },
-    );
+    const io = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), {
+      rootMargin: "100% 0px",
+    });
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
   useEffect(() => {
+    if (wantsPlay) setLoaded(true);
+  }, [wantsPlay]);
+
+  useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
     video.muted = true;
-    if (isActive && inView) {
+    if (wantsPlay && loaded) {
       video.play().catch(() => {});
     } else {
       video.pause();
     }
-  }, [isActive, inView]);
+  }, [wantsPlay, loaded]);
 
   return (
     <video
       ref={videoRef}
       src={loaded ? src : undefined}
+      poster={poster}
       loop
       muted
       playsInline
       preload={loaded ? "auto" : "none"}
+      // A play() that was rejected or cut short while the file was still
+      // loading is never retried by the browser: retry once it can play.
+      onCanPlay={(e) => {
+        if (wantsPlay && e.currentTarget.paused) e.currentTarget.play().catch(() => {});
+      }}
       aria-hidden
       className={className}
     />
@@ -62,7 +72,6 @@ interface CardItem {
   bgImage?: string;
   bgVideo?: string;
   bgColor: string;
-  hasWidget: boolean;
 }
 
 const cards: CardItem[] = [
@@ -71,21 +80,18 @@ const cards: CardItem[] = [
     bgImage: "", 
     bgVideo: "/video/One-Time-Input-Knowledge.mp4",
     bgColor: "bg-neutral-900",
-    hasWidget: false,
   },
   {
     id: 1,
     bgImage: "",
     bgVideo: "/video/schedule-content.mp4",
     bgColor: "bg-neutral-900",
-    hasWidget: false,
   },
   {
     id: 2,
     bgImage: "",
     bgVideo: "/video/postmatic-tiga-brand-satu-jadwal.mp4",
     bgColor: "bg-neutral-900",
-    hasWidget: false,
   },
 ];
 
@@ -99,7 +105,7 @@ export default function AboutSection() {
 
   // Pin the section and let scroll progress open card 1 → 2 → 3 in turn,
   // then release so the page keeps scrolling normally.
-  useGSAP(
+  useDeferredGSAP(
     () => {
       if (!sectionRef.current || prefersReducedMotion()) return;
       const mm = gsap.matchMedia();
@@ -200,12 +206,13 @@ export default function AboutSection() {
                     : "flex-[1] md:flex-[1.5] h-full opacity-90 hover:opacity-100",
                   card.bgColor
                 )}
-                onClick={() => setActiveCard(index)}
+                {...expandableProps(isActive, () => setActiveCard(index))}
               >
                 {/* Background Image or Video */}
                 {card.bgVideo ? (
                   <CardVideo
                     src={card.bgVideo}
+                    poster={card.bgVideo.replace(/\.mp4$/, "-poster.webp")}
                     isActive={isActive}
                     className={cn(
                       "absolute inset-0 w-full h-full object-cover transition-transform duration-700",
@@ -223,14 +230,27 @@ export default function AboutSection() {
                     )}
                   />
                 ) : null}
-                
-                {/* Gradient Overlay for better text readability */}
+
+                {/* Text vignette: darkens only the corner behind the expanded text */}
                 <div
+                  aria-hidden
                   className={cn(
-                    "absolute inset-0 transition-opacity duration-700",
-                    isActive
-                      ? "bg-gradient-to-r from-black/80 via-black/40 to-transparent"
-                      : "bg-black/45 md:bg-black/20"
+                    "absolute top-0 left-0 w-[min(100%,36rem)] h-[min(100%,22rem)] pointer-events-none transition-opacity duration-700 delay-100",
+                    "bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.35)_40%,transparent_75%)]",
+                    isActive ? "opacity-100" : "opacity-0"
+                  )}
+                />
+
+                {/* Vignette for collapsed (closed/narrow) state */}
+                <div
+                  aria-hidden
+                  className={cn(
+                    "absolute inset-0 pointer-events-none transition-opacity duration-700",
+                    "bg-black/30",
+                    "bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.75)_100%)]",
+                    "shadow-[inset_0_0_40px_rgba(0,0,0,0.85)] md:shadow-[inset_0_0_60px_rgba(0,0,0,0.9)]",
+                    "before:absolute before:inset-0 before:bg-gradient-to-r before:from-black/70 before:via-transparent before:to-transparent md:before:bg-gradient-to-t md:before:from-black/80 md:before:via-transparent md:before:to-black/30",
+                    !isActive ? "opacity-100" : "opacity-0"
                   )}
                 />
 
@@ -249,49 +269,6 @@ export default function AboutSection() {
                       {texts[index].description}
                     </p>
                   </div>
-
-                  {card.hasWidget ? (
-                    <div className="flex items-end justify-between w-full">
-                      {/* Floating UI Widget */}
-                      <div className="bg-white/95 backdrop-blur-sm p-4 rounded-[1.5rem] flex flex-col gap-3 shadow-2xl">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-[#FF9F43] flex items-center justify-center">
-                            <Plus className="text-white w-5 h-5" />
-                          </div>
-                          <div className="w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center flex-col">
-                            <span className="text-[8px] font-bold text-neutral-400 -mb-1">NOV</span>
-                            <span className="text-xs font-bold text-neutral-800">23</span>
-                          </div>
-                          <div className="w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center">
-                            <Check className="text-neutral-600 w-4 h-4" />
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className="flex -space-x-2">
-                            <div className="w-6 h-6 rounded-full bg-neutral-200 overflow-hidden border-2 border-white">
-                              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="" width={24} height={24} loading="lazy" decoding="async" />
-                            </div>
-                            <div className="w-6 h-6 rounded-full bg-neutral-200 overflow-hidden border-2 border-white">
-                              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="" width={24} height={24} loading="lazy" decoding="async" />
-                            </div>
-                          </div>
-                          <span className="text-[10px] font-bold text-neutral-500 ml-1">+2</span>
-                          <span className="text-[10px] font-bold text-neutral-400 ml-auto pr-1">AI</span>
-                        </div>
-                      </div>
-
-                      {/* Black Arrow Button */}
-                      <div className="w-12 h-12 bg-[#1A1A1A] hover:bg-black transition-colors rounded-full flex items-center justify-center shrink-0">
-                        <ArrowRight className="text-white w-5 h-5" />
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="flex items-end justify-end w-full h-full">
-                       <div className="w-12 h-12 bg-white/20 backdrop-blur hover:bg-white/30 transition-colors rounded-full flex items-center justify-center shrink-0">
-                        <ArrowRight className="text-white w-5 h-5" />
-                      </div>
-                    </div>
-                  )}
                 </div>
 
                 {/* Collapsed Content */}
@@ -306,7 +283,7 @@ export default function AboutSection() {
                   )}
                 >
                   <h3 
-                    className="text-white font-bold text-xl sm:text-2xl md:text-3xl whitespace-nowrap tracking-wide [writing-mode:horizontal-tb] md:[writing-mode:vertical-rl] md:rotate-180"
+                    className="text-white font-bold text-xl sm:text-2xl md:text-3xl whitespace-nowrap tracking-wide [writing-mode:horizontal-tb] md:[writing-mode:vertical-rl] md:rotate-180 drop-shadow-md"
                   >
                     {texts[index].title}
                   </h3>

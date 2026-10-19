@@ -1,14 +1,58 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
+import { useEffect, useRef, useState } from "react";
+import { useDeferredGSAP } from "@/lib/deferred-setup";
 import { gsap, ScrollTrigger, prefersReducedMotion, PIN_PRIORITY, PIN_STEP_SCROLL } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { Check } from "lucide-react";
 import Link from "next/link";
 import { LOGIN_URL } from "@/constants";
 import { useLocale, useTranslations } from "next-intl";
+import { readStorage, writeStorage } from "@/lib/safe-storage";
+
+const PROMO_DURATION_S = 2 * 3600 + 24 * 60 + 43; // 02:24:43
+const PROMO_STORAGE_KEY = "pricingPromoDeadline";
+
+function formatCountdown(totalSeconds: number) {
+  const h = Math.floor(totalSeconds / 3600);
+  const m = Math.floor((totalSeconds % 3600) / 60);
+  const s = totalSeconds % 60;
+  return [h, m, s].map((n) => String(n).padStart(2, "0")).join(":");
+}
+
+// Counts down from 02:24:43. The deadline is remembered so a reload keeps
+// counting instead of starting over; once it runs out a new round starts.
+function PromoCountdown({ label }: { label: string }) {
+  const [remaining, setRemaining] = useState(PROMO_DURATION_S);
+
+  useEffect(() => {
+    const startRound = () => {
+      const deadline = Date.now() + PROMO_DURATION_S * 1000;
+      writeStorage(PROMO_STORAGE_KEY, String(deadline));
+      return deadline;
+    };
+    const stored = Number(readStorage(PROMO_STORAGE_KEY));
+    let deadline = stored > Date.now() ? stored : startRound();
+    const tick = () => {
+      let left = Math.ceil((deadline - Date.now()) / 1000);
+      if (left <= 0) {
+        deadline = startRound();
+        left = PROMO_DURATION_S;
+      }
+      setRemaining(left);
+    };
+    tick();
+    const id = window.setInterval(tick, 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return (
+    <div role="timer" className="text-right">
+      <p className="text-white/70 font-medium text-[10px] md:text-[11px] leading-none mb-1">{label}</p>
+      <p className="text-white font-bold text-sm md:text-base leading-none tabular-nums">{formatCountdown(remaining)}</p>
+    </div>
+  );
+}
 
 export default function PricingSection() {
   const [konten, setKonten] = useState<number>(50);
@@ -27,7 +71,7 @@ export default function PricingSection() {
   const [shown, setShown] = useState(feats.length);
   const lastShown = useRef(feats.length);
 
-  useGSAP(
+  useDeferredGSAP(
     () => {
       if (!sectionRef.current || prefersReducedMotion()) return;
       const update = (p: number) => {
@@ -105,19 +149,8 @@ export default function PricingSection() {
           <div className="flex flex-col w-full max-w-lg mx-auto lg:mx-0">
             
             {/* The Card */}
-            <div data-tilt className="relative w-full aspect-[16/10] lg:aspect-[16/9] rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(255,90,50,0.2)] dark:shadow-[0_30px_60px_-15px_rgba(255,90,50,0.1)] mb-6 md:mb-10">
-              {/* Background Image */}
-              <Image 
-                src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1000&auto=format&fit=crop" 
-                alt=""
-                fill
-                sizes="(max-width: 1024px) 100vw, 512px"
-                className="object-cover"
-              />
-              {/* Dark Gradient Overlay for readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/60 mix-blend-multiply"></div>
-              <div className="absolute inset-0 bg-black/10"></div>
-              
+            <div data-tilt className="relative w-full aspect-[16/10] lg:aspect-[16/9] rounded-[2rem] overflow-hidden bg-[#0066FF] shadow-xl shadow-[#0066FF]/20 mb-6 md:mb-10">
+
               {/* Card Content */}
               <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
                 {/* Top Row */}
@@ -126,8 +159,11 @@ export default function PricingSection() {
                     <h3 className="text-white font-bold text-xl md:text-2xl leading-none mb-1 tracking-tight">{t("brand")}</h3>
                     <p className="text-white font-medium text-sm md:text-[15px]">{t("plan")}</p>
                   </div>
-                  <div className="bg-white/10 border border-white/20 backdrop-blur-md rounded-full px-4 py-1.5">
-                    <span className="text-white font-bold text-xs">{t("contentCount", { count: konten })}</span>
+                  <div className="flex flex-col items-end gap-2.5">
+                    <div className="bg-white/10 border border-white/20 backdrop-blur-md rounded-full px-4 py-1.5">
+                      <span className="text-white font-bold text-xs">{t("contentCount", { count: konten })}</span>
+                    </div>
+                    <PromoCountdown label={t("endsIn")} />
                   </div>
                 </div>
 

@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { LOGIN_URL, WHATSAPP_URL } from "@/constants";
 import { getTranslations } from "next-intl/server";
@@ -50,6 +50,16 @@ export default async function CtaSection() {
             <span>{t("contactWa")}</span>
           </a>
         </div>
+
+        {/* Reassurance perks */}
+        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          {(t.raw("perks") as string[]).map((perk) => (
+            <li key={perk} className="flex items-center gap-1.5 text-white/85 text-xs md:text-sm font-medium">
+              <Check className="w-4 h-4 text-[#3ECF8E] shrink-0" strokeWidth={3} />
+              {perk}
+            </li>
+          ))}
+        </ul>
         </div>
 
       </div>

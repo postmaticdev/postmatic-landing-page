@@ -15,7 +15,7 @@ const columns: {
   items: { src: string; altKey: string; format: keyof typeof ASPECT }[];
 }[] = [
   {
-    parallax: "-0.45",
+    parallax: "-0.15",
     offset: false,
     items: [
       { src: "/content/dummy/Story/kemewahan_emas_untuk_sehari_hari.png", altKey: "eclatStory", format: "story" },
@@ -23,7 +23,7 @@ const columns: {
     ],
   },
   {
-    parallax: "0.35",
+    parallax: "0.15",
     offset: true,
     items: [
       { src: "/content/dummy/Feeds/serasa-scarf-kata-mereka.png", altKey: "serasaFeed", format: "feed" },
@@ -31,7 +31,7 @@ const columns: {
     ],
   },
   {
-    parallax: "-0.25",
+    parallax: "-0.15",
     offset: false,
     items: [
       { src: "/content/dummy/Story/poster_serum_niacinamide_lunara_skin.png", altKey: "lunaraStory", format: "story" },
@@ -39,7 +39,7 @@ const columns: {
     ],
   },
   {
-    parallax: "0.55",
+    parallax: "0.15",
     offset: true,
     items: [
       { src: "/content/dummy/Feeds/bundle-favorit.png", altKey: "bundleFeed", format: "feed" },
@@ -56,8 +56,8 @@ export default function DesignSection() {
         
         {/* Masonry Image Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {columns.map((column) => (
-            <div key={column.parallax} data-parallax={column.parallax} className={`flex flex-col gap-4 md:gap-6 ${column.offset ? "mt-8 md:mt-16" : ""}`}>
+          {columns.map((column, colIdx) => (
+            <div key={colIdx} data-parallax={column.parallax} className={`flex flex-col gap-4 md:gap-6 ${column.offset ? "mt-8 md:mt-16" : ""}`}>
               {column.items.map((item) => (
                 <div key={item.src} data-reveal="clip" className={`relative w-full ${ASPECT[item.format]} rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-neutral-100 dark:bg-neutral-900`}>
                   <Image

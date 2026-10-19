@@ -5,25 +5,26 @@ import { Shield, X } from "lucide-react";
 import CookieSettingsModal from "./cookie-setting-modal";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { readStorage, writeStorage } from "@/lib/safe-storage";
 
 export default function CookieConsentPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [showCookieSettings, setShowCookieSettings] = useState(false);
   const t = useTranslations("cookieConsent");
   useEffect(() => {
-    const consent = localStorage.getItem("cookieConsent");
+    const consent = readStorage("cookieConsent");
     if (!consent) {
       setIsVisible(true);
     }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem("cookieConsent", "accepted");
+    writeStorage("cookieConsent", "accepted");
     setIsVisible(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem("cookieConsent", "declined");
+    writeStorage("cookieConsent", "declined");
     setIsVisible(false);
   };
 
@@ -52,6 +53,8 @@ export default function CookieConsentPopup() {
                 className="text-[#0066FF] dark:text-[#3385ff] hover:underline font-semibold ml-1 inline-block"
               >
                 {t("learnMore")}
+                {/* Descriptive link text for screen readers and crawlers */}
+                <span className="sr-only"> {t("learnMoreTarget")}</span>
               </Link>
             </p>
           </div>
