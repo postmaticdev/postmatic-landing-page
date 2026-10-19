@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Accordion,
   AccordionItem,
@@ -6,7 +7,31 @@ import {
 } from "@/components/ui/accordion";
 import { getMobileMargins } from "@/lib/utils";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { allLocales, generateAlternates } from "@/lib/seo";
+import { LANDINGPAGE_URL } from "@/constants";
+import { Locale } from "@/i18n/routing";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: tMeta("dataDeletionTitle"),
+    description: tMeta("dataDeletionDescription"),
+    alternates: generateAlternates("/data-deletion", locale),
+    openGraph: {
+      title: tMeta("dataDeletionTitle"),
+      description: tMeta("dataDeletionDescription"),
+      url: `${LANDINGPAGE_URL}/${locale}/data-deletion`,
+      type: "website",
+    },
+  };
+}
 
 interface DeletionContent {
   type: "text" | "list";
@@ -19,8 +44,18 @@ interface DeletionSection {
   content: DeletionContent[];
 }
 
-export default function DataDeletionPage() {
-  const t = useTranslations('dataDeletion');
+export function generateStaticParams() {
+  return allLocales.map((locale) => ({ locale }));
+}
+
+export default async function DataDeletionPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("dataDeletion");
   const deletionSections = t.raw('sections') as DeletionSection[];
 
   return (

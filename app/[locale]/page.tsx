@@ -1,140 +1,179 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import ProblemSection from "@/components/problem-section";
-import SolutionSection from "@/components/solution-section";
-import FeaturesSection from "@/components/features-section";
-import PricingSection from "@/components/pricing-section";
-import CTASection from "@/components/cta-section";
 import Hero from "@/components/Hero";
-
-import Introduction from "@/components/introduction";
-import { Comparison } from "@/components/comparison";
-import EndToEnd from "@/components/end-to-end";
-import IntroVideoPage from "@/components/intro-video";
+import { Logos3 } from "@/components/ui/logos3";
+import WhatIsPostmatic from "@/components/what-is-postmatic";
+import ProblemSection from "@/components/problem-section";
+import AboutSection from "@/components/about-section";
+import WorkflowSection from "@/components/workflow-section";
+import DesignSection from "@/components/design-section";
+import TestimonialMinimal from "@/components/testimonial-minimal";
+import FaqMinimal from "@/components/faq-minimal";
+import PricingSection from "@/components/pricing-section";
+import CtaSection from "@/components/cta-section";
+import ScrollEffects from "@/components/scroll/scroll-effects";
+import PaperPlane from "@/components/scroll/paper-plane";
 import {
-  API_URL,
-  DASHBOARD_URL,
   GOOGLE_SITE_VERIFICATION,
   LANDINGPAGE_URL,
   TITLE_APP,
   YAHOO_SITE_VERIFICATION,
   YANDEX_SITE_VERIFICATION,
 } from "@/constants";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  generateAlternates,
+  getOrganizationJsonLd,
+  getWebSiteJsonLd,
+  getSoftwareApplicationJsonLd,
+  getFaqJsonLd,
+  getServiceJsonLd,
+  allLocales,
+  type SeoJsonLdCopy,
+} from "@/lib/seo";
+import { Locale } from "@/i18n/routing";
 
-const REFRESH_TOKEN_COOKIE_NAME =
-  process.env.POSTMATIC_REFRESH_COOKIE_NAME || "postmaticRefreshToken";
-
-export const metadata: Metadata = {
-  title: {
-    default: TITLE_APP,
-    template: `${TITLE_APP} | %s`,
-  },
-  description:
-    "Solusi AI/ML terdepan untuk mengotomasi seluruh proses pemasaran digital bisnis...",
-  keywords:
-    "Bisnis, pemasaran digital, AI marketing, otomasi konten, social media automation, Indonesia, SaaS, artificial intelligence, marketing automation",
-  authors: [{ name: "POSTMATIC Team" }],
-  creator: "POSTMATIC Team",
-  publisher: "POSTMATIC Team",
-  formatDetection: { email: false, address: false, telephone: false },
-  metadataBase: new URL(LANDINGPAGE_URL),
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: TITLE_APP,
-    description:
-      "Solusi AI/ML terdepan untuk mengotomasi seluruh proses pemasaran digital bisnis...",
-    url: LANDINGPAGE_URL,
-    siteName: TITLE_APP,
-    images: [
-      {
-        url: "/logo-bg-blue.png",
-        width: 1200,
-        height: 630,
-        alt: "POSTMATIC - AI Marketing Automation Platform untuk Bisnis Indonesia",
-      },
-    ],
-    locale: "id_ID",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "POSTMATIC - Platform AI untuk Otomasi Pemasaran Digital Bisnis",
-    description:
-      "Solusi AI/ML terdepan untuk mengotomasi seluruh proses pemasaran digital bisnis...",
-    images: ["logo-bg-blue.png"],
-    creator: "@postmatic_id",
-    site: "@postmatic_id",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: GOOGLE_SITE_VERIFICATION,
-    yandex: YANDEX_SITE_VERIFICATION,
-    yahoo: YAHOO_SITE_VERIFICATION,
-  },
-  category: "technology",
-};
-
-async function hasValidRefreshToken() {
-  const refreshToken = (await cookies()).get(REFRESH_TOKEN_COOKIE_NAME)?.value;
-
-  console.log({ refreshToken, API_URL });
-
-  if (!refreshToken || !API_URL) {
-    return false;
-  }
-
-  try {
-    const response = await fetch(
-      new URL("/api/account/auth/refresh-token", API_URL),
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ refreshToken }),
-        cache: "no-store",
-      },
-    );
-
-    console.log({ response });
-
-    return response.ok;
-  } catch (e) {
-    console.error({ e });
-    return false;
-  }
+/**
+ * Pre-render all locale variants at build time for better performance and SEO.
+ */
+export function generateStaticParams() {
+  return allLocales.map((locale) => ({ locale }));
 }
 
-export default async function Home() {
-  if (DASHBOARD_URL !== "#" && (await hasValidRefreshToken())) {
-    redirect(DASHBOARD_URL);
-  }
+/**
+ * Dynamic metadata per locale — ensures each language version has
+ * its own title, description, OpenGraph, Twitter, and hreflang tags.
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  const ogLocaleMap: Record<string, string> = {
+    id: "id_ID",
+    en: "en_US",
+  };
+
+  return {
+    title: {
+      default: t("title"),
+      template: `%s | ${TITLE_APP}`,
+    },
+    description: t("description"),
+    keywords: t("keywords"),
+    authors: [{ name: "POSTMATIC Team" }],
+    creator: "POSTMATIC Team",
+    publisher: "POSTMATIC Team",
+    formatDetection: { email: false, address: false, telephone: false },
+    metadataBase: new URL(LANDINGPAGE_URL),
+    alternates: generateAlternates("", locale),
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDescription"),
+      url: `${LANDINGPAGE_URL}/${locale}`,
+      siteName: TITLE_APP,
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+      locale: ogLocaleMap[locale] || "id_ID",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("twitterTitle"),
+      description: t("twitterDescription"),
+      images: ["/og-image.png"],
+      creator: "@postmatic_id",
+      site: "@postmatic_id",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    verification: {
+      google: GOOGLE_SITE_VERIFICATION,
+      yandex: YANDEX_SITE_VERIFICATION,
+      yahoo: YAHOO_SITE_VERIFICATION,
+    },
+    category: "technology",
+  };
+}
+
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const tFaq = await getTranslations({ locale, namespace: "landing.faq" });
+  const faqItems = tFaq.raw("items") as Array<{ question: string; answer: string }>;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+  const jsonLdCopy = tMeta.raw("jsonLd") as SeoJsonLdCopy;
 
   return (
-    <main className="">
+    <main className="overflow-x-clip">
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getOrganizationJsonLd(jsonLdCopy)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getWebSiteJsonLd(locale)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getSoftwareApplicationJsonLd(jsonLdCopy, locale)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getFaqJsonLd(faqItems)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getServiceJsonLd(jsonLdCopy)),
+        }}
+      />
+
       <Hero />
-      <Introduction />
-      <Comparison />
+      <Logos3 />
+      <WhatIsPostmatic />
       <ProblemSection />
-      <SolutionSection />
-      <FeaturesSection />
-      <EndToEnd />
-      <IntroVideoPage />
+      <AboutSection />
+      <WorkflowSection />
+      <DesignSection />
+      <TestimonialMinimal />
+      <FaqMinimal />
       <PricingSection />
-      <CTASection />
+      <CtaSection />
+      <ScrollEffects />
+      <PaperPlane />
     </main>
   );
 }

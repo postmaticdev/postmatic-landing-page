@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Accordion,
   AccordionItem,
@@ -6,7 +7,31 @@ import {
 } from "@/components/ui/accordion";
 import { getMobileMargins } from "@/lib/utils";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { allLocales, generateAlternates } from "@/lib/seo";
+import { LANDINGPAGE_URL } from "@/constants";
+import { Locale } from "@/i18n/routing";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: tMeta("cookiePolicyTitle"),
+    description: tMeta("cookiePolicyDescription"),
+    alternates: generateAlternates("/cookie-policy", locale),
+    openGraph: {
+      title: tMeta("cookiePolicyTitle"),
+      description: tMeta("cookiePolicyDescription"),
+      url: `${LANDINGPAGE_URL}/${locale}/cookie-policy`,
+      type: "website",
+    },
+  };
+}
 
 interface CookieContent {
   type: "text" | "list";
@@ -19,8 +44,18 @@ interface CookieSection {
   content: CookieContent[];
 }
 
-export default function CookiePolicyPage() {
-  const t = useTranslations('cookiePolicy');
+export function generateStaticParams() {
+  return allLocales.map((locale) => ({ locale }));
+}
+
+export default async function CookiePolicyPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("cookiePolicy");
   const cookieSections = t.raw('sections') as CookieSection[];
 
   return (

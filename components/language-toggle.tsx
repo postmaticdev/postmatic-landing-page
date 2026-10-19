@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
 import "flag-icons/css/flag-icons.min.css";
 
@@ -21,17 +21,11 @@ type LocaleItem = { label: string; value: string; flag: string };
 const LOCALES: LocaleItem[] = [
   { label: "ID", value: "id", flag: "fi fi-id" },
   { label: "EN", value: "en", flag: "fi fi-us" },
-  { label: "日本語", value: "jp", flag: "fi fi-jp" }, // ganti ke "ja" jika pakai ja.json
-  { label: "한국어", value: "kr", flag: "fi fi-kr" }, // ganti ke "ko" jika pakai ko.json
-  { label: "中文", value: "cn", flag: "fi fi-cn" }, // ganti ke "zh" jika pakai zh.json
-  { label: "العربية", value: "ar", flag: "fi fi-sa" },
-  { label: "Русский", value: "ru", flag: "fi fi-ru" },
-  { label: "हिन्दी", value: "hi", flag: "fi fi-in" },
-  { label: "Español", value: "sp", flag: "fi fi-es" }, // ganti ke "es" jika pakai es.json
 ];
 
 export function LanguageToggle() {
   const locale = useLocale();
+  const t = useTranslations("languageToggle");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -41,6 +35,9 @@ export function LanguageToggle() {
 
   const changeLocale = (next: string) => {
     if (!next || next === locale) return;
+    // Explicit choice: remember it for a year so postmatic.id opens in this
+    // language next time (read by middleware.ts → lib/locale-detect.ts).
+    document.cookie = `NEXT_LOCALE=${next}; path=/; max-age=31536000; samesite=lax`;
     router.replace(pathname, { locale: next });
   };
 
@@ -50,8 +47,8 @@ export function LanguageToggle() {
         <Button
           variant="ghost"
           size="sm"
-          className="h-9 px-2 gap-2"
-          aria-label="Choose language"
+          className="h-11 md:h-9 px-2 gap-2"
+          aria-label={t("triggerAriaLabel", { language: triggerLabel })}
         >
           <span className={`fi ${triggerFlag}`}></span>
           <span className="font-medium">{triggerLabel}</span>
@@ -59,7 +56,7 @@ export function LanguageToggle() {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>Pilih Bahasa / Choose Language</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("label")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {LOCALES.map((l) => {
           const selected = l.value === locale;

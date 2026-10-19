@@ -21,13 +21,16 @@
     "cookieIklan": "Cookie Iklan",
     "cookieIklanDescription": "Digunakan untuk menampilkan iklan yang relevan dan mengukur efektivitas kampanye.",
     "simpanDanTerima": "Simpan & Terima",
-    "tolakSemua": "Tolak Semua"
+    "tolakSemua": "Tolak Semua",
+    "close": "Tutup"
   },
   "navigation": {
+    "home": "Beranda",
     "about": "Tentang",
     "features": "Fitur",
-    "tutorial": "Tutorial",
-    "pricing": "Harga"
+    "pricing": "Harga",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu"
   },
   "buttons": {
     "getStarted": "Mulai Sekarang"
@@ -41,6 +44,32 @@
     "headline": "Apa itu",
     "brand": "Postmatic",
     "subHeadline": "Postmatic adalah platform AI yang otomatis membantu bisnis dalam mengelola social media mereka dari menganalisis tren, membuat konten, membuat caption, menjadwalkan posting, dan mengelola iklan hanya dengan sekali input informasi bisnis."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Segala hal yang perlu Anda ketahui tentang postmatic.id",
+    "items": [
+      {
+        "question": "Bagaimana cara kerja Postmatic.id?",
+        "answer": "Postmatic.id adalah platform berbasis AI/ML yang mengotomasi seluruh alur kerja media sosial Anda. Cukup masukkan profil bisnis Anda, dan AI kami akan meriset tren, membuat desain konten visual, menulis caption, serta menjadwalkan postingan secara otomatis."
+      },
+      {
+        "question": "Apakah Postmatic.id gratis untuk digunakan?",
+        "answer": "Ya, Anda dapat membuat akun secara gratis untuk mencoba fitur dasar Postmatic.id dan merasakan kemudahan otomasi pembuatan konten sebelum mengupgrade ke paket berlangganan."
+      },
+      {
+        "question": "Apakah saya bisa mengkustomisasi konten dan hasil generasi AI?",
+        "answer": "Tentu saja! Semua konten visual, teks caption, dan jadwal posting yang dibuat oleh AI dapat Anda edit, kustomisasi, atau pratinjau terlebih dahulu sebelum dipublikasikan."
+      },
+      {
+        "question": "Apakah Postmatic.id terintegrasi dengan berbagai media sosial?",
+        "answer": "Ya, Postmatic.id mendukung integrasi langsung dengan platform media sosial populer seperti Instagram, Facebook, TikTok, WhatsApp, dan LinkedIn."
+      },
+      {
+        "question": "Apakah Postmatic.id cocok untuk bisnis UMKM?",
+        "answer": "Sangat cocok! Postmatic.id dirancang khusus untuk mempermudah pemilik bisnis dan UMKM dalam mengelola pemasaran digital tanpa perlu keahlian desain atau tim media sosial khusus."
+      }
+    ]
   },
   "comparison": {
     "titleLine1": "Ubah Konten Media Sosial Anda",
@@ -268,7 +297,7 @@
     "getStarted": "Mulai Sekarang"
   },
   "footer": {
-    "companyDescription": "Platform AI terdepan untuk mengotomasi pemasaran digital suatu Bisnis Indonesia.",
+    "companyDescription": "Automate your Content Elevate Your Brand",
     "platform": "Platform",
     "fitur": "Fitur",
     "tutorial": "Tutorial",
@@ -635,7 +664,7 @@
             "type": "list",
             "items": [
               "**Email**: team@postmatic.id",
-              "**Website**: https://postmatic.id"
+              "**Situs Web**: https://postmatic.id"
             ]
           }
         ]
@@ -660,7 +689,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Kami menggunakan cookie untuk tujuan yang dijelaskan di bawah ini. Anda dapat mengontrol cookie non-esensial melalui modal Pengaturan Cookie kami kapan saja."
+            "text": "Kami menggunakan cookie untuk tujuan yang dijelaskan di bawah ini. Anda dapat mengatur cookie non-esensial kapan saja melalui jendela Pengaturan Cookie kami."
           }
         ]
       },
@@ -703,7 +732,7 @@
           },
           {
             "type": "text",
-            "text": "Anda dapat mengunjungi kembali atau mengubah pilihan Anda kapan saja dengan mengklik tautan \"Pengaturan Cookie\" di footer atau dengan menghapus penyimpanan lokal dan me-refresh halaman."
+            "text": "Anda dapat meninjau atau mengubah pilihan Anda kapan saja dengan mengklik tautan \"Pengaturan Cookie\" di bagian bawah halaman, atau dengan menghapus penyimpanan lokal browser lalu memuat ulang halaman."
           }
         ]
       },
@@ -727,7 +756,7 @@
             "type": "list",
             "items": [
               "<strong>Email:</strong> <a href='mailto:team@postmatic.id' class='text-blue-600 underline'>team@postmatic.id</a>",
-              "<strong>Website:</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
+              "<strong>Situs Web:</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
             ]
           }
         ]
@@ -897,7 +926,7 @@
             "type": "list",
             "items": [
               "Menggunakan Postmatic untuk tujuan yang melanggar hukum, penipuan, atau berbahaya.",
-              "Mengganggu atau mengganggu fungsionalitas, kinerja, atau keamanan Postmatic.",
+              "Mengganggu atau merusak fungsionalitas, kinerja, atau keamanan Postmatic.",
               "Mengunggah atau menghasilkan konten yang berbahaya, mengancam, kasar, memfitnah, cabul, ofensif, atau tidak pantas."
             ]
           }
@@ -968,7 +997,7 @@
             "type": "list",
             "items": [
               "<strong>Email:</strong> team@postmatic.id",
-              "<strong>Website:</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
+              "<strong>Situs Web:</strong> <a href='https://postmatic.id' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline'>https://postmatic.id</a>"
             ]
           }
         ]
@@ -1018,5 +1047,369 @@
         "imageAfter": "/content/rumah-after.png"
       }
     ]
+  },
+  "metadata": {
+    "title": "Postmatic – AI Social Media Agency & Otomatisasi Media Sosial",
+    "description": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis ke Instagram, Facebook, LinkedIn & TikTok dari satu input. Bayar sesuai pemakaian, tanpa langganan.",
+    "ogTitle": "Postmatic – AI Social Media Agency & Otomatisasi Media Sosial",
+    "ogDescription": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis ke Instagram, Facebook, LinkedIn & TikTok dari satu input. Bayar sesuai pemakaian, tanpa langganan.",
+    "twitterTitle": "Postmatic – AI Social Media Agency & Otomatisasi Media Sosial",
+    "twitterDescription": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis ke Instagram, Facebook, LinkedIn & TikTok dari satu input. Bayar sesuai pemakaian, tanpa langganan.",
+    "keywords": "AI social media agency, AI social media, social media automation, AI design, AI content generator, AI caption generator, social media management, auto posting, Instagram automation, TikTok automation, LinkedIn automation, pay as you go, otomatisasi media sosial, agensi media sosial AI, jasa sosial media AI, konten AI UMKM, desain AI, caption AI, auto posting Instagram, manajemen media sosial",
+    "privacyPolicyTitle": "Kebijakan Privasi - POSTMATIC",
+    "privacyPolicyDescription": "Kebijakan privasi POSTMATIC menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda.",
+    "termsTitle": "Syarat dan Ketentuan - POSTMATIC",
+    "termsDescription": "Syarat dan ketentuan penggunaan platform POSTMATIC untuk otomasi pemasaran digital.",
+    "cookiePolicyTitle": "Kebijakan Cookie - POSTMATIC",
+    "cookiePolicyDescription": "Kebijakan cookie POSTMATIC menjelaskan bagaimana kami menggunakan cookie di situs web kami.",
+    "dataDeletionTitle": "Penghapusan Data - POSTMATIC",
+    "dataDeletionDescription": "Informasi tentang cara menghapus data Anda dari platform POSTMATIC.",
+    "statusSystemTitle": "Status Sistem - POSTMATIC",
+    "statusSystemDescription": "Pantau status sistem dan layanan POSTMATIC secara real-time.",
+    "jsonLd": {
+      "description": "Postmatic adalah platform agensi media sosial AI untuk brand yang sedang bertumbuh dan UMKM. Dari satu kali input, Postmatic meriset tren, mendesain visual sesuai brand, menulis Caption, serta menjadwalkan dan memposting otomatis ke Instagram, Facebook, LinkedIn, dan TikTok. Bayar sesuai pemakaian, tanpa langganan.",
+      "knowsAbout": [
+        "Manajemen media sosial berbasis AI",
+        "Otomatisasi media sosial",
+        "Pembuatan konten dengan AI",
+        "Desain grafis dengan AI",
+        "Pemasaran media sosial untuk UMKM"
+      ],
+      "features": [
+        "Analisis tren AI untuk industri Anda",
+        "Pembuat konten dan desain visual AI",
+        "Pembuat Caption dan Hashtag AI sesuai gaya bahasa brand Anda",
+        "Penjadwalan dan posting otomatis",
+        "Kelola banyak brand dari satu Dashboard",
+        "Integrasi Instagram, Facebook, LinkedIn, dan TikTok",
+        "Token Pay As You Go dengan kredit uji coba gratis"
+      ],
+      "appSubCategory": "Manajemen & otomatisasi media sosial",
+      "appOfferDescription": "Termasuk token uji coba gratis; selanjutnya bayar sesuai pemakaian, sekitar Rp 2.000 per postingan yang dibuat. Tanpa langganan.",
+      "serviceName": "Agensi Media Sosial AI oleh Postmatic",
+      "serviceTypes": [
+        "Agensi media sosial AI",
+        "Manajemen media sosial berbasis AI",
+        "Otomatisasi media sosial",
+        "Desain dan pembuatan konten dengan AI",
+        "Penulisan Caption dengan AI",
+        "Posting media sosial otomatis"
+      ],
+      "audience": "Usaha kecil dan menengah, brand yang sedang bertumbuh, pemasar",
+      "serviceOfferDescription": "Sekitar Rp 2.000 per postingan yang dibuat, bayar sesuai pemakaian, dengan token uji coba gratis.",
+      "offerCatalogName": "Kemampuan Postmatic"
+    }
+  },
+  "landing": {
+    "hero": {
+      "label": "Otomatisasi Media Sosial AI Generasi Baru",
+      "lines": [
+        "Agensi AI untuk",
+        "Media Sosial",
+        "Brand Bertumbuh."
+      ],
+      "subtitle": "Platform AI otomatis untuk mengelola media sosial hanya dengan satu kali input.",
+      "getStarted": "Mulai Sekarang",
+      "watchTutorial": "Lihat Tutorial",
+      "scroll": "Gulir",
+      "cards": {
+        "lunara": "Kecantikan & Skincare",
+        "haycrisp": "Camilan & Makanan",
+        "sora": "Minuman & Kafe",
+        "almeira": "Fashion & Aksesori",
+        "namu": "Rumah & Dekorasi"
+      }
+    },
+    "logos": {
+      "line1": "Dipercaya 100+",
+      "line2": "perusahaan"
+    },
+    "features": {
+      "label": "Fitur Kami",
+      "fallbackTitle": "Apa itu Postmatic",
+      "description": "Postmatic adalah platform agensi media sosial AI yang menjalankan seluruh alur media sosial brand Anda dari awal hingga akhir: riset tren, desain konten dan Caption dengan AI, hingga posting otomatis terjadwal, semuanya dari satu kali input.",
+      "items": [
+        {
+          "id": "01",
+          "title": "Apa Itu Postmatic",
+          "description": "Platform otomatisasi media sosial berbasis AI end-to-end yang mengelola seluruh siklus media sosial brand Anda secara mandiri tanpa campur tangan manusia."
+        },
+        {
+          "id": "02",
+          "title": "Sekali Setup & Jadwal",
+          "description": "Cukup atur sekali, dan biarkan AI merencanakan serta menjadwalkan konten Anda secara otomatis untuk beberapa bulan ke depan."
+        },
+        {
+          "id": "03",
+          "title": "Analisis Tren",
+          "description": "AI secara aktif menganalisis tren terkini di industri Anda untuk memastikan konten selalu relevan dan menarik."
+        },
+        {
+          "id": "04",
+          "title": "Pembuat Konten & Caption AI",
+          "description": "Membuat visual menakjubkan dan caption yang dioptimalkan untuk engagement tinggi, disesuaikan dengan suara brand Anda."
+        }
+      ],
+      "videoTitle": "Video pengenalan Postmatic: The First AI Social Media Automation"
+    },
+    "problem": {
+      "label": "Tantangan Nyata",
+      "title": "Permasalahan",
+      "numberLocale": "id-ID",
+      "quote": "“Jaman 2010-2016 rame mas, 1 dino payu 10-15, saiki opo-opo wes digital/online kabeh, ibu wes tuwo rangerti carane promosi”",
+      "author": "— Ibu Asih (58 tahun, Yogyakarta)",
+      "stat1": {
+        "value": "83,46%",
+        "text": "UMKM tanpa keahlian desain atau copywriting",
+        "source": "(INDEF, 2024)"
+      },
+      "stat2": {
+        "value": "70%",
+        "text": "UMKM kekurangan waktu untuk kelola media sosial",
+        "source": "(Kemenkop, 2022)"
+      },
+      "limits": {
+        "title": "Keterbatasan Solusi Biasa",
+        "toolsTitle": "Alat AI Biasa:",
+        "tools": [
+          "Wajib mahir menulis Prompt",
+          "Pengaturan ulang setiap kali posting"
+        ],
+        "agencyTitle": "Agensi Konvensional:",
+        "agency": [
+          "Biaya tinggi (~Rp 4,5 jt/bulan)",
+          "Revisi & komunikasi lambat"
+        ]
+      },
+      "solution": {
+        "title": "Solusi Inklusif Postmatic",
+        "text": "Otomatisasi menyeluruh: <strong>sekali input Workspace, riset tren real-time</strong>, desain visual berstandar agensi, dan <strong>Posting Otomatis 100%</strong> langsung ke feed media sosial bisnis Anda."
+      },
+      "imageAlt": "Pasar tradisional"
+    },
+    "about": {
+      "label": "Tentang Postmatic",
+      "title": "Otomatisasi <hl>media sosial</hl><br></br> tanpa ribet untuk bisnis<br></br> Anda",
+      "description": "Platform AI yang otomatis membantu bisnis mengelola media sosial, mulai dari analisis tren, pembuatan konten, Caption, penjadwalan, hingga iklan otomatis, cukup dengan sekali input.",
+      "cta": "Coba Postmatic Gratis",
+      "cards": [
+        {
+          "title": "Input Pengetahuan Sekali Saja",
+          "description": "Sistem AI pintar yang bekerja 24/7. Hasilkan ide, tulis caption, dan jadwalkan postingan ke seluruh platform tanpa perlu memikirkan bahan promosi."
+        },
+        {
+          "title": "Jadwalkan Otomatis",
+          "description": "AI kami merancang visual statis dan video pendek (Reels/TikTok) sesuai standar industri, siap diunggah kapan saja."
+        },
+        {
+          "title": "Otomatisasi Media Sosial Anda",
+          "description": "Copywriting berkonversi tinggi yang otomatis disesuaikan dengan nada suara brand Anda di berbagai platform."
+        }
+      ]
+    },
+    "workflow": {
+      "label": "Alur Kerja Praktis",
+      "title": "Otomatisasi Konten <hl>dari Hulu ke Hilir</hl>",
+      "description": "AI menganalisis tren & mendesain visual → menyusun caption persuasif →<br></br> mempublikasikan ke media sosial → menyempurnakan siklus berikutnya dari data analitik."
+    },
+    "design": {
+      "title": "Desain untuk Tampil Beda",
+      "subtitle": "Anda yang buat, kami yang sempurnakan.",
+      "cta": "Mulai Sekarang",
+      "imageAlt": {
+        "eclatStory": "Story Instagram perhiasan emas Eclat Muse",
+        "bitesFeed": "Feed promo diskon akhir pekan Bites Daily",
+        "serasaFeed": "Feed testimoni pelanggan Serasa Scarf",
+        "kalderaStory": "Story Instagram kopi Kaldera Coffee",
+        "lunaraStory": "Story Instagram serum niacinamide Lunara Skin",
+        "moireFeed": "Feed padu padan kemeja Moire Studio",
+        "bundleFeed": "Feed bundel produk favorit minggu ini",
+        "arunaStory": "Story Instagram hunian Aruna Residence"
+      }
+    },
+    "testimonial": {
+      "label": "/TESTIMONI",
+      "prev": "Testimoni sebelumnya",
+      "next": "Testimoni berikutnya",
+      "screenAlt": "Feed Instagram {brand} yang dibuat dan diposting otomatis oleh Postmatic",
+      "logoAlt": "Logo {brand}",
+      "items": {
+        "almeira": {
+          "quote": "Dulu satu foto produk bisa makan waktu seharian. Sekarang feed Almeira selalu rapi dan konsisten, dan saya bisa fokus mengurus koleksi baru.",
+          "author": "Nadia Prameswari",
+          "role": "Founder, Almeira"
+        },
+        "serasa": {
+          "quote": "Postmatic paham karakter Serasa yang lembut dan elegan. Setiap konten terasa seperti dibuat oleh desainer kami sendiri.",
+          "author": "Aisyah Rahmawati",
+          "role": "Owner, Serasa Scarf"
+        },
+        "haycrisp": {
+          "quote": "Konten promo Haycrisp sekarang tayang setiap hari tanpa harus menyewa agensi. Tim kecil kami jadi bisa fokus ke produksi.",
+          "author": "Dimas Arya Saputra",
+          "role": "Founder, Haycrisp"
+        },
+        "lunara": {
+          "quote": "Visual skincare butuh kesan bersih dan premium. Postmatic menghasilkan desain yang sesuai standar brand kami sejak percobaan pertama.",
+          "author": "Clarissa Wijaya",
+          "role": "Brand Manager, Lunara Skin"
+        },
+        "sora": {
+          "quote": "Setiap menu baru langsung punya feed dan story yang siap tayang. Pelanggan sering bilang Instagram kami terlihat seperti kafe besar.",
+          "author": "Kevin Hartono",
+          "role": "Co-Founder, Sora Matcha"
+        },
+        "eclat": {
+          "quote": "Perhiasan itu soal detail. Saya kaget desain dari Postmatic bisa menonjolkan kilau produk tanpa terlihat berlebihan.",
+          "author": "Amanda Kusuma",
+          "role": "Founder, Eclat Muse"
+        },
+        "namu": {
+          "quote": "Postmatic membantu Namu Home bercerita lewat suasana, bukan cuma produk. Jadwal posting otomatisnya juga sangat menghemat waktu.",
+          "author": "Rina Anggraini",
+          "role": "Owner, Namu Home"
+        },
+        "moire": {
+          "quote": "Kami merilis koleksi baru setiap bulan. Dengan Postmatic, satu kali input brief sudah cukup untuk konten sebulan penuh.",
+          "author": "Bagas Pratama",
+          "role": "Creative Director, Moire Studio"
+        },
+        "kaldera": {
+          "quote": "Mengurus kedai sambil membuat konten itu melelahkan. Sekarang Instagram Kaldera tetap aktif walau saya sibuk di belakang bar.",
+          "author": "Fajar Nugroho",
+          "role": "Owner, Kaldera Coffee"
+        },
+        "aruna": {
+          "quote": "Untuk properti, kesan pertama sangat penting. Postmatic membuat setiap unit Aruna tampil meyakinkan di feed dan story kami.",
+          "author": "Stefani Halim",
+          "role": "Marketing Lead, Aruna Residence"
+        }
+      },
+      "roleDescription": "karusel",
+      "autoPosted": "automated by postmatic"
+    },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "(Jawaban atas pertanyaan Anda)",
+      "items": [
+        {
+          "question": "Bagaimana cara Postmatic membantu promosi bisnis saya?",
+          "answer": "Postmatic secara otomatis menghasilkan ide konten, menulis Caption persuasif dengan berbagai gaya bahasa, mendesain materi visual promosi yang siap diposting, lalu menjadwalkannya langsung ke akun media sosial Anda dalam hitungan menit, tanpa perlu keahlian desain."
+        },
+        {
+          "question": "Apakah ada biaya langganan bulanan?",
+          "answer": "Tidak. Postmatic menggunakan sistem Pay As You Go: Anda hanya membayar token yang Anda gunakan."
+        },
+        {
+          "question": "Apakah saya bisa mencoba Postmatic secara gratis?",
+          "answer": "Ya, kami memberikan token gratis untuk pengguna baru agar dapat mencoba berbagai fitur utama Postmatic."
+        },
+        {
+          "question": "Apakah hasil konten dan visual dijamin unik untuk brand saya?",
+          "answer": "Tentu. AI kami mempelajari identitas brand Anda dan menghasilkan konten serta visual yang 100% orisinal dan unik untuk bisnis Anda."
+        },
+        {
+          "question": "Bagaimana jika saldo token saya habis?",
+          "answer": "Anda dapat mengisi ulang (top-up) token kapan saja melalui Dashboard tanpa harus berlangganan bulanan."
+        },
+        {
+          "question": "Platform media sosial apa saja yang didukung?",
+          "answer": "Saat ini kami mendukung Instagram, Facebook, LinkedIn, dan TikTok. Platform lain akan segera ditambahkan."
+        }
+      ]
+    },
+    "pricing": {
+      "label": "Skema Harga Fleksibel",
+      "title": "Pay As You Go",
+      "brand": "postmatic",
+      "plan": "pay as you go",
+      "contentCount": "{count} Konten",
+      "estimate": "Estimasi Total Biaya",
+      "perContent": "Rp {price} / konten",
+      "adjust": "Sesuaikan jumlah konten",
+      "cta": "Mulai Gratis 30.000 Token",
+      "features": [
+        {
+          "title": "Tanpa Biaya Langganan",
+          "description": "Tanpa biaya bulanan atau kontrak mengikat. Anda hanya membayar apa yang Anda gunakan melalui sistem token yang transparan."
+        },
+        {
+          "title": "Kendali Penuh & Transparan",
+          "description": "Kendali penuh atas penggunaan saldo token secara real-time. Saldo token tidak pernah hangus selama akun Anda aktif."
+        },
+        {
+          "title": "Akses Semua Platform",
+          "description": "Akses penuh ke semua platform media sosial teratas seperti Instagram, Facebook, LinkedIn, dan TikTok tanpa biaya tambahan."
+        }
+      ],
+      "normalPriceLabel": "Harga normal:",
+      "currentPriceLabel": "Harga sekarang:",
+      "save": "Hemat {percent}%"
+    },
+    "cta": {
+      "title": "Pilih Paket yang Tepat untuk Bisnis Anda",
+      "description": "Gunakan Postmatic dan rasakan bagaimana AI dapat mengubah cara Anda berbisnis. Tingkatkan engagement hingga 156% dalam 30 hari pertama!",
+      "button": "Mulai Sekarang",
+      "getStarted": "Mulai Sekarang",
+      "contactWa": "Hubungi Kami (WA)"
+    },
+    "footer": {
+      "description": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis untuk brand yang bertumbuh, semua dari satu kali input.",
+      "rights": "Hak cipta dilindungi.",
+      "privacy": "Kebijakan Privasi",
+      "terms": "Syarat Layanan",
+      "cookie": "Kebijakan Cookie",
+      "security": "Keamanan",
+      "navigation": "Navigasi",
+      "home": "Beranda",
+      "about": "Tentang",
+      "features": "Fitur",
+      "pricing": "Harga",
+      "docs": "Dokumentasi",
+      "faq": "FAQ",
+      "resource": "Sumber Daya",
+      "community": "Komunitas",
+      "helpCenter": "Pusat Bantuan",
+      "contact": "Kontak",
+      "location": "Yogyakarta, Indonesia",
+      "emailLabel": "Email",
+      "whatsappLabel": "WhatsApp",
+      "locationLabel": "Lokasi",
+      "homeAriaLabel": "Postmatic — beranda"
+    }
+  },
+  "notFound": {
+    "metaTitle": "Halaman tidak ditemukan | Postmatic",
+    "label": "Kesalahan 404",
+    "title": "Halaman ini terbang keluar jalur.",
+    "description": "Halaman yang Anda cari tidak ada, sudah dipindahkan, atau tautannya rusak. Yuk, kembali ke jalur yang benar.",
+    "home": "Kembali ke Beranda",
+    "contact": "Hubungi Kami",
+    "orVisit": "Atau kunjungi",
+    "cardLabel": "Ups!",
+    "cardCaption": "Halaman tidak ditemukan",
+    "links": {
+      "features": "Fitur",
+      "pricing": "Harga",
+      "faq": "FAQ"
+    }
+  },
+  "errorPage": {
+    "label": "Terjadi kesalahan",
+    "title": "Halaman gagal dimuat",
+    "description": "Maaf, ada gangguan saat menampilkan halaman ini. Silakan coba lagi.",
+    "retry": "Coba Lagi",
+    "home": "Ke Beranda"
+  },
+  "languageToggle": {
+    "label": "Pilih Bahasa",
+    "triggerAriaLabel": "{language} – pilih bahasa"
+  },
+  "themeToggle": {
+    "label": "Ganti tema"
+  },
+  "comingSoon": {
+    "title": "Segera Hadir",
+    "description": "Kami sedang membangun sesuatu yang luar biasa. Nantikan pembaruan real-time, Dashboard yang menawan, dan insight secepat kilat."
   }
 }

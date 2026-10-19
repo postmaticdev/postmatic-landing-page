@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Accordion,
   AccordionItem,
@@ -6,7 +7,31 @@ import {
 } from "@/components/ui/accordion";
 import { getMobileMargins } from "@/lib/utils";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { allLocales, generateAlternates } from "@/lib/seo";
+import { LANDINGPAGE_URL } from "@/constants";
+import { Locale } from "@/i18n/routing";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: tMeta("termsTitle"),
+    description: tMeta("termsDescription"),
+    alternates: generateAlternates("/terms-of-service", locale),
+    openGraph: {
+      title: tMeta("termsTitle"),
+      description: tMeta("termsDescription"),
+      url: `${LANDINGPAGE_URL}/${locale}/terms-of-service`,
+      type: "website",
+    },
+  };
+}
 
 interface TermsContent {
   type: "text" | "list";
@@ -19,8 +44,18 @@ interface TermsSection {
   content: TermsContent[];
 }
 
-export default function TermsOfServicePage() {
-  const t = useTranslations('termsOfService');
+export function generateStaticParams() {
+  return allLocales.map((locale) => ({ locale }));
+}
+
+export default async function TermsOfServicePage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("termsOfService");
   const tocSections = t.raw('sections') as TermsSection[];
 
   return (

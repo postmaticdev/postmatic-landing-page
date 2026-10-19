@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Accordion,
   AccordionItem,
@@ -6,7 +7,31 @@ import {
 } from "@/components/ui/accordion";
 import { getMobileMargins } from "@/lib/utils";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { allLocales, generateAlternates } from "@/lib/seo";
+import { LANDINGPAGE_URL } from "@/constants";
+import { Locale } from "@/i18n/routing";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: tMeta("privacyPolicyTitle"),
+    description: tMeta("privacyPolicyDescription"),
+    alternates: generateAlternates("/privacy-policy", locale),
+    openGraph: {
+      title: tMeta("privacyPolicyTitle"),
+      description: tMeta("privacyPolicyDescription"),
+      url: `${LANDINGPAGE_URL}/${locale}/privacy-policy`,
+      type: "website",
+    },
+  };
+}
 
 interface PrivacyDescription {
   type: "bold" | "text" | "list";
@@ -19,8 +44,18 @@ interface PrivacySection {
   description: PrivacyDescription[];
 }
 
-export default function PrivacyPolicyPage() {
-  const t = useTranslations('privacyPolicy');
+export function generateStaticParams() {
+  return allLocales.map((locale) => ({ locale }));
+}
+
+export default async function PrivacyPolicyPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("privacyPolicy");
   const privacySections = t.raw('sections') as PrivacySection[];
 
   return (

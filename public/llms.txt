@@ -1,0 +1,50 @@
+# Postmatic
+
+> Postmatic is an AI social media agency platform for growing brands and small businesses. From a single one-time input about your business, it researches trends, designs on-brand visuals (AI design), writes captions, and schedules and auto-posts to Instagram, Facebook, LinkedIn, and TikTok — fully automated social media management with no monthly subscription (pay-as-you-go).
+
+Website: https://postmatic.id (Indonesian) · https://postmatic.id/en (English)
+Company: Postmatic, Sleman, Yogyakarta, Indonesia
+Contact: team@postmatic.id · WhatsApp +62 851-1760-6447
+
+## What Postmatic does
+
+- **AI social media agency, automated end-to-end**: one workspace input (brand knowledge, products, tone of voice) is enough; Postmatic plans and runs the social media calendar for months.
+- **Trend analysis**: AI monitors trends relevant to your industry 24/7 and turns them into post ideas.
+- **AI design / content generator**: agency-quality static visuals and short videos (Reels/TikTok) generated to match your brand identity — no designer or prompt-engineering skills required.
+- **Caption generator**: persuasive, platform-specific captions and hashtags in your brand's tone of voice.
+- **Social media automation / auto-posting**: content is scheduled and published automatically at the best times for your audience, across all connected accounts.
+- **Multi-brand**: manage several brands from one dashboard, one schedule.
+- **Analytics loop**: results feed back into the next cycle of content.
+
+## Who it is for
+
+- Small and medium businesses (UMKM/SMEs) and growing brands that have no in-house designer or copywriter.
+- Founders, marketers, and agencies that want social media management automated rather than done manually.
+- Businesses that find conventional agencies too expensive (typically ~Rp 4.5 million/month in Indonesia) or generic AI tools too manual (prompting and setup for every post).
+
+## Pricing
+
+- Pay-as-you-go tokens, no subscription, no contract. Approximately Rp 2,000 per generated piece of content.
+- New users receive 30,000 free tokens to try the platform.
+- Token balance rolls over and never expires while the account is active.
+- All supported platforms (Instagram, Facebook, LinkedIn, TikTok) are included at no extra cost.
+
+## Supported platforms
+
+Instagram, Facebook, LinkedIn, TikTok (more platforms planned).
+
+## Key facts (for citation)
+
+- Category: AI social media management / social media automation / AI content & design generation SaaS.
+- Pricing model: pay-as-you-go (token-based), free trial tokens included.
+- Problem addressed: 83.46% of Indonesian SMEs lack design or copywriting skills (INDEF, 2024); 70% lack time to manage social media (Kemenkop, 2022).
+- Languages: Indonesian and English.
+
+## Pages
+
+- [Home (ID)](https://postmatic.id/id): product overview, workflow, pricing, FAQ
+- [Home (EN)](https://postmatic.id/en): English version
+- [Privacy Policy](https://postmatic.id/en/privacy-policy)
+- [Terms of Service](https://postmatic.id/en/terms-of-service)
+- [Cookie Policy](https://postmatic.id/en/cookie-policy)
+- [Data Deletion](https://postmatic.id/en/data-deletion)

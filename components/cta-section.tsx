@@ -1,99 +1,57 @@
-"use client";
-
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { SIGNUP_URL } from "@/constants";
-import { getContainerMargins } from "@/lib/utils";
-import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { LOGIN_URL, WHATSAPP_URL } from "@/constants";
+import { getTranslations } from "next-intl/server";
 
-export default function CTASection() {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Handle hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Use resolvedTheme for more accurate theme detection
-  const isDark = mounted ? resolvedTheme === "dark" : false;
-  const t = useTranslations("ctaSection");
-
-  // ganti konstanta EMAIL_CTA jadi mailto:
-  const EMAIL_TO = "team@postmatic.id";
-  const SUBJECT = "Halo Postmatic";
-  const BODY = `Halo tim Postmatic,
-
-Saya tertarik untuk menggunakan layanan Anda, tolong berikan informasi lebih lanjut.`;
-
-  const EMAIL_CTA = `mailto:${EMAIL_TO}?subject=${encodeURIComponent(
-    SUBJECT
-  )}&body=${encodeURIComponent(BODY)}`;
-
+function WhatsAppIcon({ className }: { className?: string }) {
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-24 h-24 bg-white/10 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute top-40 right-1/4 w-16 h-16 bg-white/10 rounded-full animate-pulse delay-500"></div>
-      </div>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
+      <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.31l-.35-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.43 9.45-9.43a9.4 9.4 0 0 1 6.68 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.45 9.43zm8.04-17.47A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.67 12.06c0 2 .52 3.96 1.52 5.68L.57 23.7l6.1-1.6a11.33 11.33 0 0 0 5.37 1.37h.01c6.27 0 11.37-5.1 11.38-11.37a11.3 11.3 0 0 0-3.34-8.06z" />
+    </svg>
+  );
+}
 
-      <div className={cn(getContainerMargins(), "relative z-10")}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-            {t("title")} <br />
-            <span className="text-yellow-300 drop-shadow-sm">
-              {t("titleHighlight")}
-            </span>{" "}
-            {t("subtitle")}?
-          </h2>
+export default async function CtaSection() {
+  const t = await getTranslations("landing.cta");
+  return (
+    <section className="w-full py-16 md:py-32 font-sans px-4 sm:px-6 lg:px-8">
+      <div data-scale-in="0.84" className="max-w-7xl mx-auto rounded-[2.5rem] bg-gradient-to-r from-[#1875FF] to-[#002688] flex flex-col items-center justify-center text-center px-6 py-16 md:py-24 md:px-12 shadow-2xl shadow-blue-900/20 will-change-transform">
+        <div data-reveal-stagger="0.2" className="flex flex-col items-center w-full">
+        
+        {/* Heading */}
+        <h2 className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-6 leading-[1.2] max-w-3xl tracking-tight">
+          {t("title")}
+        </h2>
+        
+        {/* Subheading */}
+        <p className="text-white/90 text-[13px] md:text-base lg:text-lg font-medium leading-relaxed max-w-2xl mb-10">
+          {t("description")}
+        </p>
+        
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
+          {/* Get Started Button */}
+          <Link
+            href={LOGIN_URL}
+            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#F0F5FF] hover:bg-white text-[#0066FF] px-8 py-4 md:py-3.5 rounded-full font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 group shadow-xl shadow-black/10 whitespace-nowrap"
+          >
+            <span>{t("getStarted")}</span>
+            <ChevronRight className="w-4 h-4 text-[#0066FF] group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
+          </Link>
 
-          <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-            {t("cta")}
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-row gap-3 sm:gap-4 justify-center items-center mb-8">
-            <a href={EMAIL_CTA} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-secondary text-white text-sm sm:text-base font-semibold px-6 sm:px-8 py-3 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 border-0 min-w-[140px] sm:min-w-[160px]">
-                {t("contactUs")}
-              </Button>
-            </a>
-
-            <Link href={SIGNUP_URL}>
-              <Button className="bg-white text-primary hover:bg-gray-100 text-sm sm:text-base font-semibold px-6 sm:px-8 py-3 h-auto rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 border-0 min-w-[140px] sm:min-w-[160px]">
-                {t("getStarted")}
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
-            </Link>
-          </div>
+          {/* Contact Us (WA) Button */}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white px-8 py-4 md:py-3.5 rounded-full font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 group shadow-xl shadow-black/10 whitespace-nowrap"
+          >
+            <WhatsAppIcon className="w-5 h-5 fill-white shrink-0" />
+            <span>{t("contactWa")}</span>
+          </a>
         </div>
-      </div>
+        </div>
 
-      {/* Bottom wave */}
-      <div className="absolute bottom-[-1px] left-0 right-0 z-0">
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {isDark ? (
-            <path
-              d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-              fill="#101828"
-            />
-          ) : (
-            <path
-              d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-              fill="#f5f5f5"
-            />
-          )}
-        </svg>
       </div>
     </section>
   );
