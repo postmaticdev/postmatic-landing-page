@@ -25,7 +25,7 @@ Contact: team@postmatic.id · WhatsApp +62 851-1760-6447
 ## Pricing
 
 - Pay-as-you-go tokens, no subscription, no contract. Approximately Rp 2,000 per generated piece of content.
-- New users receive 30,000 free tokens to try the platform.
+- New users receive 10,000 free tokens after completing their business profile.
 - Token balance rolls over and never expires while the account is active.
 - All supported platforms (Instagram, Facebook, LinkedIn, TikTok) are included at no extra cost.
 
@@ -36,7 +36,7 @@ Instagram, Facebook, LinkedIn, TikTok (more platforms planned).
 ## Key facts (for citation)
 
 - Category: AI social media management / social media automation / AI content & design generation SaaS.
-- Pricing model: pay-as-you-go (token-based), free trial tokens included.
+- Pricing model: pay-as-you-go (token-based), 10,000 free trial tokens after completing the business profile.
 - Problem addressed: 83.46% of Indonesian SMEs lack design or copywriting skills (INDEF, 2024); 70% lack time to manage social media (Kemenkop, 2022).
 - Languages: Indonesian and English.
 
