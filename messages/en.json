@@ -1114,11 +1114,13 @@
       "watchTutorial": "Watch Tutorial",
       "scroll": "Scroll",
       "cards": {
+        "eclat": "Jewelry & Accessories",
         "lunara": "Beauty & Skincare",
         "haycrisp": "Snacks & Food",
         "sora": "Drinks & Cafe",
         "almeira": "Fashion & Accessories",
-        "namu": "Home & Living"
+        "namu": "Home & Living",
+        "moire": "Fashion & Apparel"
       }
     },
     "logos": {
@@ -1288,7 +1290,7 @@
         }
       },
       "roleDescription": "carousel",
-      "autoPosted": "automated by postmatic"
+      "autoPosted": "Automated by Postmatic.id"
     },
     "faq": {
       "title": "FAQ",

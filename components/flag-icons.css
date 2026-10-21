@@ -16,11 +16,11 @@
   content: " ";
 }
 .fi-id {
-  background-image: url("../node_modules/flag-icons/flags/4x3/id.svg");
+  background-image: url("/flags/id.svg");
 }
 .fi-us {
-  background-image: url("../node_modules/flag-icons/flags/4x3/us.svg");
+  background-image: url("/flags/us.svg");
 }
 .fi-xx {
-  background-image: url("../node_modules/flag-icons/flags/4x3/xx.svg");
+  background-image: url("/flags/xx.svg");
 }

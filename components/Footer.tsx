@@ -61,17 +61,16 @@ export default function Footer() {
   }, []);
 
   const isDark = mounted ? resolvedTheme === "dark" : false;
-  const phoneDigits = PHONE_NUMBER.replace(/[^\d+]/g, "");
 
   return (
     <footer className="w-full bg-white dark:bg-[#0A0A0A] font-sans border-t border-neutral-100 dark:border-neutral-900 pt-16 md:pt-24 pb-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Top Section */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:flex lg:flex-row justify-between lg:gap-8 mb-12 lg:mb-16">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:flex lg:flex-row justify-between lg:gap-12 mb-12 lg:mb-16">
 
           {/* Column 1: Brand & Description */}
-          <div className="col-span-2 w-full lg:w-1/3 flex flex-col gap-6">
+          <div className="col-span-2 w-full lg:max-w-sm flex flex-col gap-6">
             <Link href="/" aria-label={t("homeAriaLabel")} className="inline-flex min-h-11 items-center gap-2.5 self-start">
               <span className="relative w-8 h-8 shrink-0">
                 {mounted && (
@@ -110,7 +109,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Navigation (mirrors the navbar) */}
-          <nav aria-label={t("navigation")} className="w-full lg:w-[15%] flex flex-col gap-0 lg:gap-5">
+          <nav aria-label={t("navigation")} className="w-full lg:w-auto flex flex-col gap-0 lg:gap-5">
             <h3 className={headCls}>{t("navigation")}</h3>
             <Link href="/#home" className={linkCls}>{t("home")}</Link>
             <Link href="/#about" className={linkCls}>{t("about")}</Link>
@@ -119,7 +118,7 @@ export default function Footer() {
           </nav>
 
           {/* Column 3: Resource */}
-          <div className="w-full lg:w-[15%] flex flex-col gap-0 lg:gap-5">
+          <div className="w-full lg:w-auto flex flex-col gap-0 lg:gap-5">
             <h3 className={headCls}>{t("resource")}</h3>
             <a href={COMMUNITY_URL} target="_blank" rel="noopener noreferrer" className={linkCls}>{t("community")}</a>
             <a href="https://docs.postmatic.id/" target="_blank" rel="noopener noreferrer" className={linkCls}>{t("docs")}</a>
@@ -127,7 +126,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Contact */}
-          <address className="col-span-2 not-italic w-full lg:w-[32%] flex flex-col gap-0 lg:gap-5">
+          <address className="col-span-2 not-italic w-full lg:w-auto flex flex-col gap-0 lg:gap-5">
             <h3 className={headCls}>{t("contact")}</h3>
             <a href={`mailto:${EMAIL}`} className={`${linkCls} flex items-center gap-3`}>
               <Mail className="w-5 h-5 shrink-0 text-[#0066FF]" aria-label={t("emailLabel")} />
@@ -135,7 +134,7 @@ export default function Footer() {
             </a>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`${linkCls} flex items-center gap-3`}>
               <WhatsAppIcon className="w-5 h-5 shrink-0 text-[#0066FF]" />
-              <span><span className="sr-only">{t("whatsappLabel")}: </span>{phoneDigits}</span>
+              <span><span className="sr-only">{t("whatsappLabel")}: </span>{PHONE_NUMBER}</span>
             </a>
             <p className={`${linkCls} flex items-center gap-3 hover:text-neutral-500`}>
               <MapPin className="w-5 h-5 shrink-0 text-[#0066FF]" aria-label={t("locationLabel")} />

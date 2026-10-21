@@ -10,20 +10,36 @@ import { useTranslations } from "next-intl";
 import { gsap, prefersReducedMotion, PIN_PRIORITY, HERO_PIN_SCROLL } from "@/lib/gsap";
 
 const cards = [
-  { title: "Lunara Skin", subtitleKey: "lunara", image: "/content/dummy/Feeds/lunara-skin-3-langkah.png", zIndex: 10 },
-  { title: "Haycrisp", subtitleKey: "haycrisp", image: "/content/dummy/Feeds/haycrisp-balado-lime.png", zIndex: 20 },
-  { title: "Sora Matcha", subtitleKey: "sora", image: "/content/dummy/Feeds/sora-strawberry-matcha.png", zIndex: 30 },
-  { title: "Almeira", subtitleKey: "almeira", image: "/content/dummy/Feeds/almeira-everyday-bag.png", zIndex: 20 },
-  { title: "Namu Home", subtitleKey: "namu", image: "/content/dummy/Feeds/namu-slow-living.png", zIndex: 10 },
+  { title: "Eclat Muse", subtitleKey: "eclat", image: "/content/dummy/Feeds/eclat-muse-detail-kecil.png", zIndex: 10 },
+  { title: "Lunara Skin", subtitleKey: "lunara", image: "/content/dummy/Feeds/lunara-skin-3-langkah.png", zIndex: 20 },
+  { title: "Haycrisp", subtitleKey: "haycrisp", image: "/content/dummy/Feeds/haycrisp-balado-lime.png", zIndex: 30 },
+  { title: "Sora Matcha", subtitleKey: "sora", image: "/content/dummy/Feeds/sora-strawberry-matcha.png", zIndex: 40 },
+  { title: "Almeira", subtitleKey: "almeira", image: "/content/dummy/Feeds/almeira-everyday-bag.png", zIndex: 30 },
+  { title: "Namu Home", subtitleKey: "namu", image: "/content/dummy/Feeds/namu-slow-living.png", zIndex: 20 },
+  { title: "Moire Studio", subtitleKey: "moire", image: "/content/dummy/Feeds/moire-1-kemeja-3-look.png", zIndex: 10 },
 ];
 
+type Fan = { x: number[]; y: number[]; r: number[] };
+
 // Fan layout (open state)
-const OPEN = {
-  desktop: { x: [-360, -180, 0, 180, 360], y: [80, 30, 0, 30, 80], r: [-16, -8, 0, 8, 16] },
-  mobile: { x: [-110, -55, 0, 55, 110], y: [50, 15, 0, 15, 50], r: [-16, -8, 0, 8, 16] },
+const OPEN: Record<"desktop" | "mobile", Fan> = {
+  desktop: {
+    x: [-480, -320, -160, 0, 160, 320, 480],
+    y: [140, 70, 22, 0, 22, 70, 140],
+    r: [-24, -16, -8, 0, 8, 16, 24],
+  },
+  mobile: {
+    x: [-135, -90, -45, 0, 45, 90, 135],
+    y: [85, 40, 12, 0, 12, 40, 85],
+    r: [-24, -16, -8, 0, 8, 16, 24],
+  },
 };
-// Deck layout (closed state): a tidy stack with the edges just peeking out
-const CLOSED = { x: [-14, -7, 0, 7, 14], y: [10, 5, 0, 5, 10], r: [-4, -2, 0, 2, 4] };
+// Starting layout: the fan already half open, scroll opens it the rest of the way
+const halfOpen = (fan: Fan): Fan => ({
+  x: fan.x.map((v) => v * 0.5),
+  y: fan.y.map((v) => v * 0.5),
+  r: fan.r.map((v) => v * 0.5),
+});
 
 export default function Hero() {
   const t = useTranslations("landing.hero");
@@ -44,13 +60,14 @@ export default function Hero() {
         { desktop: "(min-width: 768px)", mobile: "(max-width: 767px)" },
         (ctx) => {
           const open = ctx.conditions?.desktop ? OPEN.desktop : OPEN.mobile;
+          const half = halfOpen(open);
 
-          // ── Initial state: closed deck ──
+          // ── Initial state: half-open fan ──
           gsap.set(cardEls, {
             xPercent: -50,
-            x: (i) => CLOSED.x[i],
-            y: (i) => CLOSED.y[i],
-            rotation: (i) => CLOSED.r[i],
+            x: (i) => half.x[i],
+            y: (i) => half.y[i],
+            rotation: (i) => half.r[i],
             transformOrigin: "50% 100%",
             force3D: true,
           });
@@ -224,7 +241,7 @@ export default function Hero() {
         </div>
 
         {/* Bottom Fade Gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-[140px] sm:h-[260px] bg-gradient-to-t from-white from-15% via-white/85 via-55% to-transparent dark:from-[#0A0A0A] dark:from-15% dark:via-[#0A0A0A]/85 dark:via-55% z-[100] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-[110px] sm:h-[190px] bg-gradient-to-t from-white from-45% via-white/80 via-70% to-transparent dark:from-[#0A0A0A] dark:from-45% dark:via-[#0A0A0A]/80 dark:via-70% z-[100] pointer-events-none"></div>
       </div>
     </section>
   );

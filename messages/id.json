@@ -1114,11 +1114,13 @@
       "watchTutorial": "Lihat Tutorial",
       "scroll": "Gulir",
       "cards": {
+        "eclat": "Perhiasan & Aksesori",
         "lunara": "Kecantikan & Skincare",
         "haycrisp": "Camilan & Makanan",
         "sora": "Minuman & Kafe",
         "almeira": "Fashion & Aksesori",
-        "namu": "Rumah & Dekorasi"
+        "namu": "Rumah & Dekorasi",
+        "moire": "Fashion & Pakaian"
       }
     },
     "logos": {
@@ -1288,7 +1290,7 @@
         }
       },
       "roleDescription": "karusel",
-      "autoPosted": "automated by postmatic"
+      "autoPosted": "Automated by Postmatic.id"
     },
     "faq": {
       "title": "FAQ",
