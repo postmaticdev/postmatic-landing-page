@@ -12,6 +12,7 @@ import MobileNavWrapper from "@/components/navbar";
 import { LOGIN_URL, LANDINGPAGE_URL } from "@/constants";
 import Footer from "@/components/Footer";
 import CookieConsentPopup from "@/components/cookie-consent-popup";
+import { HapticsListener } from "@/components/haptics-listener";
 import { IMAGE_PATH } from "@/constants/path-file";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -141,6 +142,7 @@ export default async function RootLayout({
             {children}
             <Footer />
             <CookieConsentPopup />
+            <HapticsListener />
           </SmoothScrollProvider>
           </ThemeProvider>
         </NextIntlClientProvider>

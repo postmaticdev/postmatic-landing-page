@@ -46,6 +46,15 @@ const SOCIALS: Array<{ href: string; label: string; icon: ReactNode }> = [
   { href: TWITTER, label: "X", icon: <XIcon className="w-[18px] h-[18px]" /> },
 ].filter((s) => isSet(s.href));
 
+// Lima dokumen legal; isinya ada di lib/legal.
+const LEGAL_LINKS = [
+  { href: "/terms-and-conditions", labelKey: "termsConditions" },
+  { href: "/terms-of-service", labelKey: "terms" },
+  { href: "/privacy-policy", labelKey: "privacy" },
+  { href: "/data-deletion", labelKey: "dataDeletion" },
+  { href: "/cookie-policy", labelKey: "cookie" },
+] as const;
+
 const linkCls =
   "inline-flex min-h-11 items-center lg:min-h-0 text-[15px] text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors";
 const headCls = "font-bold text-neutral-900 dark:text-white mb-1 lg:mb-2";
@@ -155,9 +164,15 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-0 lg:gap-6">
             <LanguageToggle />
-            <Link href="/privacy-policy" className="inline-flex min-h-11 items-center md:min-h-0 text-[13px] text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white transition-colors">{t("privacy")}</Link>
-            <Link href="/terms-of-service" className="inline-flex min-h-11 items-center md:min-h-0 text-[13px] text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white transition-colors">{t("terms")}</Link>
-            <Link href="/cookie-policy" className="inline-flex min-h-11 items-center md:min-h-0 text-[13px] text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white transition-colors">{t("cookie")}</Link>
+            {LEGAL_LINKS.map(({ href, labelKey }) => (
+              <Link
+                key={href}
+                href={href}
+                className="inline-flex min-h-11 items-center md:min-h-0 text-[13px] text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white transition-colors"
+              >
+                {t(labelKey)}
+              </Link>
+            ))}
           </div>
         </div>
 
