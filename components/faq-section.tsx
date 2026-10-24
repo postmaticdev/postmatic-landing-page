@@ -35,7 +35,7 @@ const defaultFaqItems: FAQItem[] = [
   {
     question: "Apakah Postmatic.id terintegrasi dengan berbagai media sosial?",
     answer:
-      "Ya, Postmatic.id mendukung integrasi langsung dengan platform media sosial populer seperti Instagram, Facebook, TikTok, WhatsApp, dan LinkedIn.",
+      "Ya, Postmatic.id terhubung langsung dengan Instagram, Facebook, dan LinkedIn untuk menjadwalkan dan memposting konten secara otomatis.",
   },
   {
     question: "Apakah Postmatic.id cocok untuk bisnis UMKM?",

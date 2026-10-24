@@ -204,7 +204,6 @@ export default function WhatIsPostmatic() {
                 referrerPolicy="strict-origin-when-cross-origin"
                 onLoad={onVideoLoad}
                 allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                allowFullScreen
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-0 w-[max(100%,calc(100cqh*16/9))] h-[max(100%,calc(100cqw*9/16))] lg:w-full lg:h-full"
               />
             )}

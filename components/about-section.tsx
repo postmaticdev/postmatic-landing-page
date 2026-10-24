@@ -150,10 +150,13 @@ export default function AboutSection() {
   );
 
   return (
-    <section ref={sectionRef} id="about" className="scroll-mt-24 w-full py-16 md:py-24 font-sans overflow-hidden md:min-h-screen md:flex md:flex-col md:justify-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    // Desktop: the section is pinned at the top of the viewport, so it is exactly
+    // one screen tall (top padding clears the floating navbar) and the cards take
+    // the remaining height. Nothing is cut off at any window size or zoom level.
+    <section ref={sectionRef} id="about" className="scroll-mt-24 w-full py-16 font-sans overflow-hidden md:h-svh md:min-h-[600px] md:flex md:flex-col md:pt-28 md:pb-10">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 md:flex-1 md:min-h-0 md:flex md:flex-col md:justify-center">
         {/* Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 mb-12">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 mb-12 md:mb-8 md:shrink-0">
           <div data-reveal="blur" className="max-w-3xl">
             <p className="text-[#0066FF] text-xs font-bold tracking-widest uppercase mb-4">
               {t("label")}
@@ -193,7 +196,7 @@ export default function AboutSection() {
         </div>
 
         {/* Expanding Cards Area */}
-        <div ref={cardsRef} data-tilt className="flex flex-col md:flex-row gap-3 md:gap-4 h-[min(640px,calc(100svh-104px))] md:h-[min(500px,55vh)] w-full">
+        <div ref={cardsRef} data-tilt className="flex flex-col md:flex-row gap-3 md:gap-4 h-[min(640px,calc(100svh-104px))] md:h-auto md:flex-1 md:min-h-[220px] md:max-h-[520px] w-full">
           {cards.map((card, index) => {
             const isActive = activeCard === index;
             return (

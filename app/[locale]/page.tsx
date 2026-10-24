@@ -94,10 +94,11 @@ export async function generateMetadata({
       creator: "@postmatic_id",
       site: "@postmatic_id",
     },
+    // No `nocache`: Bing treats it like noarchive and then only uses the URL,
+    // title, and snippet in Copilot answers instead of the page content.
     robots: {
       index: true,
       follow: true,
-      nocache: true,
       googleBot: {
         index: true,
         follow: true,

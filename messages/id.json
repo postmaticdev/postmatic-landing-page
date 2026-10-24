@@ -64,7 +64,7 @@
       },
       {
         "question": "Apakah Postmatic.id terintegrasi dengan berbagai media sosial?",
-        "answer": "Ya, Postmatic.id mendukung integrasi langsung dengan platform media sosial populer seperti Instagram, Facebook, TikTok, WhatsApp, dan LinkedIn."
+        "answer": "Ya, Postmatic.id terhubung langsung dengan Instagram, Facebook, dan LinkedIn untuk menjadwalkan dan memposting konten secara otomatis."
       },
       {
         "question": "Apakah Postmatic.id cocok untuk bisnis UMKM?",
@@ -518,12 +518,12 @@
   },
   "metadata": {
     "title": "Postmatic – AI Social Media Agency & Otomatisasi Media Sosial",
-    "description": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis ke Instagram, Facebook, LinkedIn & TikTok dari satu input. Bayar sesuai pemakaian, tanpa langganan.",
+    "description": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis ke Instagram, Facebook & LinkedIn dari satu input. Bayar sesuai pemakaian, tanpa langganan.",
     "ogTitle": "Postmatic – AI Social Media Agency & Otomatisasi Media Sosial",
-    "ogDescription": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis ke Instagram, Facebook, LinkedIn & TikTok dari satu input. Bayar sesuai pemakaian, tanpa langganan.",
+    "ogDescription": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis ke Instagram, Facebook & LinkedIn dari satu input. Bayar sesuai pemakaian, tanpa langganan.",
     "twitterTitle": "Postmatic – AI Social Media Agency & Otomatisasi Media Sosial",
-    "twitterDescription": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis ke Instagram, Facebook, LinkedIn & TikTok dari satu input. Bayar sesuai pemakaian, tanpa langganan.",
-    "keywords": "AI social media agency, AI social media, social media automation, AI design, AI content generator, AI caption generator, social media management, auto posting, Instagram automation, TikTok automation, LinkedIn automation, pay as you go, otomatisasi media sosial, agensi media sosial AI, jasa sosial media AI, konten AI UMKM, desain AI, caption AI, auto posting Instagram, manajemen media sosial",
+    "twitterDescription": "Postmatic adalah platform AI social media agency: riset tren, AI design, caption, dan posting otomatis ke Instagram, Facebook & LinkedIn dari satu input. Bayar sesuai pemakaian, tanpa langganan.",
+    "keywords": "AI social media agency, AI social media, social media automation, AI design, AI content generator, AI caption generator, social media management, auto posting, Instagram automation, LinkedIn automation, pay as you go, otomatisasi media sosial, agensi media sosial AI, jasa sosial media AI, konten AI UMKM, desain AI, caption AI, auto posting Instagram, manajemen media sosial",
     "privacyPolicyTitle": "Kebijakan Privasi - POSTMATIC",
     "privacyPolicyDescription": "Kebijakan privasi POSTMATIC menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda.",
     "termsTitle": "Syarat dan Ketentuan - POSTMATIC",
@@ -535,7 +535,7 @@
     "statusSystemTitle": "Status Sistem - POSTMATIC",
     "statusSystemDescription": "Pantau status sistem dan layanan POSTMATIC secara real-time.",
     "jsonLd": {
-      "description": "Postmatic adalah platform agensi media sosial AI untuk brand yang sedang bertumbuh dan UMKM. Dari satu kali input, Postmatic meriset tren, mendesain visual sesuai brand, menulis Caption, serta menjadwalkan dan memposting otomatis ke Instagram, Facebook, LinkedIn, dan TikTok. Bayar sesuai pemakaian, tanpa langganan.",
+      "description": "Postmatic adalah platform agensi media sosial AI untuk brand yang sedang bertumbuh dan UMKM. Dari satu kali input, Postmatic meriset tren, mendesain visual sesuai brand, menulis Caption, serta menjadwalkan dan memposting otomatis ke Instagram, Facebook, dan LinkedIn. Bayar sesuai pemakaian, tanpa langganan.",
       "knowsAbout": [
         "Manajemen media sosial berbasis AI",
         "Otomatisasi media sosial",
@@ -549,7 +549,7 @@
         "Pembuat Caption dan Hashtag AI sesuai gaya bahasa brand Anda",
         "Penjadwalan dan posting otomatis",
         "Kelola banyak brand dari satu Dashboard",
-        "Integrasi Instagram, Facebook, LinkedIn, dan TikTok",
+        "Integrasi Instagram, Facebook, dan LinkedIn",
         "Token Pay As You Go dengan 10.000 token uji coba gratis setelah melengkapi profil bisnis"
       ],
       "appSubCategory": "Manajemen & otomatisasi media sosial",
@@ -670,7 +670,7 @@
         },
         {
           "title": "Jadwalkan Otomatis",
-          "description": "AI kami merancang visual statis dan video pendek (Reels/TikTok) sesuai standar industri, siap diunggah kapan saja."
+          "description": "AI kami merancang visual statis dan video pendek (Reels) sesuai standar industri, siap diunggah kapan saja."
         },
         {
           "title": "Otomatisasi Media Sosial Anda",
@@ -785,7 +785,7 @@
         },
         {
           "question": "Platform media sosial apa saja yang didukung?",
-          "answer": "Saat ini kami mendukung Instagram, Facebook, LinkedIn, dan TikTok. Platform lain akan segera ditambahkan."
+          "answer": "Saat ini kami mendukung Instagram, Facebook, dan LinkedIn. Platform lain akan segera ditambahkan."
         }
       ]
     },
@@ -810,7 +810,7 @@
         },
         {
           "title": "Akses Semua Platform",
-          "description": "Akses penuh ke semua platform media sosial teratas seperti Instagram, Facebook, LinkedIn, dan TikTok tanpa biaya tambahan."
+          "description": "Akses penuh ke semua platform media sosial teratas seperti Instagram, Facebook, dan LinkedIn tanpa biaya tambahan."
         }
       ],
       "normalPriceLabel": "Harga normal:",
@@ -820,7 +820,7 @@
     },
     "cta": {
       "title": "Konten Sebulan Penuh, Cukup dari Satu Kali Input",
-      "description": "Berhenti menghabiskan waktu berjam-jam untuk desain dan caption. Postmatic meriset tren, membuat visual berstandar agensi, dan memposting otomatis ke Instagram, Facebook, LinkedIn, dan TikTok, tanpa biaya agensi jutaan rupiah per bulan.",
+      "description": "Berhenti menghabiskan waktu berjam-jam untuk desain dan caption. Postmatic meriset tren, membuat visual berstandar agensi, dan memposting otomatis ke Instagram, Facebook, dan LinkedIn, tanpa biaya agensi jutaan rupiah per bulan.",
       "button": "Coba Sekarang",
       "getStarted": "Coba Gratis Sekarang",
       "contactWa": "Hubungi Kami (WA)",
@@ -851,6 +851,10 @@
       "docs": "Dokumentasi",
       "faq": "FAQ",
       "resource": "Sumber Daya",
+      "solutions": "Solusi",
+      "solutionImage": "AI Generator Gambar Produk",
+      "solutionDesign": "Desain Konten Media Sosial AI",
+      "solutionScheduler": "Auto Posting & Penjadwal",
       "community": "Komunitas",
       "helpCenter": "Pusat Bantuan",
       "contact": "Kontak",

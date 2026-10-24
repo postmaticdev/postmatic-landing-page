@@ -94,6 +94,9 @@ export default async function RootLayout({
     <html
       lang={localeToLangMap[locale] ?? locale}
       className={jakarta.variable}
+      // globals.css enables smooth scrolling when Lenis is off; this tells
+      // Next to switch it off during route changes (instant jump to top).
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <head>

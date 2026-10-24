@@ -8,6 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages = [
     { path: "", changeFrequency: "weekly" as const, priority: 1 },
+    // Solution pages target specific searches (image generator, design, scheduling).
+    { path: "/ai-product-image-generator", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/ai-social-media-design", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/social-media-scheduler", changeFrequency: "monthly" as const, priority: 0.9 },
     {
       path: "/terms-and-conditions",
       changeFrequency: "monthly" as const,
@@ -49,6 +53,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
         changeFrequency: page.changeFrequency,
         priority: page.priority,
+        // hreflang pairs, so search engines link the id/en versions of each page.
+        alternates: {
+          languages: Object.fromEntries(allLocales.map((l) => [l, `${baseUrl}/${l}${page.path}`])),
+        },
       });
     }
   }

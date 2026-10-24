@@ -189,6 +189,25 @@ export function getServiceJsonLd(copy: SeoJsonLdCopy) {
   };
 }
 
+/** Stable @id values so other pages can reference the same entities as the home page. */
+export const SEO_IDS = { organization: ORG_ID, website: WEBSITE_ID, software: APP_ID } as const;
+
+/**
+ * BreadcrumbList JSON-LD: shows the page's place in the site in search results.
+ */
+export function getBreadcrumbJsonLd(items: Array<{ name: string; url: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
 /**
  * Generate FAQ JSON-LD structured data from FAQ items.
  */

@@ -31,9 +31,13 @@ const WAYPOINTS: Array<{ x: number; y: number; s: number }> = [
   { x: 0.64, y: 0.26, s: 1.3 },
   { x: 0.22, y: 0.2, s: 1.0 },
   { x: 0.06, y: 0.55, s: 0.85 },
-  { x: 0.46, y: 0.7, s: 1.15 }, // lands near the CTA, centre
-  { x: 0.5, y: 0.5, s: 1.35 },
+  { x: 0.4, y: 0.42, s: 1.2 }, // passes over the CTA
+  { x: 0.62, y: 0.58, s: 1.05 }, // starts gliding down-right, away from the viewer
 ];
+
+// Exit glide: as the footer comes in, the plane keeps flying forward along the
+// end of the path (fraction of viewport width) while it sinks under the footer.
+const EXIT_GLIDE_X = 0.12;
 
 // Barrel rolls at these scroll windows [start, end] (page progress 0..1)
 const ROLLS: Array<[number, number]> = [
@@ -156,11 +160,13 @@ export default function PaperPlane() {
     if (footerST) footerP = footerST.progress;
     measureFooter();
 
-    const setLayer = (front: boolean) => {
+    // `fade` dips the opacity to soften a depth change; tucking under the
+    // footer skips it because the footer edge already hides the switch.
+    const setLayer = (front: boolean, fade = true) => {
       if (front === inFront) return;
       inFront = front;
       layer.style.zIndex = front ? Z_FRONT : Z_BACK;
-      layerFade = 0.35;
+      if (fade) layerFade = 0.35;
     };
 
     const tick = (time: number, deltaTime: number) => {
@@ -172,21 +178,26 @@ export default function PaperPlane() {
       const p = samplePath(prog);
       const exit = smooth(0, 1, footerP);
 
-      // idle bob so it never looks frozen
-      const bob = Math.sin(time * 2.2) * 6 * baseScale;
-      const x = p.x * vw;
+      // idle bob so it never looks frozen (settles as it glides out)
+      const bob = Math.sin(time * 2.2) * 6 * baseScale * (1 - exit);
       const pathY = p.y * vh + bob;
       // Dive target: just under the footer's top edge (tracks the footer as it
       // scrolls up, so once hidden the plane stays tucked behind it).
       const footerTop = footer && footerP > 0 ? footerDocTop - window.scrollY : vh;
       const hiddenY = footerTop + 110 * baseScale;
-      const y = pathY + (Math.max(pathY, hiddenY) - pathY) * exit;
-      const s = p.s * baseScale * (1 - exit * 0.2);
+      // Glide out like a real paper plane: keep moving forward, sink slowly at
+      // first and then faster (ease-in), and shrink as it flies away.
+      const x = p.x * vw + EXIT_GLIDE_X * vw * exit;
+      const y = pathY + Math.max(0, hiddenY - pathY) * exit * exit;
+      const s = p.s * baseScale * (1 - exit * 0.35);
 
       // ── layer: far → behind components, near → in front ──
       // Phones: always behind content, so the plane never covers text the
       // visitor is reading (desktop keeps the front/back depth effect).
-      if (mq.matches || footerP > 0.02) setLayer(false);
+      // Reaching the footer's top edge, it slips behind the (opaque) footer.
+      const underFooter = footerP > 0 && y + 32 * s > footerTop;
+      if (mq.matches) setLayer(false);
+      else if (underFooter) setLayer(false, false);
       else if (p.s < BACK_BELOW) setLayer(false);
       else if (p.s > FRONT_ABOVE) setLayer(true);
       layerFade += (1 - layerFade) * (1 - Math.pow(0.85, dt));

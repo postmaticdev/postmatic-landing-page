@@ -279,7 +279,7 @@ export const NavbarLogo = () => {
         height={36}
         className="shrink-0"
       />
-      <span className="bg-gradient-to-r from-[#0066FF] to-indigo-600 dark:from-[#3385ff] dark:to-indigo-400 bg-clip-text text-transparent font-medium text-lg">
+      <span className="bg-gradient-to-r from-[#0066FF] to-indigo-600 bg-clip-text text-transparent dark:bg-none dark:text-white font-medium text-lg">
         Postmatic
       </span>
     </LocaleLink>

@@ -64,7 +64,7 @@
       },
       {
         "question": "Does Postmatic.id integrate with major social media platforms?",
-        "answer": "Yes, Postmatic.id supports seamless integration with popular social media platforms including Instagram, Facebook, TikTok, WhatsApp, and LinkedIn."
+        "answer": "Yes, Postmatic.id connects directly to Instagram, Facebook, and LinkedIn to schedule and publish content automatically."
       },
       {
         "question": "Is Postmatic.id suitable for SMEs and local businesses?",
@@ -518,12 +518,12 @@
   },
   "metadata": {
     "title": "Postmatic – AI Social Media Agency & Automation Platform",
-    "description": "Postmatic is an AI social media agency platform: trend research, AI design, captions, and automatic posting to Instagram, Facebook, LinkedIn & TikTok from one input. Pay as you go, no subscription.",
+    "description": "Postmatic is an AI social media agency platform: trend research, AI design, captions, and automatic posting to Instagram, Facebook & LinkedIn from one input. Pay as you go, no subscription.",
     "ogTitle": "Postmatic – AI Social Media Agency & Automation Platform",
-    "ogDescription": "Postmatic is an AI social media agency platform: trend research, AI design, captions, and automatic posting to Instagram, Facebook, LinkedIn & TikTok from one input. Pay as you go, no subscription.",
+    "ogDescription": "Postmatic is an AI social media agency platform: trend research, AI design, captions, and automatic posting to Instagram, Facebook & LinkedIn from one input. Pay as you go, no subscription.",
     "twitterTitle": "Postmatic – AI Social Media Agency & Automation Platform",
-    "twitterDescription": "Postmatic is an AI social media agency platform: trend research, AI design, captions, and automatic posting to Instagram, Facebook, LinkedIn & TikTok from one input. Pay as you go, no subscription.",
-    "keywords": "AI social media agency, AI social media, social media automation, AI design, AI content generator, AI caption generator, social media management, auto posting, Instagram automation, TikTok automation, LinkedIn automation, pay as you go",
+    "twitterDescription": "Postmatic is an AI social media agency platform: trend research, AI design, captions, and automatic posting to Instagram, Facebook & LinkedIn from one input. Pay as you go, no subscription.",
+    "keywords": "AI social media agency, AI social media, social media automation, AI design, AI content generator, AI caption generator, social media management, auto posting, Instagram automation, LinkedIn automation, pay as you go",
     "privacyPolicyTitle": "Privacy Policy - POSTMATIC",
     "privacyPolicyDescription": "POSTMATIC privacy policy explains how we collect, use, and protect your personal data.",
     "termsTitle": "Terms of Service - POSTMATIC",
@@ -535,7 +535,7 @@
     "statusSystemTitle": "System Status - POSTMATIC",
     "statusSystemDescription": "Monitor POSTMATIC system and service status in real-time.",
     "jsonLd": {
-      "description": "Postmatic is an AI social media agency platform for growing brands and small businesses. From a single one-time input it researches trends, designs on-brand visuals, writes captions, and schedules and auto-posts to Instagram, Facebook, LinkedIn, and TikTok. Pay as you go, no subscription.",
+      "description": "Postmatic is an AI social media agency platform for growing brands and small businesses. From a single one-time input it researches trends, designs on-brand visuals, writes captions, and schedules and auto-posts to Instagram, Facebook, and LinkedIn. Pay as you go, no subscription.",
       "knowsAbout": [
         "AI social media management",
         "Social media automation",
@@ -549,7 +549,7 @@
         "AI caption and hashtag generator in your brand voice",
         "Automatic scheduling and auto-posting",
         "Multi-brand management from one dashboard",
-        "Instagram, Facebook, LinkedIn, and TikTok integrations",
+        "Instagram, Facebook, and LinkedIn integrations",
         "Pay-as-you-go tokens with 10,000 free trial tokens after completing the business profile"
       ],
       "appSubCategory": "Social media management & automation",
@@ -670,7 +670,7 @@
         },
         {
           "title": "Schedule It",
-          "description": "Our AI designs static visuals and short videos (Reels/TikTok) to industry standards, ready to publish anytime."
+          "description": "Our AI designs static visuals and short videos (Reels) to industry standards, ready to publish anytime."
         },
         {
           "title": "Automate Your Social Media",
@@ -785,7 +785,7 @@
         },
         {
           "question": "Which social media platforms are supported?",
-          "answer": "We currently support Instagram, Facebook, LinkedIn, and TikTok. More platforms are coming soon."
+          "answer": "We currently support Instagram, Facebook, and LinkedIn. More platforms are coming soon."
         }
       ]
     },
@@ -810,7 +810,7 @@
         },
         {
           "title": "Access to Every Platform",
-          "description": "Full access to the top social media platforms, including Instagram, Facebook, LinkedIn, and TikTok, at no extra cost."
+          "description": "Full access to the top social media platforms, including Instagram, Facebook, and LinkedIn, at no extra cost."
         }
       ],
       "normalPriceLabel": "Regular price:",
@@ -820,7 +820,7 @@
     },
     "cta": {
       "title": "A Full Month of Content From a Single Input",
-      "description": "Stop spending hours on designs and captions. Postmatic researches trends, creates agency-grade visuals, and posts automatically to Instagram, Facebook, LinkedIn, and TikTok, without paying an agency millions of rupiah every month.",
+      "description": "Stop spending hours on designs and captions. Postmatic researches trends, creates agency-grade visuals, and posts automatically to Instagram, Facebook, and LinkedIn, without paying an agency millions of rupiah every month.",
       "button": "Try Now",
       "getStarted": "Try It Free Now",
       "contactWa": "Contact Us (WA)",
@@ -851,6 +851,10 @@
       "docs": "Docs",
       "faq": "FAQ",
       "resource": "Resource",
+      "solutions": "Solutions",
+      "solutionImage": "AI Product Image Generator",
+      "solutionDesign": "AI Social Media Design",
+      "solutionScheduler": "Auto Posting & Scheduler",
       "community": "Community",
       "helpCenter": "Help Center",
       "contact": "Contact",

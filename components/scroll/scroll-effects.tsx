@@ -54,11 +54,26 @@ export default function ScrollEffects() {
         for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
         return out;
       };
+      // Elements inside a pinned section need `pinnedContainer`; without it a
+      // refresh while the pin is active (resize, browser zoom) measures them at
+      // the wrong offset and scrubs them back to their hidden start state.
+      // Read lazily: the pins are created before the read phases run.
+      let pins: Element[] | null = null;
+      const pinnedContainerOf = (el: Element | undefined) => {
+        if (!el) return undefined;
+        pins ??= ScrollTrigger.getAll()
+          .map((t) => t.pin)
+          .filter((p): p is Element => !!p);
+        return pins.find((p) => p !== el && p.contains(el));
+      };
       const st = (
         trigger: Element | undefined,
         start: string,
         end: string,
-      ): ScrollTrigger.Vars => ({ trigger, start, end, scrub: true });
+      ): ScrollTrigger.Vars => {
+        const pinnedContainer = pinnedContainerOf(trigger);
+        return { trigger, start, end, scrub: true, ...(pinnedContainer ? { pinnedContainer } : {}) };
+      };
       const NO_IR = { immediateRender: false } as const;
 
       const revealFrom = (type: string): gsap.TweenVars => {

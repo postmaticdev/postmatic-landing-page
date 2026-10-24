@@ -126,6 +126,14 @@ export default function Footer() {
             <Link href="/#pricing" className={linkCls}>{t("pricing")}</Link>
           </nav>
 
+          {/* Solutions: keyword landing pages (internal links help them rank) */}
+          <nav aria-label={t("solutions")} className="col-span-2 w-full lg:w-auto flex flex-col gap-0 lg:gap-5">
+            <h3 className={headCls}>{t("solutions")}</h3>
+            <Link href="/ai-product-image-generator" className={linkCls}>{t("solutionImage")}</Link>
+            <Link href="/ai-social-media-design" className={linkCls}>{t("solutionDesign")}</Link>
+            <Link href="/social-media-scheduler" className={linkCls}>{t("solutionScheduler")}</Link>
+          </nav>
+
           {/* Column 3: Resource */}
           <div className="w-full lg:w-auto flex flex-col gap-0 lg:gap-5">
             <h3 className={headCls}>{t("resource")}</h3>
