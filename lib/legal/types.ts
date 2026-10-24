@@ -65,5 +65,5 @@ export const LEGAL_COMPANY = {
   email: "team@postmatic.id",
   whatsapp: "+62 851-1760-6447",
   whatsappUrl: "https://wa.me/6285117606447",
-  lastUpdatedISO: "2026-10-21",
+  lastUpdatedISO: "2026-10-25",
 };

@@ -23,12 +23,12 @@ export const legalContentId: LegalContent = {
     // ------------------------------------------------------------------ Syarat & Ketentuan
     termsAndConditions: {
       title: "Syarat & Ketentuan",
-      intro: `Halaman ini adalah perjanjian antara Anda dan ${COMPANY} ("Postmatic", "kami") sebagai pengelola Postmatic. Dengan mendaftar atau menggunakan Postmatic, Anda dianggap telah membaca, memahami, dan menyetujui syarat di bawah ini.`,
+      intro: `Halaman ini adalah perjanjian antara Anda dan ${COMPANY} ("Postmatic", "kami") sebagai pengelola Postmatic. Dengan mendaftar atau menggunakan Postmatic, Anda dianggap telah membaca, memahami, dan menyetujui syarat di bawah ini. Jika Anda menggunakan Postmatic atas nama bisnis, syarat ini juga berlaku untuk bisnis tersebut.`,
       summary: [
         "Tidak ada batas usia minimal. Jika Anda belum dewasa, gunakan Postmatic dengan persetujuan orang tua atau wali.",
         "Jaga keamanan akun Anda. Semua aktivitas di akun Anda menjadi tanggung jawab Anda.",
         "Postmatic memakai sistem **bayar sesuai pemakaian** dengan **Postmatic Token**, tanpa langganan bulanan.",
-        "Data, logo, dan foto bisnis Anda tetap milik Anda. Hasil konten dari Postmatic boleh Anda pakai untuk bisnis Anda.",
+        "Data, logo, dan foto bisnis Anda tetap milik Anda. Hasil konten dari Postmatic boleh Anda pakai untuk bisnis Anda, dan Anda bertanggung jawab atas konten yang Anda publikasikan.",
         "Kami dapat membatasi atau menonaktifkan akun yang melanggar aturan atau hukum.",
       ],
       sections: [
@@ -71,7 +71,7 @@ export const legalContentId: LegalContent = {
               items: [
                 "Isi data pendaftaran dengan benar, lalu verifikasi email Anda. Anda juga bisa masuk dengan akun Google.",
                 "Jaga kerahasiaan kata sandi Anda dan jangan bagikan akun kepada orang lain. Untuk bekerja bersama, gunakan fitur undang anggota tim.",
-                "Anda bertanggung jawab atas semua aktivitas yang terjadi di akun Anda.",
+                "Anda bertanggung jawab atas semua aktivitas yang terjadi di akun Anda. Kami tidak bertanggung jawab atas kerugian yang timbul karena kata sandi atau akun Anda dibagikan kepada orang lain atau tidak dijaga dengan baik.",
                 "Satu akun dapat mengelola lebih dari satu bisnis.",
                 `Jika Anda curiga akun Anda dipakai orang lain, segera ganti kata sandi dan hubungi kami di ${EMAIL}. Di halaman Profil Anda juga bisa melihat dan mengakhiri sesi login di perangkat lain.`,
               ],
@@ -93,7 +93,8 @@ export const legalContentId: LegalContent = {
                 "Pembayaran diproses oleh mitra pembayaran kami, **Midtrans**, melalui metode yang tersedia seperti transfer Virtual Account bank atau e-wallet/QRIS.",
                 "Selesaikan pembayaran sebelum batas waktu yang tertera. Pesanan yang tidak dibayar akan otomatis dibatalkan.",
                 "Token masuk ke akun Anda secara otomatis setelah pembayaran berhasil. Kami juga mengirimkan invoice ke email Anda.",
-                "Postmatic Token **tidak memiliki masa berlaku**. Token tetap tersimpan selama akun Anda aktif.",
+                "Harga token dan jumlah token yang dipakai setiap fitur dapat berubah. Perubahan ini tidak mengurangi jumlah token yang sudah ada di akun Anda.",
+                "Postmatic Token **tidak memiliki masa berlaku**. Token tetap tersimpan selama akun Anda aktif, tetapi hangus jika akun dihapus atau dinonaktifkan karena pelanggaran.",
                 "Token tidak dapat ditukar dengan uang tunai dan tidak dapat dipindahkan ke akun lain.",
                 "Bonus token, promo, dan kode referral berlaku sesuai syarat masing-masing program. Kami dapat membatalkan bonus yang diperoleh dengan cara curang.",
               ],
@@ -110,7 +111,7 @@ export const legalContentId: LegalContent = {
             },
             {
               type: "p",
-              text: `Kami akan membantu jika terjadi kesalahan dari sisi kami, misalnya Anda tertagih dua kali atau token tidak masuk padahal pembayaran berhasil. Hubungi kami di ${EMAIL} dengan menyertakan Order ID. Jika terbukti ada kesalahan, kami akan menambahkan token yang seharusnya Anda terima atau mengembalikan dana melalui mitra pembayaran.`,
+              text: `Kami akan membantu jika terjadi kesalahan dari sisi kami, misalnya Anda tertagih dua kali atau token tidak masuk padahal pembayaran berhasil. Hubungi kami sesegera mungkin di ${EMAIL} dengan menyertakan Order ID dan bukti pembayaran. Jika setelah kami periksa terbukti ada kesalahan, kami akan menambahkan token yang seharusnya Anda terima atau mengembalikan dana melalui mitra pembayaran.`,
             },
           ],
         },
@@ -123,8 +124,9 @@ export const legalContentId: LegalContent = {
               items: [
                 `**Milik kami:** aplikasi, kode, desain, merek, dan logo Postmatic adalah milik ${COMPANY}. Anda tidak boleh menyalin atau menggunakannya tanpa izin tertulis.`,
                 "**Milik Anda:** data bisnis, logo, foto produk, dan materi lain yang Anda unggah tetap milik Anda. Anda memberi kami izin terbatas untuk menyimpan dan memprosesnya, hanya untuk menjalankan layanan untuk Anda.",
-                "**Hasil konten:** gambar dan caption yang dihasilkan Postmatic untuk Anda boleh Anda gunakan untuk keperluan bisnis, termasuk keperluan komersial. Kami tidak mengklaim kepemilikan atas hasil tersebut.",
+                "**Hasil konten:** gambar dan caption yang dihasilkan Postmatic untuk Anda boleh Anda gunakan untuk keperluan bisnis, termasuk keperluan komersial. Kami tidak mengklaim kepemilikan atas hasil tersebut. Karena dibuat dengan AI, hasil yang Anda terima bisa mirip dengan hasil pengguna lain, dan kami tidak menjamin hasil tersebut dapat didaftarkan atau dilindungi sebagai hak kekayaan intelektual.",
                 "Anda bertanggung jawab memastikan materi yang Anda unggah dan konten yang Anda publikasikan tidak melanggar hak orang lain, seperti hak cipta, merek, atau hak atas foto seseorang.",
+                "Jika Anda mengirimkan saran atau masukan tentang Postmatic, kami boleh menggunakannya untuk mengembangkan layanan tanpa kewajiban apa pun kepada Anda.",
               ],
             },
           ],
@@ -138,6 +140,8 @@ export const legalContentId: LegalContent = {
               items: [
                 "Menggunakan Postmatic untuk kegiatan yang melanggar hukum, termasuk penipuan dan perjudian.",
                 "Mencoba meretas, membobol, mengganggu, atau membebani sistem kami secara berlebihan.",
+                "Mengunggah virus, malware, atau kode berbahaya lainnya.",
+                "Mengakali batas pemakaian, perhitungan token, atau sistem pembayaran.",
                 "Membongkar (reverse engineering), menyalin, atau mengambil data dari aplikasi secara otomatis tanpa izin.",
                 "Menjual ulang atau menyewakan akses Postmatic tanpa persetujuan tertulis dari kami.",
                 "Membuat akun palsu, memakai identitas orang lain, atau menyalahgunakan promo dan program referral.",
@@ -152,7 +156,7 @@ export const legalContentId: LegalContent = {
           blocks: [
             {
               type: "p",
-              text: "Kami dapat membatasi, menangguhkan, atau menonaktifkan akun yang melanggar Syarat & Ketentuan ini, Ketentuan Layanan, atau hukum yang berlaku. Untuk pelanggaran ringan, kami akan berusaha memberi tahu Anda terlebih dahulu.",
+              text: "Kami dapat membatasi, menangguhkan, atau menonaktifkan akun yang melanggar Syarat & Ketentuan ini, Ketentuan Layanan, atau hukum yang berlaku. Untuk pelanggaran ringan, kami akan berusaha memberi tahu Anda terlebih dahulu. Untuk pelanggaran berat, misalnya penipuan, konten ilegal, atau gangguan terhadap sistem, kami dapat langsung menonaktifkan akun tanpa pemberitahuan sebelumnya.",
             },
             {
               type: "p",
@@ -170,8 +174,14 @@ export const legalContentId: LegalContent = {
                 "Postmatic disediakan sebagaimana adanya. Kami terus berusaha agar layanan berjalan baik, tetapi tidak dapat menjamin layanan selalu bebas gangguan atau bebas kesalahan.",
                 "Kami tidak menjamin hasil pemasaran tertentu, seperti jumlah penjualan, pengikut, atau interaksi.",
                 "Kami tidak bertanggung jawab atas gangguan, perubahan aturan, atau tindakan dari platform pihak ketiga, seperti Facebook, Instagram, LinkedIn, atau mitra pembayaran.",
+                "Kami tidak bertanggung jawab atas kerugian tidak langsung, seperti kehilangan keuntungan, pendapatan, data, atau reputasi bisnis.",
+                "Kami tidak bertanggung jawab atas keterlambatan atau kegagalan layanan karena keadaan di luar kendali kami, seperti bencana alam, gangguan internet atau listrik, serangan siber, atau kebijakan pemerintah.",
                 "Sejauh diizinkan hukum, total tanggung jawab kami atas kerugian Anda dibatasi sebesar jumlah yang Anda bayarkan kepada kami dalam 3 bulan terakhir sebelum kejadian.",
               ],
+            },
+            {
+              type: "p",
+              text: "Batasan di bagian ini tidak mengurangi hak Anda yang dilindungi oleh hukum yang berlaku, termasuk hukum perlindungan konsumen.",
             },
           ],
         },
@@ -197,12 +207,27 @@ export const legalContentId: LegalContent = {
           ],
         },
         {
+          id: "ketentuan-lain",
+          title: "Ketentuan lain",
+          blocks: [
+            {
+              type: "list",
+              items: [
+                "Jika ada bagian dari perjanjian ini yang dinyatakan tidak berlaku oleh hukum, bagian lainnya tetap berlaku.",
+                "Jika kami belum menindak suatu pelanggaran, bukan berarti kami melepaskan hak kami untuk menindaknya di kemudian hari.",
+                "Anda tidak boleh mengalihkan akun atau hak Anda dalam perjanjian ini kepada pihak lain tanpa persetujuan tertulis dari kami. Kami dapat mengalihkannya, misalnya jika terjadi penggabungan atau pengambilalihan perusahaan, dan akan memberi tahu Anda jika itu terjadi.",
+                "Perjanjian ini tersedia dalam bahasa Indonesia dan Inggris. Jika ada perbedaan arti, versi bahasa Indonesia yang berlaku.",
+              ],
+            },
+          ],
+        },
+        {
           id: "perubahan",
           title: "Perubahan Syarat & Ketentuan",
           blocks: [
             {
               type: "p",
-              text: "Kami dapat memperbarui Syarat & Ketentuan ini dari waktu ke waktu. Jika perubahannya penting, kami akan memberi tahu melalui email atau pemberitahuan di aplikasi. Dengan tetap menggunakan Postmatic setelah perubahan berlaku, Anda dianggap menyetujui versi terbaru.",
+              text: "Kami dapat memperbarui Syarat & Ketentuan ini dari waktu ke waktu. Jika perubahannya penting, kami akan memberi tahu melalui email atau pemberitahuan di aplikasi. Dengan tetap menggunakan Postmatic setelah perubahan berlaku, Anda dianggap menyetujui versi terbaru. Jika Anda tidak setuju, Anda dapat berhenti menggunakan Postmatic dan meminta penghapusan akun.",
             },
           ],
         },
@@ -249,9 +274,11 @@ export const legalContentId: LegalContent = {
             {
               type: "list",
               items: [
+                "Hasil AI dibuat secara otomatis dan tidak kami periksa satu per satu. Kami tidak menjamin hasilnya selalu akurat, lengkap, atau sesuai untuk kebutuhan tertentu.",
                 "Hasil AI bisa kurang akurat, misalnya salah menulis harga, nama produk, atau detail lainnya. **Periksa kembali** sebelum dipublikasikan.",
                 "Hasil AI bisa mirip dengan konten lain yang sudah ada di internet. Hindari memakai hasil yang jelas meniru merek atau karya orang lain.",
                 "Jangan gunakan konten AI untuk membuat klaim yang menyesatkan, seperti janji kesehatan atau keuntungan yang tidak benar.",
+                "Jangan memasukkan data pribadi yang sensitif, seperti nomor KTP, data kesehatan, atau data keuangan, ke dalam perintah atau materi yang Anda unggah.",
                 "Token terpakai saat proses pembuatan konten dijalankan. Jika menurut Anda token terpotong tidak semestinya, hubungi kami.",
               ],
             },
@@ -284,6 +311,7 @@ export const legalContentId: LegalContent = {
                 "Pastikan konten, akun tujuan, dan jadwal sudah benar sebelum menyimpan jadwal.",
                 "Konten dapat terlambat terposting atau gagal karena gangguan dari platform, koneksi akun yang kedaluwarsa, atau pemeliharaan sistem. Status setiap posting dapat Anda lihat di aplikasi.",
                 "Fitur otomatis, seperti pembuatan konten otomatis, menggunakan token sesuai pengaturan yang Anda aktifkan. Matikan fitur tersebut jika tidak ingin token terpakai.",
+                "Kami tidak bertanggung jawab atas akibat dari posting yang terlambat atau gagal karena hal-hal di atas, maupun posting yang terbit sesuai jadwal dan pengaturan yang Anda buat.",
               ],
             },
           ],
@@ -302,12 +330,13 @@ export const legalContentId: LegalContent = {
                 "mempromosikan perjudian, penipuan, investasi bodong, narkoba, senjata ilegal, atau barang terlarang lainnya;",
                 "melanggar hak cipta, merek dagang, atau privasi orang lain, termasuk memakai foto atau data pribadi seseorang tanpa izin;",
                 "menyebarkan hoaks atau informasi menyesatkan yang dapat membahayakan orang lain;",
+                "menyamar sebagai orang, merek, atau lembaga lain;",
                 "berupa spam atau aktivitas yang melanggar aturan platform media sosial.",
               ],
             },
             {
               type: "p",
-              text: "Kami dapat menghapus konten tersebut dari sistem kami serta membatasi atau menonaktifkan akun yang melanggar.",
+              text: "Kami dapat menghapus konten tersebut dari sistem kami serta membatasi atau menonaktifkan akun yang melanggar. Jika diwajibkan hukum, kami juga dapat melaporkannya kepada pihak berwenang.",
             },
           ],
         },
@@ -343,7 +372,7 @@ export const legalContentId: LegalContent = {
               type: "list",
               items: [
                 "Kami berusaha agar Postmatic dapat diakses setiap saat, tetapi layanan bisa sesekali terganggu karena pemeliharaan, gangguan teknis, atau gangguan dari mitra kami.",
-                "Kami dapat menambah, mengubah, atau menghentikan fitur tertentu. Jika perubahan berdampak besar bagi Anda, kami akan memberi tahu terlebih dahulu.",
+                "Kami dapat menambah, mengubah, atau menghentikan fitur tertentu. Jika perubahan berdampak besar bagi Anda, kami akan berusaha memberi tahu terlebih dahulu.",
                 "Untuk mencegah penyalahgunaan, kami menerapkan batas wajar pemakaian, misalnya jumlah permintaan dalam waktu tertentu.",
               ],
             },
@@ -382,13 +411,17 @@ export const legalContentId: LegalContent = {
             {
               type: "list",
               items: [
-                "**Data akun:** nama, alamat email, kata sandi (disimpan dalam bentuk terenkripsi, bukan teks asli), foto profil, serta nomor telepon jika Anda mengisinya.",
+                "**Data akun:** nama, alamat email, kata sandi (disimpan dalam bentuk terenkripsi satu arah, bukan teks asli), foto profil, serta nomor telepon jika Anda mengisinya.",
                 "**Jika Anda masuk dengan Google:** nama, alamat email, dan foto profil dari akun Google Anda.",
                 "**Data bisnis:** nama bisnis, logo, kategori, deskripsi, website, nomor telepon bisnis, warna brand, target audiens, gaya bahasa, hashtag, produk dan foto produk, avatar, dokumen pengetahuan, serta sumber berita (RSS) yang Anda ikuti.",
                 "**Konten:** ide atau perintah (prompt) yang Anda tulis, gambar dan caption yang dibuat, jadwal posting, serta riwayat posting.",
                 "**Anggota tim:** alamat email orang yang Anda undang ke bisnis Anda.",
                 "**Komunikasi:** pesan yang Anda kirim ke tim dukungan melalui website, email, atau WhatsApp.",
               ],
+            },
+            {
+              type: "p",
+              text: "Jika Anda memasukkan data pribadi orang lain, misalnya email anggota tim atau foto pelanggan, Anda menyatakan sudah mendapat izin dari orang tersebut atau memiliki dasar hukum untuk melakukannya.",
             },
             { type: "p", text: "**Data dari layanan yang Anda hubungkan:**" },
             {
@@ -443,7 +476,7 @@ export const legalContentId: LegalContent = {
             {
               type: "list",
               items: [
-                "**Penyedia AI** (OpenAI, Google Gemini, dan penyedia model AI lain yang kami gunakan): menerima perintah Anda serta data bisnis dan produk yang relevan untuk membuat gambar dan teks.",
+                "**Penyedia AI** (OpenAI, Google Gemini, dan penyedia model AI lain yang kami gunakan): menerima perintah Anda serta data bisnis dan produk yang relevan untuk membuat gambar dan teks. Data tersebut diproses sesuai ketentuan masing-masing penyedia.",
                 "**Mitra pembayaran** (Midtrans): menerima nama, email, rincian pesanan, dan nominal untuk memproses pembayaran.",
                 "**Platform media sosial yang Anda hubungkan** (Meta untuk Facebook dan Instagram, serta LinkedIn): menerima konten yang Anda publikasikan.",
                 "**Google:** jika Anda memilih masuk dengan akun Google.",
@@ -455,7 +488,11 @@ export const legalContentId: LegalContent = {
             },
             {
               type: "p",
-              text: "Sebagian mitra kami berada di luar Indonesia, sehingga data Anda dapat diproses di luar negeri. Kami hanya bekerja dengan mitra yang menerapkan perlindungan data yang memadai.",
+              text: "Sebagian mitra kami berada di luar Indonesia, sehingga data Anda dapat diproses di luar negeri. Kami hanya bekerja dengan mitra yang menerapkan perlindungan data yang memadai, sesuai ketentuan transfer data pribadi dalam UU PDP.",
+            },
+            {
+              type: "p",
+              text: "Karena itu, hindari memasukkan data pribadi orang lain atau data sensitif ke dalam perintah (prompt) atau dokumen yang Anda unggah, kecuali memang diperlukan dan Anda berhak membagikannya.",
             },
           ],
         },
@@ -474,7 +511,7 @@ export const legalContentId: LegalContent = {
             },
             {
               type: "p",
-              text: "Meski begitu, tidak ada sistem yang 100% aman. Jika terjadi kebocoran data yang berdampak pada Anda, kami akan memberi tahu Anda dan pihak berwenang sesuai ketentuan UU PDP.",
+              text: "Meski begitu, tidak ada sistem yang 100% aman. Jika terjadi kebocoran data yang berdampak pada Anda, kami akan memberi tahu Anda dan pihak berwenang sesuai jangka waktu dan ketentuan UU PDP.",
             },
           ],
         },
@@ -512,6 +549,10 @@ export const legalContentId: LegalContent = {
             {
               type: "p",
               text: `Untuk menggunakan hak ini, kirim email ke ${EMAIL} dari alamat email yang terdaftar di Postmatic. Kami mungkin akan memverifikasi identitas Anda terlebih dahulu.`,
+            },
+            {
+              type: "p",
+              text: "Kami akan menanggapi permintaan Anda dalam jangka waktu yang diatur UU PDP. Dalam keadaan tertentu, misalnya jika data masih wajib kami simpan menurut hukum, permintaan dapat kami penuhi sebagian. Jika demikian, kami akan menjelaskan alasannya.",
             },
           ],
         },
@@ -591,7 +632,7 @@ export const legalContentId: LegalContent = {
             { type: "p", text: "**Data yang dihapus:** akun dan profil, bisnis yang Anda miliki beserta produk, konten, avatar, dan jadwal, koneksi media sosial, serta sesi login." },
             {
               type: "p",
-              text: "**Data yang tetap disimpan:** catatan transaksi dan invoice, selama diwajibkan oleh peraturan perpajakan dan akuntansi, serta catatan keamanan dalam jangka waktu terbatas. Data ini tidak lagi dipakai untuk keperluan lain.",
+              text: "**Data yang tetap disimpan:** catatan transaksi dan invoice, selama diwajibkan oleh peraturan perpajakan dan akuntansi, serta catatan keamanan dalam jangka waktu terbatas. Data ini tidak lagi dipakai untuk keperluan lain. Salinan cadangan (backup) dapat tersimpan sementara dan akan terhapus sesuai jadwal pencadangan kami.",
             },
             {
               type: "note",

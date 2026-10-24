@@ -23,12 +23,12 @@ export const legalContentEn: LegalContent = {
     // ------------------------------------------------------------------ Terms & Conditions
     termsAndConditions: {
       title: "Terms & Conditions",
-      intro: `These terms are an agreement between you and ${COMPANY} ("Postmatic", "we", "us"), the company that runs Postmatic. By signing up for or using Postmatic, you confirm that you have read, understood, and agree to the terms below.`,
+      intro: `These terms are an agreement between you and ${COMPANY} ("Postmatic", "we", "us"), the company that runs Postmatic. By signing up for or using Postmatic, you confirm that you have read, understood, and agree to the terms below. If you use Postmatic on behalf of a business, these terms also apply to that business.`,
       summary: [
         "There is no minimum age. If you are a minor, use Postmatic with your parent's or guardian's consent.",
         "Keep your account secure. You are responsible for everything that happens in your account.",
         "Postmatic is **pay as you go** with **Postmatic Tokens**. There is no monthly subscription.",
-        "Your business data, logos, and photos stay yours. You may use the content Postmatic creates for your business.",
+        "Your business data, logos, and photos stay yours. You may use the content Postmatic creates for your business, and you are responsible for the content you publish.",
         "We may limit or disable accounts that break these rules or the law.",
       ],
       sections: [
@@ -71,7 +71,7 @@ export const legalContentEn: LegalContent = {
               items: [
                 "Provide accurate sign-up details and verify your email. You can also sign in with your Google account.",
                 "Keep your password private and do not share your account. To work together, invite team members instead.",
-                "You are responsible for all activity in your account.",
+                "You are responsible for all activity in your account. We are not responsible for losses caused by sharing your password or account with others, or by not keeping them secure.",
                 "One account can manage more than one business.",
                 `If you think someone else is using your account, change your password right away and contact us at ${EMAIL}. You can also review and end sign-in sessions on other devices from your Profile page.`,
               ],
@@ -93,7 +93,8 @@ export const legalContentEn: LegalContent = {
                 "Payments are processed by our payment partner, **Midtrans**, using the available methods such as bank Virtual Account transfer or e-wallet/QRIS.",
                 "Complete your payment before the deadline shown. Unpaid orders are canceled automatically.",
                 "Tokens are added to your account automatically once payment succeeds. We also email you an invoice.",
-                "Postmatic Tokens **do not expire**. They stay in your account for as long as it is active.",
+                "Token prices and the number of tokens each feature uses may change. Such changes do not reduce the tokens already in your account.",
+                "Postmatic Tokens **do not expire**. They stay in your account for as long as it is active, but are forfeited if the account is deleted or disabled for a violation.",
                 "Tokens cannot be exchanged for cash or moved to another account.",
                 "Bonus tokens, promotions, and referral codes follow the terms of each program. We may cancel bonuses obtained through fraud.",
               ],
@@ -110,7 +111,7 @@ export const legalContentEn: LegalContent = {
             },
             {
               type: "p",
-              text: `We will help if something went wrong on our side, for example if you were charged twice or your tokens did not arrive after a successful payment. Contact us at ${EMAIL} with your Order ID. If we confirm an error, we will add the tokens you should have received or refund you through our payment partner.`,
+              text: `We will help if something went wrong on our side, for example if you were charged twice or your tokens did not arrive after a successful payment. Contact us as soon as possible at ${EMAIL} with your Order ID and proof of payment. If our check confirms an error, we will add the tokens you should have received or refund you through our payment partner.`,
             },
           ],
         },
@@ -123,8 +124,9 @@ export const legalContentEn: LegalContent = {
               items: [
                 `**Ours:** the Postmatic app, code, design, brand, and logo belong to ${COMPANY}. You may not copy or use them without our written permission.`,
                 "**Yours:** the business data, logos, product photos, and other material you upload remain yours. You give us a limited permission to store and process them, only to run the service for you.",
-                "**Created content:** you may use the images and captions Postmatic creates for you for your business, including commercial use. We do not claim ownership of them.",
+                "**Created content:** you may use the images and captions Postmatic creates for you for your business, including commercial use. We do not claim ownership of them. Because they are made with AI, your results may be similar to other users' results, and we do not guarantee they can be registered or protected as intellectual property.",
                 "You are responsible for making sure the material you upload and the content you publish do not infringe anyone else's rights, such as copyright, trademarks, or rights over a person's photo.",
+                "If you send us suggestions or feedback about Postmatic, we may use them to improve the service without any obligation to you.",
               ],
             },
           ],
@@ -138,6 +140,8 @@ export const legalContentEn: LegalContent = {
               items: [
                 "Use Postmatic for illegal activities, including fraud and gambling.",
                 "Try to hack, break into, disrupt, or overload our systems.",
+                "Upload viruses, malware, or other harmful code.",
+                "Get around usage limits, token calculations, or the payment system.",
                 "Reverse engineer, copy, or automatically extract data from the app without permission.",
                 "Resell or rent out access to Postmatic without our written approval.",
                 "Create fake accounts, impersonate others, or abuse promotions and the referral program.",
@@ -152,7 +156,7 @@ export const legalContentEn: LegalContent = {
           blocks: [
             {
               type: "p",
-              text: "We may limit, suspend, or disable accounts that break these Terms & Conditions, the Terms of Service, or the law. For minor issues, we will try to warn you first.",
+              text: "We may limit, suspend, or disable accounts that break these Terms & Conditions, the Terms of Service, or the law. For minor issues, we will try to warn you first. For serious violations, such as fraud, illegal content, or disrupting our systems, we may disable the account immediately without prior notice.",
             },
             {
               type: "p",
@@ -170,8 +174,14 @@ export const legalContentEn: LegalContent = {
                 "Postmatic is provided as is. We work hard to keep it running well, but we cannot guarantee it will always be free of interruptions or errors.",
                 "We do not guarantee specific marketing results, such as sales, followers, or engagement.",
                 "We are not responsible for outages, rule changes, or actions by third-party platforms such as Facebook, Instagram, LinkedIn, or our payment partner.",
+                "We are not responsible for indirect losses, such as lost profits, revenue, data, or business reputation.",
+                "We are not responsible for delays or failures caused by events outside our control, such as natural disasters, internet or power outages, cyberattacks, or government action.",
                 "To the extent the law allows, our total liability for your losses is limited to the amount you paid us in the 3 months before the event.",
               ],
+            },
+            {
+              type: "p",
+              text: "The limits in this section do not reduce any rights you have under applicable law, including consumer protection law.",
             },
           ],
         },
@@ -197,12 +207,27 @@ export const legalContentEn: LegalContent = {
           ],
         },
         {
+          id: "other-terms",
+          title: "Other terms",
+          blocks: [
+            {
+              type: "list",
+              items: [
+                "If any part of this agreement is found to be unenforceable under the law, the rest stays in effect.",
+                "If we do not act on a violation right away, we do not give up our right to act on it later.",
+                "You may not transfer your account or your rights under this agreement to anyone else without our written approval. We may transfer them, for example in a merger or acquisition, and will let you know if that happens.",
+                "This agreement is available in Indonesian and English. If the two versions differ, the Indonesian version applies.",
+              ],
+            },
+          ],
+        },
+        {
           id: "changes",
           title: "Changes to these terms",
           blocks: [
             {
               type: "p",
-              text: "We may update these Terms & Conditions from time to time. For important changes, we will let you know by email or in the app. By continuing to use Postmatic after a change takes effect, you agree to the latest version.",
+              text: "We may update these Terms & Conditions from time to time. For important changes, we will let you know by email or in the app. By continuing to use Postmatic after a change takes effect, you agree to the latest version. If you do not agree, you can stop using Postmatic and ask us to delete your account.",
             },
           ],
         },
@@ -249,9 +274,11 @@ export const legalContentEn: LegalContent = {
             {
               type: "list",
               items: [
+                "AI results are generated automatically and are not reviewed by us one by one. We do not guarantee they are always accurate, complete, or suitable for a particular purpose.",
                 "AI results can be inaccurate, for example a wrong price, product name, or other detail. **Double-check** before publishing.",
                 "AI results can resemble content that already exists online. Avoid using results that clearly copy another brand or someone else's work.",
                 "Do not use AI content to make misleading claims, such as false health or financial promises.",
+                "Do not put sensitive personal data, such as ID card numbers, health data, or financial data, into your prompts or uploaded material.",
                 "Tokens are used when a content creation process runs. If you believe tokens were deducted incorrectly, contact us.",
               ],
             },
@@ -284,6 +311,7 @@ export const legalContentEn: LegalContent = {
                 "Make sure the content, target account, and schedule are correct before saving.",
                 "Posts may be delayed or fail because of platform issues, expired account connections, or system maintenance. You can check the status of each post in the app.",
                 "Automatic features, such as automatic content creation, use tokens according to the settings you turn on. Turn them off if you do not want tokens to be used.",
+                "We are not responsible for the consequences of posts that are delayed or fail for the reasons above, or of posts that go out according to the schedule and settings you set.",
               ],
             },
           ],
@@ -302,12 +330,13 @@ export const legalContentEn: LegalContent = {
                 "promotes gambling, scams, fraudulent investments, drugs, illegal weapons, or other prohibited goods;",
                 "infringes copyright, trademarks, or other people's privacy, including using someone's photo or personal data without permission;",
                 "spreads hoaxes or misleading information that could harm others;",
+                "impersonates another person, brand, or organization;",
                 "is spam or breaks the rules of social media platforms.",
               ],
             },
             {
               type: "p",
-              text: "We may remove such content from our systems and limit or disable accounts that break these rules.",
+              text: "We may remove such content from our systems and limit or disable accounts that break these rules. Where the law requires it, we may also report it to the authorities.",
             },
           ],
         },
@@ -343,7 +372,7 @@ export const legalContentEn: LegalContent = {
               type: "list",
               items: [
                 "We aim to keep Postmatic available at all times, but it may occasionally be interrupted by maintenance, technical problems, or issues with our partners.",
-                "We may add, change, or remove features. If a change significantly affects you, we will let you know in advance.",
+                "We may add, change, or remove features. If a change significantly affects you, we will try to let you know in advance.",
                 "To prevent abuse, we apply reasonable usage limits, such as the number of requests within a period of time.",
               ],
             },
@@ -382,13 +411,17 @@ export const legalContentEn: LegalContent = {
             {
               type: "list",
               items: [
-                "**Account data:** name, email address, password (stored encrypted, never as plain text), profile photo, and phone number if you add one.",
+                "**Account data:** name, email address, password (stored with one-way encryption, never as plain text), profile photo, and phone number if you add one.",
                 "**If you sign in with Google:** your name, email address, and profile photo from your Google account.",
                 "**Business data:** business name, logo, category, description, website, business phone number, brand colors, target audience, tone of voice, hashtags, products and product photos, avatars, knowledge documents, and the news sources (RSS) you follow.",
                 "**Content:** the ideas or prompts you write, the images and captions created, post schedules, and posting history.",
                 "**Team members:** the email addresses of people you invite to your business.",
                 "**Communication:** messages you send to our support team through the website, email, or WhatsApp.",
               ],
+            },
+            {
+              type: "p",
+              text: "If you add other people's personal data, such as team members' emails or customers' photos, you confirm that you have their permission or another legal basis to do so.",
             },
             { type: "p", text: "**Data from services you connect:**" },
             {
@@ -443,7 +476,7 @@ export const legalContentEn: LegalContent = {
             {
               type: "list",
               items: [
-                "**AI providers** (OpenAI, Google Gemini, and other AI model providers we use): receive your prompts and the relevant business and product data to create images and text.",
+                "**AI providers** (OpenAI, Google Gemini, and other AI model providers we use): receive your prompts and the relevant business and product data to create images and text. This data is processed under each provider's own terms.",
                 "**Payment partner** (Midtrans): receives your name, email, order details, and amount to process payments.",
                 "**Social media platforms you connect** (Meta for Facebook and Instagram, and LinkedIn): receive the content you publish.",
                 "**Google:** if you choose to sign in with your Google account.",
@@ -455,7 +488,11 @@ export const legalContentEn: LegalContent = {
             },
             {
               type: "p",
-              text: "Some of our partners are located outside Indonesia, so your data may be processed abroad. We only work with partners that apply adequate data protection.",
+              text: "Some of our partners are located outside Indonesia, so your data may be processed abroad. We only work with partners that apply adequate data protection, in line with the PDP Law's rules on cross-border data transfers.",
+            },
+            {
+              type: "p",
+              text: "For this reason, avoid putting other people's personal data or sensitive data into your prompts or uploaded documents, unless it is truly needed and you have the right to share it.",
             },
           ],
         },
@@ -474,7 +511,7 @@ export const legalContentEn: LegalContent = {
             },
             {
               type: "p",
-              text: "Even so, no system is 100% secure. If a data breach affects you, we will notify you and the authorities as required by the PDP Law.",
+              text: "Even so, no system is 100% secure. If a data breach affects you, we will notify you and the authorities within the time and in the manner required by the PDP Law.",
             },
           ],
         },
@@ -512,6 +549,10 @@ export const legalContentEn: LegalContent = {
             {
               type: "p",
               text: `To use these rights, email ${EMAIL} from the email address registered with Postmatic. We may need to verify your identity first.`,
+            },
+            {
+              type: "p",
+              text: "We will respond within the time set by the PDP Law. In some cases, for example when the law still requires us to keep certain data, we may only be able to fulfill part of your request. If so, we will explain why.",
             },
           ],
         },
@@ -594,7 +635,7 @@ export const legalContentEn: LegalContent = {
             { type: "p", text: "**What gets deleted:** your account and profile, the businesses you own with their products, content, avatars, and schedules, your social media connections, and your sign-in sessions." },
             {
               type: "p",
-              text: "**What we keep:** transaction records and invoices, for as long as tax and accounting rules require, and security records for a limited time. This data is not used for anything else.",
+              text: "**What we keep:** transaction records and invoices, for as long as tax and accounting rules require, and security records for a limited time. This data is not used for anything else. Backup copies may remain for a short time and are deleted on our regular backup schedule.",
             },
             {
               type: "note",

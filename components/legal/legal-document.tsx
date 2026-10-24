@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
-import { Mail, MessageCircle } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Link } from "@/i18n/routing";
+import { SupportIllustration } from "@/components/legal/support-illustration";
 import { cn, getMobileMargins } from "@/lib/utils";
 import {
   LEGAL_COMPANY,
@@ -155,24 +156,24 @@ export function LegalDocumentView({ docKey, content, lastUpdatedLabel }: LegalDo
           ))}
         </div>
 
-        <aside className="mt-14 rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800 md:p-6">
-          <h2 className="text-base font-semibold text-neutral-900 dark:text-white">{ui.contactTitle}</h2>
-          <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{ui.contactBody}</p>
-          <div className="mt-4 flex flex-col gap-3 text-sm sm:flex-row sm:gap-6">
-            <a href={`mailto:${LEGAL_COMPANY.email}`} className="inline-flex items-center gap-2 font-medium text-[#0066FF]">
+        {/* Tampilan sama dengan blok "Butuh bantuan" di docs.postmatic.id. */}
+        <aside className="mt-14 flex items-center justify-between gap-4 rounded-2xl border border-neutral-200 bg-neutral-100/60 px-5 py-6 dark:border-neutral-800 dark:bg-neutral-900 sm:gap-8 sm:px-10 sm:py-8">
+          <div className="flex min-w-0 flex-col items-start">
+            <h2 className="text-balance text-xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-2xl">
+              {ui.contactTitle}
+            </h2>
+            <p className="mt-1.5 text-pretty text-sm leading-6 text-neutral-600 dark:text-neutral-400 sm:text-base">
+              {ui.contactBody}
+            </p>
+            <a
+              href={`mailto:${LEGAL_COMPANY.email}`}
+              className="mt-5 inline-flex h-10 items-center justify-center gap-2 rounded-md bg-neutral-900 px-6 text-sm font-semibold text-white transition-colors hover:bg-neutral-900/85 dark:bg-white dark:text-neutral-900 dark:hover:bg-white/85 sm:min-w-40"
+            >
               <Mail className="size-4" aria-hidden />
               {LEGAL_COMPANY.email}
             </a>
-            <a
-              href={LEGAL_COMPANY.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-medium text-[#0066FF]"
-            >
-              <MessageCircle className="size-4" aria-hidden />
-              WhatsApp {LEGAL_COMPANY.whatsapp}
-            </a>
           </div>
+          <SupportIllustration className="w-24 shrink-0 sm:w-36" />
         </aside>
 
         <nav aria-labelledby="legal-related" className="mt-10">
