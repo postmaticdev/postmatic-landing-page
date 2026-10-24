@@ -6,28 +6,40 @@ import { useRouter, usePathname } from "@/i18n/routing";
 import "./flag-icons.css";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
-import { Check } from "lucide-react";
 
-type LocaleItem = { label: string; value: string; flag: string };
+export type LocaleItem = { label: string; value: string; flag: string };
 
 const LOCALES: LocaleItem[] = [
   { label: "ID", value: "id", flag: "fi fi-id" },
   { label: "EN", value: "en", flag: "fi fi-us" },
 ];
 
+type LanguageMenuComponent = typeof import("./language-menu").default;
+const loadLanguageMenu = () => import("./language-menu").then((m) => m.default);
+
 export function LanguageToggle() {
   const locale = useLocale();
   const t = useTranslations("languageToggle");
   const router = useRouter();
   const pathname = usePathname();
+  // The dropdown lives in its own chunk (see language-menu.tsx), loaded once
+  // the browser is idle — or right away if the button is used before that.
+  const [Menu, setMenu] = React.useState<LanguageMenuComponent | null>(null);
+  const [openOnLoad, setOpenOnLoad] = React.useState(false);
+
+  const load = React.useCallback(() => {
+    loadLanguageMenu().then((component) => setMenu(() => component));
+  }, []);
+
+  React.useEffect(() => {
+    // Safari has no requestIdleCallback.
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(load, { timeout: 4000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const id = window.setTimeout(load, 2000);
+    return () => window.clearTimeout(id);
+  }, [load]);
 
   const active = LOCALES.find((l) => l.value === locale);
   const triggerLabel = active?.label ?? locale?.toUpperCase() ?? "ID";
@@ -41,42 +53,29 @@ export function LanguageToggle() {
     router.replace(pathname, { locale: next });
   };
 
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          size="sm"
-          className="h-11 md:h-9 px-2 gap-2"
-          aria-label={t("triggerAriaLabel", { language: triggerLabel })}
-        >
-          <span className={`fi ${triggerFlag}`}></span>
-          <span className="font-medium">{triggerLabel}</span>
-        </Button>
-      </DropdownMenuTrigger>
+  const openEarly = () => {
+    setOpenOnLoad(true);
+    load();
+  };
 
-      <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>{t("label")}</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        {LOCALES.map((l) => {
-          const selected = l.value === locale;
-          return (
-            <DropdownMenuItem
-              key={l.value}
-              role="menuitemradio"
-              aria-checked={selected}
-              onClick={() => changeLocale(l.value)}
-              className="flex items-center gap-2"
-            >
-              <span className={`fi ${l.flag ?? "fi-xx"}`}></span>
-              <span className="flex-1">{l.label}</span>
-              <Check
-                className={`h-4 w-4 ${selected ? "opacity-100" : "opacity-0"}`}
-              />
-            </DropdownMenuItem>
-          );
-        })}
-      </DropdownMenuContent>
-    </DropdownMenu>
+  const trigger = (
+    <Button
+      variant="ghost"
+      size="sm"
+      className="h-11 md:h-9 px-2 gap-2"
+      aria-label={t("triggerAriaLabel", { language: triggerLabel })}
+      onClick={Menu ? undefined : openEarly}
+    >
+      <span className={`fi ${triggerFlag}`}></span>
+      <span className="font-medium">{triggerLabel}</span>
+    </Button>
+  );
+
+  if (!Menu) return trigger;
+
+  return (
+    <Menu locales={LOCALES} locale={locale} defaultOpen={openOnLoad} onSelect={changeLocale}>
+      {trigger}
+    </Menu>
   );
 }

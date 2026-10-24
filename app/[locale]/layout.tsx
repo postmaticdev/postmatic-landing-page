@@ -13,7 +13,6 @@ import { LOGIN_URL, LANDINGPAGE_URL } from "@/constants";
 import Footer from "@/components/Footer";
 import CookieConsentPopup from "@/components/cookie-consent-popup";
 import { HapticsListener } from "@/components/haptics-listener";
-import { IMAGE_PATH } from "@/constants/path-file";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
@@ -47,13 +46,13 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 /**
- * Layout-level metadata — only icons and essentials.
+ * Layout-level metadata — only essentials. The favicon is app/favicon.ico
+ * (16/32/48 px only, ~3 KB); IMAGE_PATH is the same icon with every size up
+ * to 256 px (~185 KB), kept for the JSON-LD logo but no longer linked as a
+ * second favicon that each first visit downloaded.
  * Page-specific SEO metadata is handled by generateMetadata() in each page.tsx.
  */
 export const metadata: Metadata = {
-  icons: {
-    icon: IMAGE_PATH,
-  },
   metadataBase: new URL(LANDINGPAGE_URL),
 };
 

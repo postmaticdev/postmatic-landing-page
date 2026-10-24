@@ -95,11 +95,16 @@ const cards: CardItem[] = [
   },
 ];
 
+// Phones: distance from the viewport top at which the card stack sticks —
+// the fixed mobile navbar (~69px) plus some breathing room.
+const MOBILE_STICKY_TOP = 84;
+
 export default function AboutSection() {
   const [activeCard, setActiveCard] = useState<number>(0);
   const t = useTranslations("landing.about");
   const texts = t.raw("cards") as Array<{ title: string; description: string }>;
   const sectionRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const lastIndex = useRef(0);
 
@@ -126,16 +131,17 @@ export default function AboutSection() {
           },
         });
       });
-      // Phones: the card stack sticks just below the navbar and opens
-      // card 1 → 2 → 3 in turn, then releases (same rhythm as desktop).
+      // Phones: the card stack is CSS-sticky just below the navbar (see the
+      // track below) and opens card 1 → 2 → 3 in turn while it sticks. Sticky
+      // is laid out by the browser, so unlike a JS pin it never lags behind a
+      // touch scroll and slides under the navbar; this only reads progress.
       mm.add("(max-width: 767px)", () => {
         ScrollTrigger.create({
-          trigger: cardsRef.current,
-          start: "top 76px",
-          end: `+=${cards.length * PIN_STEP_SCROLL.mobile}%`,
-          pin: true,
+          trigger: trackRef.current,
+          start: `top ${MOBILE_STICKY_TOP}px`,
+          end: () => `+=${trackRef.current!.offsetHeight - cardsRef.current!.offsetHeight}`,
           refreshPriority: PIN_PRIORITY.about,
-          anticipatePin: 1,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
             const idx = Math.min(cards.length - 1, Math.floor(self.progress * cards.length));
             if (idx !== lastIndex.current) {
@@ -153,7 +159,9 @@ export default function AboutSection() {
     // Desktop: the section is pinned at the top of the viewport, so it is exactly
     // one screen tall (top padding clears the floating navbar) and the cards take
     // the remaining height. Nothing is cut off at any window size or zoom level.
-    <section ref={sectionRef} id="about" className="scroll-mt-24 w-full py-16 font-sans overflow-hidden md:h-svh md:min-h-[600px] md:flex md:flex-col md:pt-28 md:pb-10">
+    // Phones use overflow-clip, not overflow-hidden: a hidden overflow would make
+    // the section the sticky container and the card stack would never stick.
+    <section ref={sectionRef} id="about" className="scroll-mt-24 w-full py-16 font-sans overflow-clip md:overflow-hidden md:h-svh md:min-h-[600px] md:flex md:flex-col md:pt-28 md:pb-10">
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 md:flex-1 md:min-h-0 md:flex md:flex-col md:justify-center">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 mb-12 md:mb-8 md:shrink-0">
@@ -195,8 +203,26 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Expanding Cards Area */}
-        <div ref={cardsRef} data-tilt className="flex flex-col md:flex-row gap-3 md:gap-4 h-[min(640px,calc(100svh-104px))] md:h-auto md:flex-1 md:min-h-[220px] md:max-h-[520px] w-full">
+        {/* Expanding Cards Area. On phones the track is one stack height plus
+            the scroll spent opening the cards, and the stack sticks inside it
+            (sized to stay clear of the navbar and the floating CTA). On
+            desktop the track is display:contents, so it adds no box. */}
+        <div
+          ref={trackRef}
+          className="md:contents max-md:motion-safe:h-[calc(var(--about-stack-h)+var(--about-scroll))]"
+          style={
+            {
+              "--about-stack-h": "min(600px, calc(100svh - 172px))",
+              "--about-scroll": `${cards.length * PIN_STEP_SCROLL.mobile}svh`,
+            } as React.CSSProperties
+          }
+        >
+        <div
+          ref={cardsRef}
+          data-tilt
+          className="flex flex-col md:flex-row gap-3 md:gap-4 h-[var(--about-stack-h)] max-md:motion-safe:sticky md:h-auto md:flex-1 md:min-h-[220px] md:max-h-[520px] w-full"
+          style={{ top: MOBILE_STICKY_TOP }}
+        >
           {cards.map((card, index) => {
             const isActive = activeCard === index;
             return (
@@ -294,6 +320,7 @@ export default function AboutSection() {
               </div>
             );
           })}
+        </div>
         </div>
       </div>
     </section>

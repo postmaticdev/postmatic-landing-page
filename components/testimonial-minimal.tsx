@@ -28,6 +28,10 @@ const testimonials = [
 const AUTOPLAY_MS = 7000;
 // The section stays pinned while scrolling through the first N testimonials.
 const PINNED_SLIDES = 3;
+// Phones: room kept clear while pinned — the fixed navbar at the top and the
+// floating CTA at the bottom.
+const MOBILE_TOP_CLEARANCE = 80;
+const MOBILE_BOTTOM_CLEARANCE = 72;
 
 // Every slide stays mounted and stacked in the same grid cell, so the section
 // keeps the height of its tallest quote and the page's scroll triggers below
@@ -42,6 +46,7 @@ export default function TestimonialMinimal() {
   const t = useTranslations("landing.testimonial");
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [inView, setInView] = useState(false);
@@ -71,7 +76,9 @@ export default function TestimonialMinimal() {
     () => {
       const section = sectionRef.current;
       const content = contentRef.current;
-      if (!section || !content || prefersReducedMotion()) return;
+      const footer = footerRef.current;
+      if (!section || !content || !footer || prefersReducedMotion()) return;
+      const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
 
       const slideAt = (progress: number) => Math.min(PINNED_SLIDES - 1, Math.floor(progress * PINNED_SLIDES));
       let last = -1;
@@ -89,13 +96,23 @@ export default function TestimonialMinimal() {
         // Centre the section when it fits; otherwise keep quote, phone and author on screen.
         start: () => {
           const vh = window.innerHeight;
+          const sectionTop = section.getBoundingClientRect().top;
+          if (isMobile()) {
+            // Phones: centre quote → author/arrows between the navbar and the
+            // floating CTA (top-aligned under the navbar if it can't fit).
+            const blockTop = content.getBoundingClientRect().top - sectionTop;
+            const blockHeight = footer.getBoundingClientRect().bottom - sectionTop - blockTop;
+            const room = vh - MOBILE_TOP_CLEARANCE - MOBILE_BOTTOM_CLEARANCE;
+            const offset = MOBILE_TOP_CLEARANCE + Math.max(0, (room - blockHeight) / 2);
+            return `top+=${blockTop} top+=${offset}`;
+          }
           const height = section.offsetHeight;
           if (height <= vh) return "center center";
-          const contentTop = content.getBoundingClientRect().top - section.getBoundingClientRect().top - 16;
+          const contentTop = content.getBoundingClientRect().top - sectionTop - 16;
           return height - contentTop <= vh ? "bottom bottom" : `top+=${contentTop} top`;
         },
         end: () => {
-          const step = window.matchMedia("(max-width: 767px)").matches ? PIN_STEP_SCROLL.mobile : PIN_STEP_SCROLL.desktop;
+          const step = isMobile() ? PIN_STEP_SCROLL.mobile : PIN_STEP_SCROLL.desktop;
           return `+=${(window.innerHeight * step * PINNED_SLIDES) / 100}`;
         },
         pin: true,
@@ -134,16 +151,18 @@ export default function TestimonialMinimal() {
         </div>
 
         {/* Subhead */}
-        <div data-reveal="fade" className="text-xs font-bold tracking-widest text-neutral-500 dark:text-neutral-400 uppercase mb-16 md:mb-24">
+        <div data-reveal="fade" className="text-xs font-bold tracking-widest text-neutral-500 dark:text-neutral-400 uppercase mb-10 md:mb-24">
           {t("label")}
         </div>
 
-        {/* Content: quote (left) + half iPhone sitting on the bottom rule (right) */}
-        <div ref={contentRef} className="flex flex-col md:flex-row md:items-end gap-12 md:gap-10 lg:gap-16">
-          <div className="flex flex-1 flex-col md:flex-row gap-6 md:gap-10 md:self-center md:pb-16">
+        {/* Content: quote (left) + half iPhone sitting on the bottom rule (right).
+            Phones size the iPhone cut to the screen height, so quote, phone and
+            author/arrows fit on screen together while the section is pinned. */}
+        <div ref={contentRef} className="flex flex-col md:flex-row md:items-end gap-6 md:gap-10 lg:gap-16">
+          <div className="flex flex-1 flex-col md:flex-row gap-3 md:gap-10 md:self-center md:pb-16">
             {/* Icon */}
-            <div data-reveal="scale" className="shrink-0 pt-1 md:pt-2">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" className="text-neutral-300 dark:text-neutral-700">
+            <div data-reveal="scale" className="shrink-0 md:pt-2">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-9 md:h-9 text-neutral-300 dark:text-neutral-700">
                  <path d="M7 4l-4 16h5l4-16h-5zm10 0l-4 16h5l4-16h-5z" />
               </svg>
             </div>
@@ -155,7 +174,7 @@ export default function TestimonialMinimal() {
                   <ScrollWords
                     active={i === active}
                     text={t(`items.${item.id}.quote`)}
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] leading-[1.3] font-medium text-neutral-900 dark:text-white tracking-tight"
+                    className="text-xl sm:text-3xl md:text-4xl lg:text-[2.5rem] leading-[1.35] md:leading-[1.3] font-medium text-neutral-900 dark:text-white tracking-tight"
                   />
                 </div>
               ))}
@@ -165,7 +184,7 @@ export default function TestimonialMinimal() {
           {/* Half iPhone — clipped by the bottom rule, rises as you scroll */}
           <div
             data-reveal="fade"
-            className="relative mx-auto md:mx-0 shrink-0 w-[260px] sm:w-[280px] lg:w-[320px] h-[380px] sm:h-[420px] lg:h-[480px] overflow-hidden px-5"
+            className="relative mx-auto md:mx-0 shrink-0 w-[240px] sm:w-[280px] lg:w-[320px] h-[clamp(190px,calc(100svh-450px),360px)] sm:h-[420px] lg:h-[480px] overflow-hidden px-5"
           >
             <div data-parallax="-0.25" className="absolute inset-x-5 top-10 will-change-transform">
               <div className="relative w-full aspect-[9/19.5] rounded-[2.8rem] bg-neutral-900 p-[9px] ring-1 ring-neutral-700/60 dark:ring-neutral-600/60">
@@ -203,12 +222,12 @@ export default function TestimonialMinimal() {
         </div>
 
         {/* Bottom border */}
-        <div data-reveal="line" className="w-full h-[1px] bg-neutral-200 dark:bg-neutral-800 relative mb-6">
+        <div data-reveal="line" className="w-full h-[1px] bg-neutral-200 dark:bg-neutral-800 relative mb-4 md:mb-6">
           <div className="absolute top-0 left-0 w-16 h-[2px] bg-neutral-900 dark:bg-white -mt-[0.5px]"></div>
         </div>
 
         {/* Footer */}
-        <div data-reveal="up" className="flex flex-row items-center justify-between gap-6">
+        <div ref={footerRef} data-reveal="up" className="flex flex-row items-center justify-between gap-4 md:gap-6">
           {/* Author */}
           <div className="grid min-w-0">
             {testimonials.map((item, i) => (

@@ -140,17 +140,18 @@ export default function Hero() {
       id="home"
       className="relative w-full min-h-[100svh] pt-[5.5rem] sm:pt-24 lg:pt-24 overflow-hidden font-sans flex flex-col"
     >
-      <div ref={headerRef} className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-6 lg:pb-8 will-change-transform">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-8">
+      <div ref={headerRef} className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 will-change-transform">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 sm:gap-10 lg:gap-8">
           {/* Left Column */}
           <div className="flex-1 max-w-3xl">
-            <div data-hero-label className="flex items-center gap-3 mb-6 lg:mb-8">
-              <div className="w-3.5 h-3.5 bg-[#0066FF]"></div>
-              <span className="text-xs sm:text-sm font-bold tracking-widest text-neutral-800 dark:text-neutral-300 uppercase whitespace-nowrap truncate">
+            <div data-hero-label className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6 lg:mb-8">
+              <div className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 shrink-0 bg-[#0066FF]"></div>
+              <span className="text-[10px] sm:text-sm font-bold tracking-[0.14em] sm:tracking-widest text-neutral-800 dark:text-neutral-300 uppercase whitespace-nowrap truncate">
                 {t("label")}
               </span>
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-[4.75rem] font-extrabold text-neutral-900 dark:text-white tracking-tight leading-[1.05]">
+            {/* Phones: sized to the screen width so every line stays on one line */}
+            <h1 className="text-[clamp(2rem,9.6vw,3rem)] sm:text-6xl lg:text-[4.75rem] font-extrabold text-neutral-900 dark:text-white tracking-tight leading-[1.05]">
               {lines.map((line) => (
                 <span key={line} className="block overflow-hidden pb-[0.08em] -mb-[0.08em]">
                   <span data-hero-line className="block will-change-transform">
@@ -163,7 +164,7 @@ export default function Hero() {
 
           {/* Right Column */}
           <div data-hero-right className="flex-1 max-w-md lg:pb-4">
-            <p className="text-xl sm:text-2xl text-neutral-800 dark:text-neutral-200 font-medium mb-8 leading-snug">
+            <p className="text-[17px] sm:text-2xl text-neutral-800 dark:text-neutral-200 font-medium mb-6 sm:mb-8 leading-relaxed sm:leading-snug">
               {t("subtitle")}
             </p>
             <div className="flex flex-row items-center gap-3 sm:gap-4 w-full">
@@ -189,13 +190,13 @@ export default function Hero() {
       </div>
 
       {/* Cards Deck / Fan */}
-      <div className="relative w-full flex-1 min-h-[300px] sm:min-h-[380px] lg:min-h-[420px]">
+      <div className="relative w-full flex-1 min-h-[280px] sm:min-h-[380px] lg:min-h-[420px]">
         <div ref={deckRef} className="absolute inset-0 will-change-transform">
           {cards.map((card, idx) => (
             <div
               key={card.title}
               data-hero-card
-              className="absolute top-0 left-1/2 w-[160px] sm:w-[220px] md:w-[min(270px,32vh)] lg:w-[min(300px,36vh)] will-change-transform motion-reduce:[transform:var(--transform-mobile)] md:motion-reduce:[transform:var(--transform-desktop)]"
+              className="absolute top-[max(0px,calc(50%-160px))] sm:top-0 left-1/2 w-[160px] sm:w-[220px] md:w-[min(270px,32vh)] lg:w-[min(300px,36vh)] will-change-transform motion-reduce:[transform:var(--transform-mobile)] md:motion-reduce:[transform:var(--transform-desktop)]"
               style={
                 {
                   "--transform-desktop": `translateX(calc(-50% + ${OPEN.desktop.x[idx]}px)) translateY(${OPEN.desktop.y[idx]}px) rotate(${OPEN.desktop.r[idx]}deg)`,

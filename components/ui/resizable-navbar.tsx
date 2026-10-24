@@ -2,12 +2,10 @@
 import { LOGO_BLUE, LOGO_WHITE } from "@/constants/path-file";
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "motion/react";
+import { AnimatePresence, LazyMotion } from "motion/react";
+// The minimal `m` components, named `motion` so the JSX below reads as usual;
+// their features come from <LazyMotion> in Navbar.
+import * as motion from "motion/react-m";
 import Image from "next/image";
 import Link from "next/link";
 import { Link as LocaleLink } from "@/i18n/routing";
@@ -54,37 +52,41 @@ interface MobileNavMenuProps {
   onClose: () => void;
 }
 
+// Motion's features (animations, layoutId) arrive in their own chunk; the
+// navbar renders its resting state from the server HTML until then, and only
+// animates once the visitor scrolls or hovers.
+const loadMotionFeatures = () => import("@/lib/motion-features").then((m) => m.default);
+
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  // Only the page's scrollY is needed. Passing `target` made motion measure
-  // the navbar's layout on every scroll frame just to compute an unused
-  // scrollYProgress.
-  const { scrollY } = useScroll();
   const [visible, setVisible] = useState<boolean>(false);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 100) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  });
+  // Only the page's scrollY is needed: a passive listener instead of motion's
+  // useScroll, which pulled motion's scroll-timeline code into every page.
+  useEffect(() => {
+    const update = () => setVisible(window.scrollY > 100);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
 
   return (
-    <motion.div
-      ref={ref}
-      // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("sticky inset-x-0 top-20 z-40 w-full", className)}
-    >
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              { visible }
-            )
-          : child
-      )}
-    </motion.div>
+    <LazyMotion features={loadMotionFeatures}>
+      <motion.div
+        ref={ref}
+        // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
+        className={cn("sticky inset-x-0 top-20 z-40 w-full", className)}
+      >
+        {React.Children.map(children, (child) =>
+          React.isValidElement(child)
+            ? React.cloneElement(
+                child as React.ReactElement<{ visible?: boolean }>,
+                { visible }
+              )
+            : child
+        )}
+      </motion.div>
+    </LazyMotion>
   );
 };
 

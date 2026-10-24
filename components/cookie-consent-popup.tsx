@@ -1,11 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { Shield, X } from "lucide-react";
-import CookieSettingsModal from "./cookie-setting-modal";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { readStorage, writeStorage } from "@/lib/safe-storage";
+
+// The settings modal (and the styled-jsx runtime it uses) is only needed after
+// "Manage cookies" is clicked, so it stays out of the bundle every page loads.
+const loadCookieSettingsModal = () => import("./cookie-setting-modal");
+const CookieSettingsModal = dynamic(loadCookieSettingsModal, { ssr: false });
 
 export default function CookieConsentPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,6 +20,8 @@ export default function CookieConsentPopup() {
     const consent = readStorage("cookieConsent");
     if (!consent) {
       setIsVisible(true);
+      // Fetch it while the banner is up, so the modal still opens instantly.
+      loadCookieSettingsModal();
     }
   }, []);
 
@@ -83,11 +90,13 @@ export default function CookieConsentPopup() {
           </button>
         </div>
       </div>
-      <CookieSettingsModal
-        isOpen={showCookieSettings}
-        onClose={() => setShowCookieSettings(false)}
-        closeConsent={() => setIsVisible(false)}
-      />
+      {showCookieSettings && (
+        <CookieSettingsModal
+          isOpen
+          onClose={() => setShowCookieSettings(false)}
+          closeConsent={() => setIsVisible(false)}
+        />
+      )}
     </div>
   );
 }
