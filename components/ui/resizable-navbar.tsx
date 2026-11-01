@@ -2,17 +2,17 @@
 import { LOGO_BLUE, LOGO_WHITE } from "@/constants/path-file";
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "motion/react";
+import { AnimatePresence, LazyMotion } from "motion/react";
+// The minimal `m` components, named `motion` so the JSX below reads as usual;
+// their features come from <LazyMotion> in Navbar.
+import * as motion from "motion/react-m";
 import Image from "next/image";
 import Link from "next/link";
+import { Link as LocaleLink } from "@/i18n/routing";
 
 import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -52,37 +52,41 @@ interface MobileNavMenuProps {
   onClose: () => void;
 }
 
+// Motion's features (animations, layoutId) arrive in their own chunk; the
+// navbar renders its resting state from the server HTML until then, and only
+// animates once the visitor scrolls or hovers.
+const loadMotionFeatures = () => import("@/lib/motion-features").then((m) => m.default);
+
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
   const [visible, setVisible] = useState<boolean>(false);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 100) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  });
+  // Only the page's scrollY is needed: a passive listener instead of motion's
+  // useScroll, which pulled motion's scroll-timeline code into every page.
+  useEffect(() => {
+    const update = () => setVisible(window.scrollY > 100);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
 
   return (
-    <motion.div
-      ref={ref}
-      // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("sticky inset-x-0 top-20 z-40 w-full", className)}
-    >
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              { visible }
-            )
-          : child
-      )}
-    </motion.div>
+    <LazyMotion features={loadMotionFeatures}>
+      <motion.div
+        ref={ref}
+        // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
+        className={cn("sticky inset-x-0 top-20 z-40 w-full", className)}
+      >
+        {React.Children.map(children, (child) =>
+          React.isValidElement(child)
+            ? React.cloneElement(
+                child as React.ReactElement<{ visible?: boolean }>,
+                { visible }
+              )
+            : child
+        )}
+      </motion.div>
+    </LazyMotion>
   );
 };
 
@@ -106,8 +110,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        "relative z-[60] mx-auto hidden w-full flex-row items-center justify-between self-start rounded-full bg-transparent py-2 lg:flex dark:bg-transparent",
+        visible ? "bg-white/80 dark:bg-neutral-950/80 px-4" : "max-w-[90rem] px-8",
         className
       )}
     >
@@ -123,7 +127,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "hidden flex-1 flex-row items-center justify-center text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex",
+        "hidden lg:flex absolute left-1/2 -translate-x-1/2 flex-row items-center justify-center text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800",
         // spacing antar item dipindah ke Link biar truncate bekerja
         className
       )}
@@ -149,16 +153,9 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             />
           )}
 
-          {/* 
-            Span ini yang di-truncate. 
-            max-w berbasis jumlah karakter agar konsisten di berbagai bahasa.
-            Sesuaikan nilai ch sesuai kebutuhan desain.
-          */}
           <span
             className={cn(
-              "relative z-20 block leading-none",
-              "truncate", // overflow-hidden + text-ellipsis + nowrap
-              "max-w-[14ch] xl:max-w-[18ch]" // beri ruang lebih di layar lebar
+              "relative z-20 block leading-normal whitespace-nowrap py-0.5"
             )}
           >
             {item.name}
@@ -246,10 +243,18 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
-  return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
-  ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+  const t = useTranslations("navigation");
+  // A real button: focusable, announced, and a 44px tap target.
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={isOpen ? t("closeMenu") : t("openMenu")}
+      aria-expanded={isOpen}
+      className="-mr-2.5 inline-flex h-11 w-11 items-center justify-center rounded-full text-black dark:text-white"
+    >
+      {isOpen ? <IconX aria-hidden /> : <IconMenu2 aria-hidden />}
+    </button>
   );
 };
 
@@ -262,21 +267,24 @@ export const NavbarLogo = () => {
 
   // Use resolvedTheme for more accurate theme detection
   const isDark = mounted ? resolvedTheme === "dark" : false;
+  // Locale-aware, so the logo never sends a visitor to "/" (which would
+  // re-detect their language) from e.g. /en/privacy-policy.
   return (
-    <Link
+    <LocaleLink
       href="/#home"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black dark:text-white"
     >
       <Image
         src={isDark ? LOGO_WHITE : LOGO_BLUE}
-        alt="logo"
-        width={40}
-        height={40}
+        alt=""
+        width={36}
+        height={36}
+        className="shrink-0"
       />
-      <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent bold dark:text-white">
+      <span className="bg-gradient-to-r from-[#0066FF] to-indigo-600 bg-clip-text text-transparent dark:bg-none dark:text-white font-medium text-lg">
         Postmatic
       </span>
-    </Link>
+    </LocaleLink>
   );
 };
 
@@ -298,15 +306,17 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =
-    "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-4 py-2 rounded-xl text-sm font-semibold relative cursor-pointer transition-all duration-200 inline-flex items-center justify-center gap-2 text-center active:scale-95";
 
   const variantStyles = {
     primary:
-      "shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
-    secondary: "bg-transparent shadow-none dark:text-white",
-    dark: "bg-black text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+      "bg-[#0066FF] hover:bg-[#0052cc] text-white shadow-md shadow-[#0066FF]/25 hover:shadow-lg hover:shadow-[#0066FF]/35 hover:-translate-y-0.5",
+    secondary:
+      "bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-white",
+    dark:
+      "bg-black hover:bg-neutral-900 text-white dark:bg-white dark:hover:bg-neutral-100 dark:text-black shadow-md",
     gradient:
-      "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
+      "bg-gradient-to-r from-[#0066FF] to-indigo-600 hover:from-[#0052cc] hover:to-indigo-700 text-white shadow-md shadow-[#0066FF]/25 hover:-translate-y-0.5",
   };
 
   return (

@@ -1,5 +1,6 @@
+import "../globals.css";
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import {
   Navbar,
   NavbarButton,
@@ -8,82 +9,51 @@ import {
   NavItems,
 } from "@/components/ui/resizable-navbar";
 import MobileNavWrapper from "@/components/navbar";
-import { LogIn } from "lucide-react";
-import {
-  GOOGLE_SITE_VERIFICATION,
-  LANDINGPAGE_URL,
-  LOGIN_URL,
-  TITLE_APP,
-  YAHOO_SITE_VERIFICATION,
-  YANDEX_SITE_VERIFICATION,
-} from "@/constants";
+import { LOGIN_URL, LANDINGPAGE_URL } from "@/constants";
 import Footer from "@/components/Footer";
 import CookieConsentPopup from "@/components/cookie-consent-popup";
-import { IMAGE_PATH } from "@/constants/path-file";
+import { HapticsListener } from "@/components/haptics-listener";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { LanguageToggle } from "@/components/language-toggle";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Locale, routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
+import SmoothScrollProvider from "@/components/scroll/smooth-scroll-provider";
+import { localeToLangMap } from "@/lib/seo";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const poppins = Poppins({
+// Keep in sync when a client component starts using a new namespace.
+const CLIENT_MESSAGE_NAMESPACES = [
+  "landing",
+  "navigation",
+  "buttons",
+  "cookieConsent",
+  "cookieSettings",
+  "languageToggle",
+  "themeToggle",
+  "faq",
+  "comingSoon",
+  "notFound",
+  "endToEnd",
+  "introVideo",
+  "introduction",
+] as const;
+
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
 });
 
+/**
+ * Layout-level metadata — only essentials. The favicon is app/favicon.ico
+ * (16/32/48 px only, ~3 KB); IMAGE_PATH is the same icon with every size up
+ * to 256 px (~185 KB), kept for the JSON-LD logo but no longer linked as a
+ * second favicon that each first visit downloaded.
+ * Page-specific SEO metadata is handled by generateMetadata() in each page.tsx.
+ */
 export const metadata: Metadata = {
-  icons: {
-    icon: IMAGE_PATH,
-  },
-  title: {
-    default: TITLE_APP,
-    template: "%s | POSTMATIC",
-  },
-  description:
-    "Platform SaaS berbasis AI/ML yang mengotomasi seluruh proses pemasaran digital bisnis Indonesia.",
-  keywords:
-    "Bisnis, pemasaran digital, AI marketing, otomasi konten, social media automation, Indonesia, SaaS, artificial intelligence, marketing automation",
-  authors: [{ name: "POSTMATIC Team" }],
-  creator: "POSTMATIC Team",
-  publisher: "POSTMATIC Team",
-  formatDetection: { email: false, address: false, telephone: false },
   metadataBase: new URL(LANDINGPAGE_URL),
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: TITLE_APP,
-    description:
-      "Platform SaaS berbasis AI/ML yang mengotomasi seluruh proses pemasaran digital bisnis Indonesia.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: GOOGLE_SITE_VERIFICATION,
-    yandex: YANDEX_SITE_VERIFICATION,
-    yahoo: YAHOO_SITE_VERIFICATION,
-  },
-  category: "technology",
-  twitter: {
-    card: "summary_large_image",
-    title: TITLE_APP,
-    description:
-      "Platform SaaS berbasis AI/ML yang mengotomasi seluruh proses pemasaran digital bisnis Indonesia.",
-    images: ["logo-bg-blue.png"],
-  },
 };
 
 export default async function RootLayout({
@@ -91,38 +61,58 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }>) {
   const { locale } = await params;
   if (!routing.locales.includes(locale as Locale)) {
-    redirect(routing.defaultLocale);
+    // Not a supported locale (e.g. "/wp-login.php" matched as [locale]):
+    // render the root 404 instead of bouncing to the home page.
+    notFound();
   }
-
-  const t = await getTranslations("navigation");
+  // Enables static rendering for every locale (next-intl otherwise reads
+  // request headers, which forces dynamic rendering).
+  setRequestLocale(locale);
   const tButtons = await getTranslations("buttons");
+  const tNav = await getTranslations("navigation");
   const navItems = [
-    { name: t("about"), link: "/#about" },
-    { name: t("features"), link: "/#features" },
-    { name: t("tutorial"), link: "/#tutorial" },
-    { name: t("pricing"), link: "/#pricing" },
+    { name: tNav("home"), link: `/${locale}#home` },
+    { name: tNav("about"), link: `/${locale}#about` },
+    { name: tNav("features"), link: `/${locale}#features` },
+    { name: tNav("pricing"), link: `/${locale}#pricing` },
   ];
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
+  // Only the namespaces client components read (useTranslations in "use client"
+  // trees). Everything else — legal pages, SEO metadata, server components —
+  // is translated on the server, so it no longer has to be inlined into every
+  // page's HTML (~45 KB less per page).
+  const allMessages = await getMessages();
+  const messages = Object.fromEntries(
+    CLIENT_MESSAGE_NAMESPACES.filter((ns) => ns in allMessages).map((ns) => [ns, allMessages[ns]]),
+  );
   return (
     <html
-      lang={locale}
-      className={`${inter.variable} ${poppins.variable}`}
+      lang={localeToLangMap[locale] ?? locale}
+      className={jakarta.variable}
+      // globals.css enables smooth scrolling when Lenis is off; this tells
+      // Next to switch it off during route changes (instant jump to top).
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <meta name="theme-color" content="#0066FF" />
+        {/* A reload starts from the top like a fresh visit. Runs before the
+            browser would restore the old scroll position. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{var n=performance.getEntriesByType("navigation")[0];if(n&&n.type==="reload"){history.scrollRestoration="manual";window.scrollTo(0,0)}}catch(e){}',
+          }}
+        />
       </head>
       <body
-        className={`${poppins.className} bg-white dark:bg-[#0A0A0A] antialiased scroll-smooth`}
+        className={`${jakarta.className} bg-white dark:bg-[#0A0A0A] antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
@@ -131,22 +121,21 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+          <SmoothScrollProvider>
             <Navbar className="top-0">
               <NavBody>
                 <NavbarLogo />
                 <NavItems items={navItems} />
                 <div className="flex items-center gap-2">
-                  {/* tombol ID / EN */}
-                  <LanguageToggle />
                   <ThemeToggle />
-                  <NavbarButton
-                    href={LOGIN_URL}
-                    className="flex items-center gap-6 whitespace-nowrap"
-                    variant="primary"
-                  >
-                    <LogIn size="16" />
-                    {tButtons("getStarted")}
-                  </NavbarButton>
+                    <NavbarButton
+                      href={LOGIN_URL}
+                      className="flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-full"
+                      variant="primary"
+                    >
+                      <span className="font-medium">{tButtons("getStarted")}</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                    </NavbarButton>
                 </div>
               </NavBody>
 
@@ -155,6 +144,8 @@ export default async function RootLayout({
             {children}
             <Footer />
             <CookieConsentPopup />
+            <HapticsListener />
+          </SmoothScrollProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

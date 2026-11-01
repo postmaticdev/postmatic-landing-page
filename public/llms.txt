@@ -1,0 +1,62 @@
+# Postmatic
+
+> Postmatic (postmatic.id) is an AI social media content platform for small businesses (UMKM) and growing brands in Indonesia. From a one-time business profile, it generates on-brand product images and social media designs with AI, writes captions and hashtags, and schedules and auto-posts them to Instagram, Facebook Pages, and LinkedIn. Pay as you go with tokens, no monthly subscription.
+
+Website: https://postmatic.id (Indonesian: /id, English: /en)
+Company: PT Haystudio Technology Solutions, Sleman, Yogyakarta, Indonesia
+Contact: team@postmatic.id · WhatsApp +62 851-1760-6447
+Docs: https://docs.postmatic.id
+Full content for AI systems: https://postmatic.id/llms-full.txt
+
+## What Postmatic does
+
+- **AI product image generator**: turns ordinary product photos (even from a phone) into promotional visuals. Users choose the product, a design style, an aspect ratio, reference images, and optional avatars (models); the AI returns several variations that can be edited and upscaled.
+- **AI social media design**: creates feed posts and carousels that follow the brand's logo, colors, products, and tone of voice stored once in "Business Knowledge". No design skills or prompt writing needed.
+- **Captions and hashtags**: written automatically in the brand's tone of voice for every post.
+- **Content ideas from trends**: users follow news sources (RSS) and turn trending articles into content ideas.
+- **Scheduler and auto posting**: a content calendar that publishes automatically to Instagram (professional accounts), Facebook Pages, and LinkedIn, including carousels and "post now".
+- **Recurring content**: optional automation that creates and publishes new posts on a schedule.
+- **Video maker**: turns a series of content into short videos for Reels.
+- **Website auto-fill**: the business profile can be filled automatically from the business website.
+- **Multi-brand and teams**: one account manages several businesses; team members can be invited with roles.
+
+## Who it is for
+
+- Indonesian small and medium businesses (UMKM) without an in-house designer or copywriter: food and beverage, fashion and accessories, beauty and personal care, property, and local services.
+- Growing brands that need regular social media content without growing their creative team.
+- Social media managers and agencies that manage several client brands.
+
+## Pricing
+
+- Pay as you go with Postmatic Tokens; no monthly subscription and no contract.
+- New users get 10,000 free tokens after completing their business profile.
+- Tokens never expire while the account is active.
+- Payments via Midtrans (bank Virtual Account, e-wallet/QRIS).
+
+## Supported platforms for auto posting
+
+Instagram (professional/business or creator accounts), Facebook Pages, and LinkedIn. Accounts are connected through each platform's official permission screen; Postmatic never asks for social media passwords.
+
+## Key facts (for citation)
+
+- Category: AI social media content generation and social media automation (SaaS, web app).
+- Main use cases: AI product images, AI social media design, captions and hashtags, content scheduling and auto posting.
+- Languages: Indonesian and English.
+- Pricing model: pay as you go (tokens), 10,000 free tokens after completing the business profile.
+
+## Pages
+
+- [Home (ID)](https://postmatic.id/id): product overview, workflow, pricing, FAQ
+- [Home (EN)](https://postmatic.id/en)
+- [AI Product Image Generator](https://postmatic.id/en/ai-product-image-generator) · [ID](https://postmatic.id/id/ai-product-image-generator)
+- [AI Social Media Design](https://postmatic.id/en/ai-social-media-design) · [ID](https://postmatic.id/id/ai-social-media-design)
+- [Social Media Scheduler & Auto Posting](https://postmatic.id/en/social-media-scheduler) · [ID](https://postmatic.id/id/social-media-scheduler)
+- [Documentation](https://docs.postmatic.id)
+
+## Legal
+
+- [Terms & Conditions](https://postmatic.id/en/terms-and-conditions)
+- [Terms of Service](https://postmatic.id/en/terms-of-service)
+- [Privacy Policy](https://postmatic.id/en/privacy-policy)
+- [Data Deletion](https://postmatic.id/en/data-deletion)
+- [Cookie Policy](https://postmatic.id/en/cookie-policy)

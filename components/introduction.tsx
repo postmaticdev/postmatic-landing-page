@@ -28,22 +28,22 @@ export default function Introduction() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center bg-gradient-to-b from-white via-blue-50 to-indigo-50 dark:from-black dark:via-slate-950 dark:to-slate-900 overflow-hidden"
+      className="relative py-16 md:py-20 flex items-center bg-gradient-to-b from-white via-blue-50/30 to-white dark:from-[#0A0A0A] dark:via-[#080d1a] dark:to-[#0A0A0A] overflow-hidden transition-colors duration-300"
     >
-      <div className={cn("relative pt-20 pb-32", getContainerMargins())}>
+      <div className={cn("relative z-10 w-full", getContainerMargins())}>
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 md:gap-14 gap-12 items-center">
             {/* Content */}
-            <div className="space-y-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 tracking-tight">
+            <div className="space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-slate-900 dark:text-white tracking-tight">
                 {t('headline')}{" "}
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent drop-shadow-sm">
+                <span className="bg-gradient-to-r from-[#0066FF] via-indigo-600 to-[#3385ff] dark:from-[#3385ff] dark:via-indigo-300 dark:to-[#66a3ff] bg-clip-text text-transparent">
                   {t('brand')}
                 </span>
                 ?
-              </h1>
+              </h2>
 
-              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="text-base sm:text-lg leading-relaxed text-slate-600 dark:text-zinc-400">
                 {t('subHeadline')}
               </p>
             </div>
@@ -51,16 +51,14 @@ export default function Introduction() {
             {/* Hero Video/Dashboard Preview */}
             <div className="relative">
               <MacWindow keepAspectRatio hoverZoom={false} title="What is Postmatic?">
-               
-              <iframe
-              className="w-full h-full rounded"
-              src={cleanVideoUrl}
-              title="Overview Postmatic"
-              frameBorder="0"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay"
-              allowFullScreen
-            />
-             
+                <iframe
+                  className="w-full h-full rounded"
+                  src={cleanVideoUrl}
+                  title="Overview Postmatic"
+                  frameBorder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay"
+                  allowFullScreen
+                />
               </MacWindow>
             </div>
           </div>

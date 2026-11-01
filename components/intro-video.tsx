@@ -25,11 +25,14 @@ export default function IntroVideoPage() {
   const cleanVideoUrl = createCleanVideoUrl(VIDEO_TUTORIAL_URL);
 
   return (
-    <section id="tutorial" className="py-20 bg-gradient-to-b from-white via-blue-50 to-indigo-50 dark:from-black dark:via-slate-950 dark:to-slate-900">
-      <div className={getContainerMargins()}>
+    <section id="tutorial" className="py-16 md:py-20 bg-white dark:bg-[#0A0A0A] transition-colors duration-300 relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#0066FF]/10 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className={`${getContainerMargins()} relative z-10`}>
         {/* Header */}
         <div className="text-center mb-12">
-          <TextAnimate className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold -tracking-widest text-black dark:text-white" animation="blurInUp" by="character" once startOnView>
+          <TextAnimate className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white" animation="blurInUp" by="character" once startOnView>
             {t('titleLine1')}
           </TextAnimate>
         </div>
@@ -39,7 +42,7 @@ export default function IntroVideoPage() {
           keepAspectRatio
           hoverZoom={false}
           title={t('windowTitle')}
-          className="max-w-4xl mx-auto dark:border dark:border-slate-700"
+          className="max-w-4xl mx-auto border border-slate-200 dark:border-slate-800 shadow-xl"
         >
           <div className="aspect-w-16 aspect-h-10 h-full">
             <iframe

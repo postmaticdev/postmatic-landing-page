@@ -6,14 +6,17 @@ export default function EndToEnd() {
   const t = useTranslations('endToEnd');
   
   return (
-    <section className="py-20 bg-gradient-to-b from-indigo-50 via-blue-50 to-white dark:from-slate-900 dark:via-slate-950 dark:to-black">
-      <div className={getContainerMargins()}>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent drop-shadow-sm">{t('highlight')}</span>
+    <section className="py-16 md:py-20 bg-slate-50/70 dark:bg-[#0A0A0A] transition-colors duration-300 relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#0066FF]/10 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className={`${getContainerMargins()} relative z-10`}>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4 leading-tight">
+            <span className="bg-gradient-to-r from-[#0066FF] via-indigo-600 to-[#3385ff] dark:from-[#3385ff] dark:via-indigo-300 dark:to-[#66a3ff] bg-clip-text text-transparent drop-shadow-sm">{t('highlight')}</span>
             <span className="block sm:inline sm:ml-2">{t('title')}</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-slate-600 dark:text-zinc-400 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
             {t('description')}
           </p>
         </div>
